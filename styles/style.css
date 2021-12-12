@@ -41,6 +41,7 @@ header > img{
 	height: 250px;
 	transition: .3s;
 }
+
 .active{
 	left: 0;
 }
@@ -59,7 +60,6 @@ ul li a{
 	color: #fff;
 	display: block;
 	text-decoration: none;
-	
 }
 
 .sidebarBtn{
@@ -75,8 +75,7 @@ ul li a{
 	outline: none;
 }
 
-.sidebarBtn span{
-	
+.sidebarBtn span{	
 	display: block;	
 	width: 35px;
 	height: 5px;
@@ -87,8 +86,7 @@ ul li a{
 	transition: .3s;
 }
 
-.sidebarBtn span:before{
-	
+.sidebarBtn span:before{	
 	content: '';
 	position: absolute;
 	top: -10px;
@@ -100,7 +98,6 @@ ul li a{
 }
 
 .sidebarBtn span:after{
-	
 	content: '';
 	position: absolute;
 	top: 10px;
