@@ -4,7 +4,7 @@ body, header, h1, p, nav, aside, section, ul, li, footer{
 }
 
 header{
-	background: rgb(0, 153, 153)	
+	background: #099999;
 }
 
 header img{
@@ -15,6 +15,9 @@ header img{
 	margin-right: auto;
 }
 
+body > div > button > img{
+	background-color: #099999;
+}
 
 .sidebar{
 	position: fixed;

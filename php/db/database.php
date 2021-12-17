@@ -13,8 +13,8 @@ class DatabaseHelper{
 		$sql = "INSERT INTO users(email, name, username, password, phone)
 			  VALUES ('$email', '$name', '$username', '$password', '$phone')";
 	
-		if ($this->db->query($sql)=== TRUE) { // ! sta per la negazione
-			header("location: http://localhost/Web/index.html");
+		if ($this->db->query($sql) == TRUE) { // ! sta per la negazione
+			header("Location: ../index.html");
 			exit;
 		}
 		else{
