@@ -36,6 +36,13 @@
 			</button>
 		</div>
 		<main>
+			<!-- La parte di error message sarà da portare nel form di registrazione -->
+			<?php if(isset($ErrorMessage)): ?>
+				<h2 class="font-verdana text-center"><?php echo $ErrorMessage; ?></h2>
+			<?php endif; ?>
+			<?php if(isset($AuthForm)):?>
+				<?php require($AuthForm); ?>
+			<?php endif; ?>
 		</main>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	</body>

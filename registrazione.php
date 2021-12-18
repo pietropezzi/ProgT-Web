@@ -11,7 +11,8 @@ $checkInsert = $dbh->insertUser($email, $name, $username, $password, $phone);
 if($checkInsert){
 	header("Location: index.php");
 }else{
-# TEMPORANEO
-echo "Registrazione fallita.";
+	$ErrorMessage = "Registrazione fallita";
+
+	require("auth.php");
 }
 ?>
