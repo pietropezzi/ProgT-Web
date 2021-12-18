@@ -14,7 +14,7 @@ class DatabaseHelper{
 			  VALUES ('$email', '$name', '$username', '$password', '$phone')";
 	
 		if ($this->db->query($sql) == TRUE) { // ! sta per la negazione
-			header("Location: ../index.html");
+			header("Location: index.php");
 			exit;
 		}
 		else{

@@ -30,7 +30,7 @@
 	</head>
 	<body>
 		<header class="text-white text-center">
-			<img src="images/logo.png" alt="" />
+			<img src="<?php echo IMAGES_DIR; ?>logo.png" alt="" />
 			<h1 class="font-verdana text-center">PC HARDWARE</h1>
 		</header>
 		<div class="sidebar">
@@ -39,10 +39,10 @@
 				<li><a class="nav-link mt-2 mx-2 text-white" href="#" >Carrello</a></li>
 				<li><a class="nav-link mt-2 mx-2 text-white" href="#" >Ordini</a></li>
 				<li><a class="nav-link mt-2 mx-2 text-white" href="#" >Notifiche</a></li>
-				<li><a class="nav-link mt-2 mx-2 text-white" href="registrazione.html" >Registrati Qui</a></li>	 <!-- questo è quì temporaneamente-->				
+				<li><a class="nav-link mt-2 mx-2 text-white" href="template/registrazione.html" >Registrati Qui</a></li>	 <!-- questo è quì temporaneamente-->				
 			</ul>
 			<button class="sidebarBtn">
-				<img class="img-fluid text-center" src="images/menu.png" alt="" />
+				<img class="img-fluid text-center" src="<?php echo IMAGES_DIR; ?>menu.png" alt="" />
 			</button>
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
