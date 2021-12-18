@@ -7,5 +7,11 @@ $username = $_POST["username"];
 $password = $_POST["password"];	
 $phone = $_POST["phone"];
 
-$dbh->insertUser($email, $name, $username, $password, $phone);
+$checkInsert = $dbh->insertUser($email, $name, $username, $password, $phone);
+if($checkInsert){
+	header("Location: index.php");
+}else{
+# TEMPORANEO
+echo "Registrazione fallita.";
+}
 ?>

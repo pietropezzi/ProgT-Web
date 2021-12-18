@@ -10,17 +10,11 @@ class DatabaseHelper{
     }
 	
 	public function insertUser($email, $name, $username, $password, $phone){
-		$sql = "INSERT INTO users(email, name, username, password, phone)
-			  VALUES ('$email', '$name', '$username', '$password', '$phone')";
-	
-		if ($this->db->query($sql) == TRUE) { // ! sta per la negazione
-			header("Location: index.php");
-			exit;
-		}
-		else{
-			echo "Errore nell'inserimento: " . $this->db->error . ".";	
-			$this->db->close();
-		}
+		$query = "INSERT INTO users(email, name, username, password, phone)
+			  VALUES (?, ?, ?, ?, ?)";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('ssssi', $email, $name, $username, $password, $phone);
+		return $stmt->execute();
 	}
 }
 ?>
