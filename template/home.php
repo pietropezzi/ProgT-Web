@@ -19,14 +19,6 @@
 				})
 			})		
 		</script>
-		
-		<!-- Reload CSS -->
-		<script type="text/javascript">
-			function LoadOnce() { 
-				window.location.reload(); 
-				} 
-		</script>
-		
 	</head>
 	<body>
 		<header class="text-white text-center">
@@ -35,16 +27,16 @@
 		</header>
 		<div class="sidebar">
 			<ul class="nav flex-column font-verdana" id="navigation">
-				<li><a class="nav-link mt-2 mx-2 text-white" href="#" >Home</a></li>
-				<li><a class="nav-link mt-2 mx-2 text-white" href="#" >Carrello</a></li>
-				<li><a class="nav-link mt-2 mx-2 text-white" href="#" >Ordini</a></li>
-				<li><a class="nav-link mt-2 mx-2 text-white" href="#" >Notifiche</a></li>
-				<li><a class="nav-link mt-2 mx-2 text-white" href="template/registrazione.html" >Registrati Qui</a></li>	 <!-- questo è quì temporaneamente-->				
+			<?php foreach($Categories as $cat): ?>
+				<li><a class="nav-link mt-2 mx-2 text-white" href="<?php echo $CatToLink[$cat]; ?>" ><?php echo $cat; ?></a></li>
+			<?php endforeach; ?>
 			</ul>
 			<button class="sidebarBtn">
 				<img class="img-fluid text-center" src="<?php echo IMAGES_DIR; ?>menu.png" alt="" />
 			</button>
 		</div>
+		<main>
+		</main>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	</body>
 </html>
