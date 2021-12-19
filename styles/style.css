@@ -58,6 +58,39 @@ header img{
 	margin-left: 10px;
 	color: white;
 }
+/* register css*/
+.register{
+	background: #006666;
+	margin: auto;
+	width: 100%;	
+	padding: 10px;
+}
+
+.register > label{
+	font-size: 150%;
+	font-weight: bold;	
+}
+
+.register input{	
+	width: 100%;	
+}
+
+form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+.register .button{	
+		background: #099999;
+		border: 3px solid #099999;	
+}
 
 
 @media screen and (min-width:768px){
@@ -74,4 +107,9 @@ header img{
 		font-size: 220%;
 		transition: .3s;
 	}
+	
+	.register{
+	width: 30%;	
+	
+}
 }
