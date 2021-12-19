@@ -1,7 +1,7 @@
 <div class="my-4 text-white register">
     <label class=" mb-2" for="username">Registrati</label>
     <div class="">
-        <form name="registrazione" action="registrazione.php" onsubmit="return validateForm()" method="post"action="#">
+        <form name="registrazione" action="registrazione.php" method="post" action="#">
             <div class="user-details">
                 <div class="input-box">
                     <label class="mb-1" for="username">Nome</label><br>
