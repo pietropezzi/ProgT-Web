@@ -8,8 +8,8 @@ header{
 }
 
 header img{
-	max-height: 40%;
-	max-width: 40%;
+	max-height: 20%;
+	max-width: 20%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -21,6 +21,7 @@ body > div > button > img{
 
 .sidebar{
 	position: fixed;
+	font-size: 170%;
 	top: 0;
 	left: -40%;
 	background: #006666;
@@ -28,6 +29,7 @@ body > div > button > img{
 	height: 100%;
 	transition: .3s;
 }
+
 .active{
 	left: 0;
 }
@@ -51,4 +53,21 @@ body > div > button > img{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+
+@media screen and (min-width:768px){
+	header img{
+		max-height: 10%;
+		max-width: 10%;
+	}
+
+	.sidebar > ul > li > a{
+		transition: .3s;
+	}
+
+	.sidebar > ul > li > a:hover{
+		font-size: 220%;
+		transition: .3s;
+	}
 }

@@ -12,7 +12,6 @@ if($checkInsert){
 	header("Location: index.php");
 }else{
 	$ErrorMessage = "Registrazione fallita";
-
 	require("auth.php");
 }
 ?>
