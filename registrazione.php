@@ -9,6 +9,7 @@ $phone = $_POST["phone"];
 
 $checkInsert = $dbh->insertUser($email, $name, $username, $password, $phone);
 if($checkInsert){
+	registerLoggedUser($name, $email);
 	header("Location: index.php");
 }else{
 	$ErrorMessage = "Registrazione fallita";
