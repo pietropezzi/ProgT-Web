@@ -12,7 +12,7 @@ if($checkInsert){
 	registerLoggedUser($name, $email);
 	header("Location: index.php");
 }else{
-	$ErrorMessage = "Registrazione fallita";
+	$ErrorMessage = "REGISTRAZIONE FALLITA";
 	require("auth.php");
 }
 ?>
