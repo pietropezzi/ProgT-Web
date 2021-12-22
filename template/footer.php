@@ -21,4 +21,4 @@
     <div class="bottom-text">
         <p> PCHARDWARE.COM - 2021/2022 </p>
     </div>
-</footer>
+</footer> 
