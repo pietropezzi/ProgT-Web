@@ -4,7 +4,16 @@ body, header, h1, p, nav, aside, section, ul, li, footer{
 }
 
 header{
-	background: #099999;
+	background: #088484;
+	margin-bottom: 10px;
+}
+
+footer{
+	text-align: center;
+	color: #ffffff;
+	margin-top: 20px;
+	background: #088484;
+	padding: 10px 0;
 }
 
 header img{
@@ -96,8 +105,8 @@ form .user-details .input-box{
 }
 
 .register .button{	
-		background: #099999;
-		border: 3px solid #099999;	
+		background: #088484;
+		border: 3px solid #088484;	
 }
 
 
