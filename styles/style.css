@@ -8,13 +8,64 @@ header{
 	margin-bottom: 10px;
 }
 
-footer{
-	text-align: center;
-	color: #ffffff;
-	margin-top: 20px;
-	background: #088484;
-	padding: 10px 0;
+/* FOOTER */
+footer
+{
+  background-color: #088484;;
+  padding: 10px 0;
+  line-height: 24px;
+  color: #ffffff;
+  text-align: center
 }
+
+footer > hr{
+	width: 50%;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.about-contatti, .ext-links {
+	display: inline-block;
+	text-align: left;
+	vertical-align: top;
+	margin: 0px 50px;
+}
+
+footer > .about-contatti > h3, footer > .ext-links > h3{
+	color: #ffffff;
+	font-size: 18px;
+	margin-top: 5px;
+	letter-spacing: 1px;
+}
+
+footer > .about-contatti > p, footer > .ext-links > p{
+	color: #ffffff;
+	font-size: 15px;
+	letter-spacing: 1 px;
+}
+
+.linklist > li > a {
+	color: #9db9f1;
+	text-decoration: none;
+}
+
+.linklist > li{
+	list-style:none
+}
+
+.bottom-text
+{
+  margin:0;
+  text-align: center;
+}
+
+.gestori{
+	margin-left: 10px;
+	list-style: none;
+}
+
+/* FINE FOOTER */
 
 header img{
 	max-height: 20%;
