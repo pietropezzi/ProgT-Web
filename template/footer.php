@@ -17,7 +17,7 @@
             <li><a href="#">Linkedin</a></li>
         </ul>
     </div>
-    <hr/>
+    <div class="line"></div>
     <div class="bottom-text">
         <p> PCHARDWARE.COM - 2021/2022 </p>
     </div>
