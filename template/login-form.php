@@ -1,16 +1,19 @@
-<div class="text-center">
+<div class="my-4 text-white register">
+	<label class=" mb-2">Login</label>
 	<form action="action_page.php" method="post">  
 		<div>
-			<div class="container">
-				<label for="uname"><b>Email</b></label>
-				<input type="text" placeholder="Enter Email" name="email" required>
+			<div class="input-box">
+				<label class="m-1"><b>Email</b></label><br>
+				<input type="text" placeholder="Inserisci la tua e-mail" name="email" required>
 			</div>
-			<div>
-				<label for="psw"><b>Password</b></label>
-				<input type="password" placeholder="Enter Password" name="psw" required>
+			<div class="input-box">
+				<label class="m-1"><b>Password</b></label><br>
+				<input class="mb-2" type="password" placeholder="Inserisci la tua password" name="psw" required>
 			</div>
 		</div>
-		<button type="submit">Login</button>		
+		<input class="button my-3 text-white" type="submit" value="Login">
 	</form> 
-	<a href="auth.php">Non sei ancora registrato? Registrati qui</a>.
+	<div class="link text-center ">
+		<a href="auth.php">Non sei ancora registrato? Registrati qui.</a>
+	</div>
 </div>

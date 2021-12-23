@@ -3,12 +3,25 @@ body, header, h1, p, nav, aside, section, ul, li, footer{
     padding: 0;
 }
 
+/* HEADER */
+
 header{
 	background: #088484;
 	margin-bottom: 10px;
 }
 
+header img{
+	max-height: 20%;
+	max-width: 20%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* FINE HEADER */
+
 /* FOOTER */
+
 footer
 {
   background-color: #088484;;
@@ -67,13 +80,7 @@ footer > .about-contatti > p, footer > .ext-links > p{
 
 /* FINE FOOTER */
 
-header img{
-	max-height: 20%;
-	max-width: 20%;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
+/* MENU LATERALE */
 
 .sidebar{
 	position: fixed;
@@ -118,6 +125,8 @@ header img{
 	color: white;
 }
 
+/* FINE MENU LATERALE */
+
 .errormessage h2{
 	text-align: center;
 	background-color: #8B0000;
@@ -126,7 +135,7 @@ header img{
 	color: #ffffff;
 }
 
-/* register css*/
+/* REGISTRAZIONE E LOGIN*/
 .register{
 	background: #006666;
 	margin: auto;
@@ -160,6 +169,12 @@ form .user-details .input-box{
 		border: 3px solid #088484;	
 }
 
+.register a {
+	color: #9db9f1;
+	text-decoration: none;
+}
+
+/* FINE REGISTRAZIONE E LOGIN*/
 
 @media screen and (min-width:768px){
 	header img{
