@@ -4,8 +4,14 @@
         <p>pchardware è un piccolo sito per acquisti e vendite di parti hardware per pc.<br>
         Il sito è attualmente gestito da:</p>
         <ul class="gestori">
-            <li>Fabio Chiarini</li>
-            <li>Pietro Pezzi</li>
+            <li>Fabio Chiarini 
+            <a href="https://github.com/FabioDrago13"><img src="<?php echo IMAGES_DIR; ?>github.png"/></a>
+            <a href="#"><img src="<?php echo IMAGES_DIR; ?>email.png"/></a>
+            </li>
+            <li>Pietro Pezzi 
+            <a href="https://github.com/pietropezzi"><img src="<?php echo IMAGES_DIR; ?>github.png"/></a>
+            <a href="mailto:pietro.pezzi3@studio.unibo.it"><img src="<?php echo IMAGES_DIR; ?>email.png"/></a>
+            </li>
         </ul>
         <p>Per informazioni e assistenza contattare uno dei gestori.</p>
     </div>
