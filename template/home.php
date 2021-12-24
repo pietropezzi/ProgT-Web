@@ -42,6 +42,11 @@
 			</button>
 		</div>
 		<main>
+			<?php if(isset($Message)): ?>
+				<div class="message">
+					<h2><?php echo $Message; ?></h2>
+				</div>
+			<?php endif; ?>
 			<?php if(isset($AuthForm)):?>
 				<?php require($AuthForm); ?>			
 			<?php endif; ?>		
