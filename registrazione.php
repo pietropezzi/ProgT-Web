@@ -5,9 +5,11 @@ $email = $_POST["email"];
 $name = $_POST["name"];
 $username = $_POST["username"];			
 $password = $_POST["password"];	
+$type = $_POST["type"];
 $phone = $_POST["phone"];
 
-$checkInsert = $dbh->insertUser($email, $name, $username, $password, $phone);
+
+$checkInsert = $dbh->insertUser($email, $name, $username, $password, $type, $phone);
 if($checkInsert){
 	registerLoggedUser($name, $email);
 	header("Location: index.php");

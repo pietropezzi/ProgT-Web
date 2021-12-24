@@ -158,7 +158,7 @@ footer > .about-contatti > p, footer > .ext-links > p{
 	font-weight: bold;	
 }
 
-.register input{	
+.register .text-input{	
 	width: 100%;	
 }
 
@@ -170,18 +170,38 @@ form .user-details{
 }
 
 form .user-details .input-box{
-  margin-bottom: 15px;
-  width: calc(100% / 2 - 20px);
+	margin-bottom: 15px;
+	width: calc(100% / 2 - 20px);
 }
 
 .register .button{	
-		background: #088484;
-		border: 3px solid #088484;	
+	width: 100%;	
+	background: #088484;
+	border: 3px solid #088484;	
 }
 
 .register a {
 	color: #9db9f1;
 	text-decoration: none;
+}
+
+.user-type {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.user-type .title{
+	font-size: 120%;
+	font-weight: bold;	
+}
+
+.user-type .name1{
+	margin-right: 20px;
+}
+
+.user-type .name2{
+	margin-left: 20px;
 }
 
 /* FINE REGISTRAZIONE E LOGIN*/

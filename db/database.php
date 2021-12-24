@@ -9,11 +9,11 @@ class DatabaseHelper{
         }
     }
 	
-	public function insertUser($email, $name, $username, $password, $phone){
-		$query = "INSERT INTO users(email, name, username, password, phone)
-			  VALUES (?, ?, ?, ?, ?)";
+	public function insertUser($email, $name, $username, $password, $type, $phone){
+		$query = "INSERT INTO users(email, name, username, password, type,  phone)
+			  VALUES (?, ?, ?, ?, ?, ?)";
 		$stmt = $this->db->prepare($query);
-		$stmt->bind_param('ssssi', $email, $name, $username, $password, $phone);
+		$stmt->bind_param('sssssi', $email, $name, $username, $password, $type, $phone);
 		return $stmt->execute();
 	}
 }
