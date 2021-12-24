@@ -42,12 +42,6 @@
 			</button>
 		</div>
 		<main>
-			<!-- La parte di error message sarà da portare nel form di registrazione -->
-			<?php if(isset($ErrorMessage)): ?>
-			<div class="errormessage">
-				<h2 class="font-verdana text-center"><?php echo $ErrorMessage; ?></h2>
-			</div>
-			<?php endif; ?>
 			<?php if(isset($AuthForm)):?>
 				<?php require($AuthForm); ?>			
 			<?php endif; ?>		

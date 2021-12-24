@@ -1,4 +1,9 @@
 <script src="js/checkRegisterForm.js"></script>
+<?php if(isset($ErrorMessage)): ?> 
+<div class="errormessage">
+    <h2 class="font-verdana text-center"><?php echo $ErrorMessage; ?></h2>
+</div>
+<?php endif; ?>
  <div class="my-4 text-white register">
     <label class="mb-2">Registrati</label>
     <div>
