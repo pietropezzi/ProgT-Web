@@ -10,4 +10,4 @@ Mockup del design della pagina **Home** versione *mobile*:
 ## Home Desktop
 Mockup del design della pagina **Home** versione *desktop*:
 
-![immagine](https://user-images.githubusercontent.com/55588165/145062389-3eebaf02-809f-4fbc-8325-5c73016c1e50.png)
+![immagine](/img/mockup_desktop_home.png)
