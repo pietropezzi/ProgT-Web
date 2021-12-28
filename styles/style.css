@@ -137,16 +137,6 @@ footer > .about-contatti > p, footer > .ext-links > p{
 
 /* FINE MENU LATERALE */
 
-/* MESSAGGI IN HOME */
-
-.message h2{
-	text-align: center;
-	background-color: #136408;
-	padding: 10px 0;
-	margin: 10px 0;
-	color: #ffffff;
-}
-
 .errormessage h2{
 	text-align: center;
 	background-color: #8B0000;
@@ -154,8 +144,6 @@ footer > .about-contatti > p, footer > .ext-links > p{
 	margin: 10px 0;
 	color: #ffffff;
 }
-
-/* FINE MESSAGGI IN HOME */
 
 /* REGISTRAZIONE E LOGIN*/
 .register{

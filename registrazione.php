@@ -12,8 +12,7 @@ $phone = $_POST["phone"];
 $checkInsert = $dbh->insertUser($email, $name, $username, $password, $type, $phone);
 if($checkInsert){
 	registerLoggedUser($name, $email);
-	$Message = "Registrazione per: ".$username." eseguita con successo.";
-	require("index.php");
+	header("Location: index.php");
 }else{
 	$ErrorMessage = "REGISTRAZIONE FALLITA";
 	require("auth.php");

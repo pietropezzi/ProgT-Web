@@ -6,7 +6,7 @@ CREATE TABLE `users`(
     `name` varchar(50) NOT NULL,
     `username` varchar(50) NOT NULL,
     `password` varchar(255) NOT NULL,
-    `type` varchar(255) NOT NULL,
+    `type` varchar(50) NOT NULL,
     `phone` int(255),
     PRIMARY KEY (`email`)   
 );

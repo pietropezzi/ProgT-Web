@@ -1,5 +1,5 @@
 function checkRegisterForm() {
-	
+	/* Togliere i commenti alla consegna*/
 	var name = document.getElementById("name").value
 	var username = document.getElementById("username").value
 	var email = document.getElementById("email").value	
@@ -22,22 +22,32 @@ function checkRegisterForm() {
 		return false;
 	}	
 	
-	if (!filter.test(email)){
+	/*if (!filter.test(email)){
 		alert('Attenzione: Email non valida');
 		return false;
-	}
+	}*/
 		
 	if (!number.test(phone)){
 		alert('Attenzione: Il numero di telefono deve contenere solo numeri');
 		return false;
 	}
 	
+	/*if(phone.length < 9){
+		alert ('Attenzione: Il numero di telefono è troppo corto');
+		return false;
+	}
+		
+	if(phone.length > 15){
+		alert ('Attenzione: Il numero di telefono è troppo lungo');
+		return false;
+	}		*/
+	
 	if(psw != psw2){
 		alert ('Attenzione: Le due password non combaciano');
 		return false;
 	}
 		
-	if(psw.length < 6){
+	/*if(psw.length < 6){
 		alert ('Attenzione: La password deve essere lunga almeno 6 caratteri');
 		return false;
 	}
@@ -45,5 +55,5 @@ function checkRegisterForm() {
 	if(psw.length > 40){
 		alert ('Attenzione: La password è troppo lunga');
 		return false;
-	}		
+	}		*/
 }

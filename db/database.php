@@ -16,5 +16,15 @@ class DatabaseHelper{
 		$stmt->bind_param('sssssi', $email, $name, $username, $password, $type, $phone);
 		return $stmt->execute();
 	}
+	
+	public function loginCheck($email, $password){
+	    $query = "SELECT name FROM users WHERE email = ? AND password = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('ss', $email, $password);
+		$stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+	}
 }
 ?>

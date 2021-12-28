@@ -1,6 +1,6 @@
 <div class="my-4 text-white register">
 	<label class=" mb-2">Login</label>
-	<form action="action_page.php" method="post">  
+	<form action="loginCheck.php" method="post">  
 		<div>
 			<div class="input-box">
 				<label class="m-1">Email</label><br>
@@ -8,7 +8,7 @@
 			</div>
 			<div class="input-box">
 				<label class="m-1">Password</label><br>
-				<input class="text-input mb-2" type="password" placeholder="Inserisci la tua password" name="psw" required>
+				<input class="text-input mb-2" type="password" placeholder="Inserisci la tua password" name="password" required>
 			</div>
 		</div>
 		<input class="button my-3 text-white" type="submit" value="Login">
