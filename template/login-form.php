@@ -1,3 +1,8 @@
+<?php if(isset($ErrorMessage)): ?> 
+<div class="errormessage">
+    <h2 class="font-verdana text-center"><?php echo $ErrorMessage; ?></h2>
+</div>
+<?php endif; ?>
 <div class="my-4 text-white register">
 	<label class=" mb-2">Login</label>
 	<form action="loginCheck.php" method="post">  
