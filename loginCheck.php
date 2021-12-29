@@ -13,6 +13,7 @@ if(count($login_result)== 0){
     else{
 		$name = implode($login_result[0]);
         registerLoggedUser($name, $email);
-		header("Location: index.php");
+    $Message = "Login eseguito con successo!";
+		require("index.php");
     }
 ?>

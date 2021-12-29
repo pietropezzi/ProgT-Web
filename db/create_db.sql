@@ -10,3 +10,13 @@ CREATE TABLE `users`(
     `phone` int(255),
     PRIMARY KEY (`email`)   
 );
+
+/* Restano diversi attributi da mettere */
+CREATE TABLE `prodotti`(
+    `idprod` varchar(50) NOT NULL,
+    `nome` varchar(50) NOT NULL,
+    `prezzo` decimal(10, 2) NOT NULL,
+    `breve_descrizione` varchar(50) NOT NULL,
+    `descrizione` varchar(255) NOT NULL,
+    PRIMARY KEY(`idprod`)
+);

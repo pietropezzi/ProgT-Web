@@ -137,6 +137,17 @@ footer > .about-contatti > p, footer > .ext-links > p{
 
 /* FINE MENU LATERALE */
 
+/* PRODOTTI */
+
+.prodotto {
+	display: inline-block;
+	margin: 10px 30px;
+	padding: 1%;
+	border-style: solid;
+}
+
+/* FINE PRODOTTI */
+
 /* MESSAGGI IN HOME */
 
 .message h2{

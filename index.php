@@ -20,5 +20,7 @@ if(isset($_SESSION["email"])){
     $CatToLink = ["Carrello" => "#", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
 }
 
+$prodotti = $dbh->getProducts();
+
 require("template/home.php");
 ?> 

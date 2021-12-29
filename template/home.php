@@ -42,11 +42,13 @@
 			</button>
 		</div>
 		<main>
-			<!-- La parte di error message sarà da portare nel form di registrazione -->
 			<?php if(isset($Message)): ?>
 				<div class="message">
 					<h2><?php echo $Message; ?></h2>
 				</div>
+			<?php endif; ?>
+			<?php if(isset($prodotti)): ?>
+				<?php require("products.php"); ?>
 			<?php endif; ?>
 			<?php if(isset($AuthForm)):?>
 				<?php require($AuthForm); ?>			

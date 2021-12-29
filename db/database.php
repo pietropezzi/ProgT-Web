@@ -36,5 +36,15 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
 	}
+
+	/* da mettere $amount per prendere una quantità precisa di prodotti */
+	public function getProducts(){
+		$query = "SELECT idprod, nome, prezzo, breve_descrizione FROM prodotti ORDER BY idprod";
+		$stmt = $this->db->prepare($query);
+		$stmt->execute();
+		$result = $stmt->get_result();
+
+		return $result->fetch_all(MYSQLI_ASSOC);
+	}
 }
 ?>
