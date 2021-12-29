@@ -26,5 +26,15 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
 	}
+	
+	public function getType($email){
+	    $query = "SELECT type FROM users WHERE email = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('s', $email);
+		$stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+	}
 }
 ?>
