@@ -11,3 +11,9 @@ Mockup del design della pagina **Home** versione *mobile*:
 Mockup del design della pagina **Home** versione *desktop*:
 
 ![immagine](/img/mockup_desktop_home.png)
+
+
+## Cart Mobile
+Mockup del design della pagina **Cart** versione *mobile*:
+
+![immagine](/img/mockup_mobile_cart.png)
