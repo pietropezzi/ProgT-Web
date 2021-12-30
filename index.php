@@ -7,7 +7,7 @@ if(isset($_SESSION["email"])){
 		
 	if($_SESSION["type"] == "venditore"){
 		$Categories = ["Carrello", "Ordini", "Prodotti", "Notifiche"];
-		$CatToLink = ["Carrello" => "#", "Ordini" => "#", "Prodotti" => "#", "Notifiche" => "#"];
+		$CatToLink = ["Carrello" => "#", "Ordini" => "#", "Prodotti" => "your_product.php", "Notifiche" => "#"];
 		
 	}
 	
