@@ -18,7 +18,7 @@ class DatabaseHelper{
 	}
 	
 	public function loginCheck($email, $password){
-	    $query = "SELECT name FROM users WHERE email = ? AND password = ?";
+	    $query = "SELECT name, username, type FROM users WHERE email = ? AND password = ?";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('ss', $email, $password);
 		$stmt->execute();

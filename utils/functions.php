@@ -1,8 +1,10 @@
 <?php 
 
-function registerLoggedUser($nome, $email){
+function registerLoggedUser($nome, $username, $email, $type){
     $_SESSION["nome"] = $nome;
-    $_SESSION["email"] = $email;
+    $_SESSION["username"] = $username;
+	$_SESSION["email"] = $email;
+    $_SESSION["type"] = $type;
 }
 
 ?>
