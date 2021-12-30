@@ -1,6 +1,7 @@
 <?php
 require_once("bootstrap.php");
 
+$title = "PCHW - Home";
 if(isset($_SESSION["email"])){
     $Categories = ["Carrello", "Ordini", "Notifiche"];
     $CatToLink = ["Carrello" => "#", "Ordini" => "#", "Notifiche" => "#"];
