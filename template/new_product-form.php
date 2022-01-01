@@ -1,44 +1,33 @@
 <div class="my-4 text-white register">
    <label class="mb-2">Inserisci un nuovo Prodotto</label>
    <div>
-		<form name="new_product" action="insert_product.php" method="post">
-			<div class="user-details">
+		<form name="new_product" id="new_product" action="insert_product.php" method="post">
+			<div>
 				<div class="input-box">
-					<label class="mb-1" for="username">Nome</label><br>
-                    <input class="text-input" id="name" name="name" type="text" placeholder="Inserisci il tuo nome" required>
+					<label class="mb-1">ID Prodotto</label><br>
+                    <input class="text-input" id="idprod" name="idprod" type="text" placeholder="Inserisci l'ID del tuo prodotto" required>
                 </div>
                 <div class="input-box">
-                    <label class="mb-1" for="username">Username</label><br>
-                    <input class="text-input" id="username" name="username" type="text" placeholder="Inserisci il tuo username" required>
+                    <label class="mb-1">Nome</label><br>
+                    <input class="text-input" id="nome" name="nome" type="text" placeholder="Inserisci il nome del tuo prodotto" required>
                 </div>
                 <div class="input-box">
-                    <label class="mb-1" for="username">E-mail</label><br>
-                    <input class="text-input" id="email" name="email" type="text" placeholder="Inserisci la tua e-mail" required>
+                    <label class="mb-1">Prezzo</label><br>
+                    <input class="text-input" id="prezzo" name="prezzo" type="text" placeholder="Inserisci il prezzo del tuo prodotto" required>
                 </div>
                 <div class="input-box">
-                    <label class="mb-1" for="username">Numero di telefono</label><br>
-                    <input class="text-input" id="phone" name="phone" type="text" placeholder="Inserisci il tuo numero di telefono">
+                    <label class="mb-1">Breve descrizione</label><br>
+                    <textarea rows = "2" cols = "50" name = "breve_descrizione" id="breve_descrizione" class="text-input" placeholder="Inserisci una breve descrizione del tuo prodotto">
+                    </textarea>
                 </div>
                 <div class="input-box">
-                    <label class="mb-1" for="username">Password</label><br>
-                    <input class="text-input" id="psw" name="password" type="password" placeholder="Inserisci la tua password" required>
-                </div>
-                <div class="input-box">
-                    <label class="mb-1" for="username">Verifica Password</label><br>
-                    <input class="text-input" id="psw2" name="password2" type="password" placeholder="Conferma la tua password" required>
-                </div>
-				<div class="user-type text-center">
-					<label class="title my-2">Che tipo di utente sei?</label><br>
-					<div class="user-type">
-						<input type="radio" name="type" value="cliente" id="dot-1" checked>
-						<label class="name1" >Cliente</label>
-						<input class="name2" type="radio" name="type" value="venditore" id="dot-1" >
-						<label>Venditore</label>
-					</div>
-				</div>
+                    <label class="mb-1">Descrizione</label><br>
+                    <textarea rows ="5" cols="50" name="descrizione" id="descrizione" class="text-input" placeholder="Inserisci la descrizione del tuo prodotto">   
+                    </textarea>                 
+                </div>               
             </div>
             <div>
-                <input class="button text-white" type="submit" value="Registrati">
+                <input class="button text-white mt-2" type="submit" value="Inserisci il tuo nuovo prodotto">
             </div>
         </form>
     </div>

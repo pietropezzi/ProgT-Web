@@ -14,6 +14,7 @@ class DatabaseHelper{
 			  VALUES (?, ?, ?, ?, ?, ?)";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('sssssi', $email, $name, $username, $password, $type, $phone);
+
 		return $stmt->execute();
 	}
 	
@@ -26,7 +27,16 @@ class DatabaseHelper{
 
         return $result->fetch_object();
 	}	
-	
+
+	public function insertProduct($idprod, $nome, $prezzo, $venditore, $breve_descrizione, $descrizione){
+		$query = "INSERT INTO prodotti(idprod, nome, prezzo, venditore, breve_descrizione,  descrizione)
+		VALUES (?, ?, ?, ?, ?, ?)";
+  		$stmt = $this->db->prepare($query);
+ 		$stmt->bind_param('ssisss', $idprod, $nome, $prezzo, $venditore, $breve_descrizione, $descrizione);
+
+  		return $stmt->execute();
+	}	
+
 	/* da mettere $amount per prendere una quantità precisa di prodotti */
 	public function getProducts(){
 		$query = "SELECT idprod, nome, prezzo, breve_descrizione FROM prodotti ORDER BY idprod";
