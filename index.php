@@ -7,11 +7,9 @@ if(isset($_SESSION["email"])){
     $CatToLink = ["Carrello" => "#", "Ordini" => "#", "Notifiche" => "#"];
 		
 	if($_SESSION["type"] == "venditore"){
-		$Categories = ["Carrello", "Ordini", "Prodotti", "Notifiche"];
-		$CatToLink = ["Carrello" => "#", "Ordini" => "#", "Prodotti" => "your_product.php", "Notifiche" => "#"];
-		
-	}
-	
+		$Categories = ["Carrello", "Ordini", "I Tuoi Prodotti", "Notifiche"];
+		$CatToLink = ["Carrello" => "#", "Ordini" => "#", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "#"];		
+	}	
 }
  else {
     $Categories = ["Carrello", "Ordini", "Notifiche", "Login"];

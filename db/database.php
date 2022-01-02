@@ -37,6 +37,16 @@ class DatabaseHelper{
   		return $stmt->execute();
 	}	
 
+	public function getProductsBySeller($venditore){
+		$query = "SELECT idprod, nome, prezzo, breve_descrizione FROM prodotti WHERE venditore = ? ORDER BY idprod";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('s', $venditore);
+		$stmt->execute();
+		$result = $stmt->get_result();
+
+		return $result->fetch_all(MYSQLI_ASSOC);
+	}
+
 	/* da mettere $amount per prendere una quantità precisa di prodotti */
 	public function getProducts(){
 		$query = "SELECT idprod, nome, prezzo, breve_descrizione FROM prodotti ORDER BY idprod";
