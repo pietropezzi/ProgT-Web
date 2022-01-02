@@ -96,11 +96,12 @@ footer > .about-contatti > p, footer > .ext-links > p{
 	position: fixed;
 	font-size: 170%;
 	top: 0;
-	left: -40%;
+	left: -50%;
 	background: #006666;
-	width: 40%;
+	width: 50%;
 	height: 100%;
 	transition: .3s;
+	white-space: normal;
 }
 
 .active{
@@ -130,9 +131,28 @@ footer > .about-contatti > p, footer > .ext-links > p{
 
 .user{
 	position: absolute;
-	bottom: 20px;
+	bottom: 30px;
+	width: 90%;
 	margin-left: 10px;
 	color: white;
+	box-sizing: border-box;
+	white-space: normal;
+	overflow: scroll;
+}
+
+.user > h3{
+	font-size: 80%;
+}
+
+.user > h2{
+	font-size: 190%;
+	font-weight: bold;
+}
+
+.user > a{
+	color: #9db9f1;
+	text-decoration: none;
+	font-size: 130%;
 }
 
 /* FINE MENU LATERALE */
@@ -233,6 +253,10 @@ form .user-details .input-box{
 	header img{
 		max-height: 5%;
 		max-width: 5%;
+	}
+	
+	.user{
+		overflow: hidden;
 	}
 
 	.sidebar > ul > li > a{
