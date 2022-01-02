@@ -17,13 +17,11 @@
                 </div>
                 <div class="input-box">
                     <label class="mb-1">Breve descrizione</label><br>
-                    <textarea rows = "2" cols = "50" name = "breve_descrizione" id="breve_descrizione" class="text-input" placeholder="Inserisci una breve descrizione del tuo prodotto">
-                    </textarea>
+                    <textarea rows = "2" cols = "50" name = "breve_descrizione" id="breve_descrizione" class="text-input" placeholder="Inserisci una breve descrizione del tuo prodotto"></textarea>
                 </div>
                 <div class="input-box">
                     <label class="mb-1">Descrizione</label><br>
-                    <textarea rows ="5" cols="50" name="descrizione" id="descrizione" class="text-input" placeholder="Inserisci la descrizione del tuo prodotto">   
-                    </textarea>                 
+                    <textarea rows ="5" cols="50" name="descrizione" id="descrizione" class="text-input" placeholder="Inserisci la descrizione del tuo prodotto"></textarea>                 
                 </div>               
             </div>
             <div>
