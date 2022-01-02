@@ -32,7 +32,7 @@ class DatabaseHelper{
 		$query = "INSERT INTO prodotti(idprod, nome, prezzo, venditore, breve_descrizione,  descrizione)
 		VALUES (?, ?, ?, ?, ?, ?)";
   		$stmt = $this->db->prepare($query);
- 		$stmt->bind_param('ssisss', $idprod, $nome, $prezzo, $venditore, $breve_descrizione, $descrizione);
+ 		$stmt->bind_param('ssdsss', $idprod, $nome, $prezzo, $venditore, $breve_descrizione, $descrizione);
 
   		return $stmt->execute();
 	}	
