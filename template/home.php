@@ -22,7 +22,7 @@
 	</head>
 	<body>
 		<header class="text-white text-center">
-			<img src="<?php echo IMAGES_DIR; ?>logo.png" alt="" />
+			<img src="<?php echo IMAGES_DIR; ?>logo.png" alt="logo"/>
 			<h1 class="font-verdana text-center">PC HARDWARE</h1>
 		</header>
 		<div class="sidebar">
@@ -38,7 +38,7 @@
 			</div>
 			<?php endif; ?>
 			<button class="sidebarBtn">
-				<img class="img-fluid text-center" src="<?php echo IMAGES_DIR; ?>menu.png" alt="" />
+				<img class="img-fluid text-center" src="<?php echo IMAGES_DIR; ?>menu.png" alt="menu"/>
 			</button>
 		</div>
 		<main>
