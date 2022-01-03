@@ -28,17 +28,17 @@ class DatabaseHelper{
         return $result->fetch_object();
 	}	
 
-	public function insertProduct($idprod, $nome, $prezzo, $venditore, $breve_descrizione, $descrizione){
+	/*public function insertProduct($idprod, $nome, $prezzo, $venditore, $breve_descrizione, $descrizione){
 		$query = "INSERT INTO prodotti(idprod, nome, prezzo, venditore, breve_descrizione,  descrizione)
 		VALUES (?, ?, ?, ?, ?, ?)";
   		$stmt = $this->db->prepare($query);
  		$stmt->bind_param('ssdsss', $idprod, $nome, $prezzo, $venditore, $breve_descrizione, $descrizione);
 
   		return $stmt->execute();
-	}	
+	}	*/
 
 	public function getProductsBySeller($venditore){
-		$query = "SELECT idprod, nome, prezzo, breve_descrizione FROM prodotti WHERE venditore = ? ORDER BY idprod";
+		$query = "SELECT nome, venditore, prezzo, breve_descrizione FROM prodotti WHERE venditore = ? ORDER BY nome";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('s', $venditore);
 		$stmt->execute();
@@ -49,7 +49,7 @@ class DatabaseHelper{
 
 	/* da mettere $amount per prendere una quantità precisa di prodotti */
 	public function getProducts(){
-		$query = "SELECT idprod, nome, prezzo, breve_descrizione FROM prodotti ORDER BY idprod";
+		$query = "SELECT nome, venditore, prezzo, breve_descrizione FROM prodotti ORDER BY nome";
 		$stmt = $this->db->prepare($query);
 		$stmt->execute();
 		$result = $stmt->get_result();
