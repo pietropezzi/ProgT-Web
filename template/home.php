@@ -25,22 +25,9 @@
 			<img src="<?php echo IMAGES_DIR; ?>logo.png" alt="logo"/>
 			<h1 class="font-verdana text-center">PC HARDWARE</h1>
 		</header>
-		<div class="sidebar">
-			<ul class="nav flex-column font-verdana" id="navigation">
-			<?php foreach($Categories as $cat): ?>
-				<li><a class="nav-link mt-2 mx-2 text-white" href="<?php echo $CatToLink[$cat]; ?>" ><?php echo $cat; ?></a></li>
-			<?php endforeach; ?>
-			</ul>
-			<!-- INFORMAZIONI UTENTE LOGGATO -->
-			<?php if(isset($_SESSION["email"])): ?>
-			<div class="user">
-				<?php require("user-info.php"); ?>
-			</div>
-			<?php endif; ?>
-			<button class="sidebarBtn">
-				<img class="img-fluid text-center" src="<?php echo IMAGES_DIR; ?>menu.png" alt="menu"/>
-			</button>
-		</div>
+		<nav>
+			<?php require("template/sidebar.php"); ?>
+		</nav>
 		<main>
 			<?php if(isset($Message)): ?>
 				<div class="message">
@@ -48,13 +35,15 @@
 				</div>
 			<?php endif; ?>
 			<?php if(isset($prodotti)): ?>
-				<?php require("products.php"); ?>
+				<?php require("template/products.php"); ?>
 			<?php endif; ?>
 			<?php if(isset($AuthForm)):?>
 				<?php require($AuthForm); ?>			
 			<?php endif; ?>		
 		</main>
-		<?php require("template/footer.php"); ?>
+		<footer>
+			<?php require("template/footer.php"); ?>
+		</footer>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	</body>
 </html>
