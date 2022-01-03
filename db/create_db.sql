@@ -17,7 +17,7 @@ CREATE TABLE `prodotti`(
     `venditore` varchar(50) NOT NULL,
     `prezzo` decimal(10, 2) NOT NULL,   
     `tipo` varchar(50) NOT NULL,
-    `quantità` int(50) NOT NULL,	
+    `quantita` int(50) NOT NULL,	
     `breve_descrizione` varchar(50) NOT NULL,
     `descrizione` varchar(255) NOT NULL,
     PRIMARY KEY(`nome`, `venditore`)

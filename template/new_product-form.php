@@ -2,11 +2,7 @@
    <label class="mb-2">Inserisci un nuovo Prodotto</label>
    <div>
 		<form name="new_product" id="new_product" action="insert_product.php" method="post">
-			<div>
-				<div class="input-box">
-					<label class="mb-1">ID Prodotto</label><br>
-                    <input class="text-input" id="idprod" name="idprod" type="text" placeholder="Inserisci l'ID del tuo prodotto" required>
-                </div>
+			<div>				
                 <div class="input-box">
                     <label class="mb-1">Nome</label><br>
                     <input class="text-input" id="nome" name="nome" type="text" placeholder="Inserisci il nome del tuo prodotto" required>
@@ -22,7 +18,23 @@
                 <div class="input-box">
                     <label class="mb-1">Descrizione</label><br>
                     <textarea rows ="5" cols="50" name="descrizione" id="descrizione" class="text-input" placeholder="Inserisci la descrizione del tuo prodotto"></textarea>                 
-                </div>               
+                </div>    
+                <label class="mb-1">Tipo di Prodotto</label><br>
+                <select id="tipo" name="tipo">
+                    <option value="cpu">CPU/Processore</option>
+                    <option value="cpu_cooling">Raffredamento della CPU</option>
+                    <option value="motherboard">Scheda Madre</option>
+                    <option value="memory">Memoria</option>
+                    <option value="grafic">Scheda Video</option>
+                    <option value="power">Alimentatore</option>
+                    <option value="storage">Memoria di Massa</option>
+                    <option value="fan">Ventola del Case</option>
+                    <option value="case">Case</option>
+                </select>         
+            </div>
+            <div class="quantity_buttons">
+                <label class="mb-1">Quanti prodotti hai del genere?</label><br>
+	            <input type="number" step="1" min="1" max="" id="quantità" name="quantità" value="1" title="Qty" class="input-text">
             </div>
             <div>
                 <input class="button text-white mt-2" type="submit" value="Inserisci il tuo nuovo prodotto">

@@ -28,14 +28,14 @@ class DatabaseHelper{
         return $result->fetch_object();
 	}	
 
-	/*public function insertProduct($idprod, $nome, $prezzo, $venditore, $breve_descrizione, $descrizione){
-		$query = "INSERT INTO prodotti(idprod, nome, prezzo, venditore, breve_descrizione,  descrizione)
-		VALUES (?, ?, ?, ?, ?, ?)";
+	public function insertProduct($nome, $venditore, $prezzo, $tipo, $quantità, $breve_descrizione, $descrizione){
+		$query = "INSERT INTO prodotti(nome, venditore, prezzo, tipo, quantita, breve_descrizione, descrizione)
+		VALUES (?, ?, ?, ?, ?, ?, ?)";		
   		$stmt = $this->db->prepare($query);
- 		$stmt->bind_param('ssdsss', $idprod, $nome, $prezzo, $venditore, $breve_descrizione, $descrizione);
+ 		$stmt->bind_param('ssdsiss', $nome, $venditore, $prezzo, $tipo, $quantità, $breve_descrizione, $descrizione);
 
   		return $stmt->execute();
-	}	*/
+	}	
 
 	public function getProductsBySeller($venditore){
 		$query = "SELECT nome, venditore, prezzo, breve_descrizione FROM prodotti WHERE venditore = ? ORDER BY nome";

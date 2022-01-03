@@ -8,7 +8,7 @@ INSERT INTO user(email, name, username, password, type, phone) VALUES
 
 
 
-INSERT INTO prodotti (nome, venditore,  prezzo, tipo, quantità, breve_descrizione, descrizione ) VALUES 
+INSERT INTO prodotti (nome, venditore,  prezzo, tipo, quantita, breve_descrizione, descrizione ) VALUES 
 ("ADATA XPG Dozzle(Red Light) 16GB 2400MHZ", "luigi@luigi.it", 45, "Memoria", 3,  "breve_descrizione", "descrizione lunga del prodotto .... "), 
 ("AMD Ryzen 5 Quad Core 14000", "luigi@luigi.it", 170, "CPU/Processore", 2,  "breve_descrizione", "descrizione lunga del prodotto .... "), 
 ("Seagate Barracuda 500GB 32 Cache", "gustavo@gus.it", 49, "Memoria_di_massa", 2,  "breve_descrizione", "descrizione lunga del prodotto .... "); 
