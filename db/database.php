@@ -47,6 +47,16 @@ class DatabaseHelper{
 		return $result->fetch_all(MYSQLI_ASSOC);
 	}
 
+	public function getUser($email){
+		$query = "SELECT email, name, username, type, phone FROM users WHERE email = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('s', $email);
+		$stmt->execute();
+		$result = $stmt->get_result();
+
+		return $result->fetch_object();
+	}
+
 	/* da mettere $amount per prendere una quantità precisa di prodotti */
 	public function getProducts(){
 		$query = "SELECT nome, venditore, prezzo, breve_descrizione FROM prodotti ORDER BY nome";
