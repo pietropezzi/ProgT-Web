@@ -7,7 +7,7 @@
 
     <?php if(isset($_SESSION["email"])): ?>
     <div class="user">
-        <?php require("user-info.php"); ?>
+        <?php require("user/user-info.php"); ?>
     </div>
     <?php endif; ?>
     <button class="sidebarBtn">

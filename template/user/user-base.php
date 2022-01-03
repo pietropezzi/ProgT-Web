@@ -21,34 +21,20 @@
 		</script>
 	</head>
 	<body>
-			<?php if(isset($profile)): ?>
-				<header>
-					<div class="user_header">
-						<?php require("template/user/user-header.php"); ?> 
-					</div>
-				</header>
-			<?php else: ?>
-				<header class="text-white text-center">
-					<img src="<?php echo IMAGES_DIR; ?>logo.png" alt="logo"/>
-					<h1 class="font-verdana text-center">PC HARDWARE</h1>
-				</header>
-			<?php endif; ?>
-		</header>
+        <header>
+            <div class="user_header">
+                <?php require("template/user/user-header.php"); ?> 
+            </div>
+        </header>
 		<nav>
 			<?php require("template/sidebar.php"); ?>
 		</nav>
 		<main>
 			<?php if(isset($Message)): ?>
-				<div class="message">
-					<h2><?php echo $Message; ?></h2>
-				</div>
-			<?php endif; ?>
-			<?php if(isset($prodotti)): ?>
-				<?php require("template/products.php"); ?>
-			<?php endif; ?>
-			<?php if(isset($AuthForm)):?>
-				<?php require($AuthForm); ?>			
-			<?php endif; ?>		
+            <div class="message">
+                <h2><?php echo $Message; ?></h2>
+            </div>
+            <?php endif; ?>
 		</main>
 		<footer>
 			<?php require("template/footer.php"); ?>

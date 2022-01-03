@@ -18,6 +18,27 @@ header img{
 	margin-right: auto;
 }
 
+.user_header{
+    display: flex;
+	flex-direction: row; 
+}
+
+.user_header > h1{
+	font-family: Verdana;
+	margin-left: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	vertical-align: middle;
+	color: #ffffff;
+}
+
+.user_header > .user_image{
+	max-height: 17%;
+	max-width: 17%;
+	padding: 5px 0;
+	margin-right: 10px;
+}
+
 /* FINE HEADER */
 
 /* FOOTER */
@@ -137,22 +158,38 @@ footer > .about-contatti > p, footer > .ext-links > p{
 	color: white;
 	box-sizing: border-box;
 	white-space: normal;
-	overflow: scroll;
+	overflow-x: scroll;
 }
 
 .user > h3{
 	font-size: 80%;
 }
 
-.user > h2{
+.user > .nome{
+	text-decoration: none;
 	font-size: 190%;
 	font-weight: bold;
+	color: #ffffff;
+	transition: .3s;
+} 
+
+.user > .nome:hover{
+	font-size: 210%;
+	transition: .3s;
+	color: #b19cd9;
 }
 
 .user > a{
 	color: #9db9f1;
 	text-decoration: none;
 	font-size: 130%;
+	transition: .3s;
+}
+
+.user > a:hover{
+	font-size: 150%;
+	transition: .3s;
+	color: #b19cd9;
 }
 
 /* FINE MENU LATERALE */
@@ -253,6 +290,11 @@ form .user-details .input-box{
 	header img{
 		max-height: 5%;
 		max-width: 5%;
+	}
+
+	.user_header > .user_image{
+		max-height: 4%;
+		max-width: 4%;
 	}
 	
 	.user{
