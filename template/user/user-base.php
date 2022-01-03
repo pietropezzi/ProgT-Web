@@ -35,6 +35,9 @@
                 <h2><?php echo $Message; ?></h2>
             </div>
             <?php endif; ?>
+			<?php if(isset($profile_data)): ?>
+				<?php require("template/user/user-data.php"); ?>
+			<?php endif; ?>
 		</main>
 		<footer>
 			<?php require("template/footer.php"); ?>

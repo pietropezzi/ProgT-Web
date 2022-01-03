@@ -17,7 +17,7 @@ if(isset($_SESSION["email"])){
     $CatToLink = ["Carrello" => "#", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
 }
 
-$profile = $dbh->getUser($_SESSION["email"]);
+$profile_data = $dbh->getUser($_SESSION["email"]);
 $profile_image = "default.png";
 
 require("template/user/user-base.php");

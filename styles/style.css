@@ -193,6 +193,29 @@ footer > .about-contatti > p, footer > .ext-links > p{
 
 /* FINE MENU LATERALE */
 
+/* USERDATA */
+
+.userdata{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 50%;
+	padding: 1%;
+	border-style: solid;
+}
+
+.userdata > p, .userdata > h4{
+	margin: 0 5px;
+	display: inline;
+}
+
+.user_image{
+	float: left;
+}
+
+/* FINE USERDATA */
+
 /* PRODOTTI */
 
 .prodotto {
