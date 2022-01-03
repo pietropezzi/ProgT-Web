@@ -1,5 +1,5 @@
-<script src="js/checkRegisterForm.js"></script>
-<?php if(isset($ErrorMessage)): ?> 
+
+<?php if(isset($E<script src="js/checkRegisterForm.js"></script>rrorMessage)): ?> 
 <div class="errormessage">
     <h2 class="font-verdana text-center"><?php echo $ErrorMessage; ?></h2>
 </div>

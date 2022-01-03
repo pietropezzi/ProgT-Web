@@ -1,7 +1,8 @@
+<script src="js/checkProductForm.js"></script>
 <div class="my-4 text-white register">
    <label class="mb-2">Inserisci un nuovo Prodotto</label>
    <div>
-		<form name="new_product" id="new_product" action="insert_product.php" method="post">
+		<form name="new_product" id="new_product" action="insert_product.php" onsubmit="return checkProductForm()" method="post">
 			<div>				
                 <div class="input-box">
                     <label class="mb-1">Nome</label><br>
