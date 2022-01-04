@@ -24,7 +24,7 @@
 	<body>
         <header>
             <div class="user_header">
-                <?php require("template/user/user-header.php"); ?> 
+                <?php require("user-header.php"); ?> 
             </div>
         </header>
 		<nav>

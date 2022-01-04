@@ -17,6 +17,26 @@ class DatabaseHelper{
 
 		return $stmt->execute();
 	}
+
+	// ritorna la password id un utente.
+	public function getUserPassword($email){
+		$query = "SELECT password, email FROM users WHERE email = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('s', $email);
+		$stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_object();
+	}
+
+	// Cambia password di un utente
+	public function updateUserPassword($email, $password){
+		$query = "UPDATE users SET password = ? WHERE email = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('ss', $password, $email);
+
+		return $stmt->execute();
+	}
 	
 	public function loginCheck($email, $password){
 	    $query = "SELECT name, username, type FROM users WHERE email = ? AND password = ?";

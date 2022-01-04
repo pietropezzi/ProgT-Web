@@ -17,6 +17,16 @@ if(isset($_SESSION["email"])){
     $CatToLink = ["Home" => "index.php", "Carrello" => "#", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
 }
 
+if(isset($_GET["Message"])){
+    $Message = $_GET["Message"];
+}
+if(isset($_GET["ErrPass"])){
+    $AggPassErr = "La vecchia password inserita non è corretta.";
+}
+if(isset($_GET["ErrDb"])){
+    $AggPassErr = "Errore aggiornamento della password.";
+}
+
 $profile_data = $dbh->getUser($_SESSION["email"]);
 $profile_image = "default.png";
 
