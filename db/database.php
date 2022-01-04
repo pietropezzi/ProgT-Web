@@ -66,5 +66,15 @@ class DatabaseHelper{
 
 		return $result->fetch_all(MYSQLI_ASSOC);
 	}
+
+	public function searchProduct($nome, $venditore){
+	    $query = "SELECT * FROM prodotti WHERE nome = ? AND venditore = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('ss', $nome, $venditore);
+		$stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_object();
+	}	
 }
 ?>
