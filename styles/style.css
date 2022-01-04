@@ -270,19 +270,6 @@ form .user-details .input-box{
 		max-height: 5%;
 		max-width: 5%;
 	}
-
-	.user_header > .user_image{
-		max-height: 4%;
-		max-width: 4%;
-	}
-
-	.userdata{
-		width: 50%;
-	}
-
-	.update_userdata_form > form > fieldset{
-		width: 50%;
-	}
 	
 	.user{
 		overflow: hidden;
