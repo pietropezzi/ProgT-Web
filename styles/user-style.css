@@ -1,0 +1,94 @@
+/* USER HEADER */
+
+.user_header{
+    display: flex;
+	flex-direction: row; 
+}
+
+.user_header > h1{
+	font-family: Verdana;
+	margin-left: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	color: #ffffff;
+}
+
+.user_header > .user_image{
+	max-height: 17%;
+	max-width: 17%;
+	padding: 5px 0;
+	margin-right: 10px;
+}
+
+/* USER HEADER */
+
+/* USERDATA */
+
+.userdata{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;
+	padding: 1%;
+	border: 2px dashed #000000;
+	border-radius: 9px;
+	word-wrap: break-word;
+}
+
+.userdata > p, .userdata > h2{
+	margin: 0 5px;
+	display: inline;
+}
+
+.userdata > h2{
+	font-size: 140%;
+	font-weight: 100;
+}
+
+.userdata > p{
+	font-size: 130%;
+}
+
+.user_image{
+	float: left;
+}
+
+/* FINE USERDATA */
+
+/* UPDATE USER DATA */
+
+.update_userdata_form > form > fieldset{	
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;
+	padding: 1%;
+	border: 2px dashed #000000;
+	border-radius: 9px;
+	word-wrap: break-word;
+}
+
+.update_userdata_form > form > fieldset > label{
+	font-size: 120%;
+	margin: 5px 10px;
+	display: inline-block;
+}
+
+/* FINE UPDATE USER DATA */
+
+@media screen and (min-width:768px){
+    .user_header > .user_image{
+        max-height: 4%;
+        max-width: 4%;
+    }
+
+    .userdata{
+        width: 50%;
+    }
+
+    .update_userdata_form > form > fieldset{
+        width: 50%;
+    }
+}
