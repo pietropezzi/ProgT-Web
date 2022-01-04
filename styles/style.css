@@ -200,14 +200,24 @@ footer > .about-contatti > p, footer > .ext-links > p{
 	margin-right: auto;
 	margin-top: 30px;
 	margin-bottom: 30px;
-	width: 50%;
+	width: 100%;
 	padding: 1%;
-	border-style: solid;
+	border: 2px dashed #000000;
+	border-radius: 9px;
+	word-wrap: break-word;
 }
 
 .userdata > p, .userdata > h4{
 	margin: 0 5px;
 	display: inline;
+}
+
+.userdata > h4{
+	font-weight: 100;
+}
+
+.userdata > p{
+	font-size: 130%;
 }
 
 .user_image{
@@ -317,6 +327,10 @@ form .user-details .input-box{
 	.user_header > .user_image{
 		max-height: 4%;
 		max-width: 4%;
+	}
+
+	.userdata{
+		width: 50%;
 	}
 	
 	.user{
