@@ -207,12 +207,13 @@ footer > .about-contatti > p, footer > .ext-links > p{
 	word-wrap: break-word;
 }
 
-.userdata > p, .userdata > h4{
+.userdata > p, .userdata > h2{
 	margin: 0 5px;
 	display: inline;
 }
 
-.userdata > h4{
+.userdata > h2{
+	font-size: 140%;
 	font-weight: 100;
 }
 
@@ -225,6 +226,28 @@ footer > .about-contatti > p, footer > .ext-links > p{
 }
 
 /* FINE USERDATA */
+
+/* UPDATE USER DATA */
+
+.update_userdata_form > form > fieldset{	
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;
+	padding: 1%;
+	border: 2px dashed #000000;
+	border-radius: 9px;
+	word-wrap: break-word;
+}
+
+.update_userdata_form > form > fieldset > label{
+	font-size: 120%;
+	margin: 5px 10px;
+	display: inline-block;
+}
+
+/* FINE UPDATE USER DATA */
 
 /* PRODOTTI */
 
@@ -332,7 +355,10 @@ form .user-details .input-box{
 	.userdata{
 		width: 50%;
 	}
-	
+
+	.update_userdata_form > form > fieldset{
+		width: 50%;
+	}
 	.user{
 		overflow: hidden;
 	}
