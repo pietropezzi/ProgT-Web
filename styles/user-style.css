@@ -34,6 +34,7 @@
 	border: 2px dashed #000000;
 	border-radius: 9px;
 	word-wrap: break-word;
+	transition: .4s;
 }
 
 .userdata > p, .userdata > h2{
@@ -58,7 +59,7 @@
 
 /* UPDATE USER DATA */
 
-.update_userdata_form > form > fieldset{	
+.update_userdata_form > form {	
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 30px;
@@ -68,12 +69,28 @@
 	border: 2px dashed #000000;
 	border-radius: 9px;
 	word-wrap: break-word;
+	transition: .4s;
 }
 
-.update_userdata_form > form > fieldset > label{
-	font-size: 120%;
-	margin: 5px 10px;
+.update_userdata_form > form > p{
+	font-size: 110%;
+	margin-bottom: 20px;
+}
+
+.update_userdata_form > form > label{
+	font-size: 115%;
+	margin: 5px 8px;
 	display: inline-block;
+}
+
+.update_userdata_form > form:hover, .userdata:hover{
+	background-color: #bffffa;
+	transition: .8s;
+}
+
+.update_userdata_form > form > .sub_button{
+	margin: 20px 0;
+	width: 100%;
 }
 
 /* FINE UPDATE USER DATA */
@@ -88,7 +105,7 @@
         width: 50%;
     }
 
-    .update_userdata_form > form > fieldset{
+    .update_userdata_form > form{
         width: 50%;
     }
 }
