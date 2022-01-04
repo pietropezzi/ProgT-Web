@@ -8,12 +8,14 @@ $oldpass = $dbh->getUserPassword($_SESSION["email"]);
 
 
 if($oldpass->password != $ins_oldpass){
-    header("Location: ../../profile.php?ErrPass=err");
+    $_SESSION["ErrPass"] = "La password inserita non è corretta.";
 }else{
     if($dbh->updateUserPassword($_SESSION["email"], $ins_newpass) == false){
-        header("Location: ../../profile.php?ErrDb=err");
+        $_SESSION["ErrDb"] = "Errore durante aggiornamento password.";
     }else{
-        header("Location: ../../profile.php?Message=Password aggiornata con successo.");
+        $_SESSION["Message"] = "Password aggiornata con successo.";
     }
 }
+
+header("Location: ../../profile.php");
 ?>

@@ -17,14 +17,17 @@ if(isset($_SESSION["email"])){
     $CatToLink = ["Home" => "index.php", "Carrello" => "#", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
 }
 
-if(isset($_GET["Message"])){
-    $Message = $_GET["Message"];
+if(isset($_SESSION["Message"])){
+    $Message = $_SESSION["Message"];
+    unset($_SESSION["Message"]);
 }
-if(isset($_GET["ErrPass"])){
-    $AggPassErr = "La vecchia password inserita non è corretta.";
+if(isset($_SESSION["ErrPass"])){
+    $AggPassErr = $_SESSION["ErrPass"];
+    unset($_SESSION["ErrPass"]);
 }
-if(isset($_GET["ErrDb"])){
-    $AggPassErr = "Errore aggiornamento della password.";
+if(isset($_SESSION["ErrDb"])){
+    $AggPassErr = $_SESSION["ErrDb"];
+    unset($_SESSION["ErrDb"]);
 }
 
 $profile_data = $dbh->getUser($_SESSION["email"]);
