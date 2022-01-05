@@ -29,6 +29,10 @@ if(isset($_SESSION["ErrDb"])){
     $AggPassErr = $_SESSION["ErrDb"];
     unset($_SESSION["ErrDb"]);
 }
+if(isset($_SESSION["ErrEmpty"])){
+    $AggDataErr = $_SESSION["ErrEmpty"];
+    unset($_SESSION["ErrEmpty"]);
+}
 
 $profile_data = $dbh->getUser($_SESSION["email"]);
 $profile_image = "default.png";

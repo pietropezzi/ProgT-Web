@@ -17,23 +17,28 @@
     <form name="agg_pass" action="template/user/update-pass.php" onsubmit="return checkAggPassForm()" method="post"> 
         <h2>Aggiorna password</h2>
         <p>Per aggiornare la password, reinserire la vecchia password per la convalida per poi inserire la nuova due volte</p>
-        <label for="oldpass">Vecchia password </label><input type="text" id="oldpass" name="agg_pass"/><br>
-        <label for="newpass">Nuova password </label><input type="text" id="newpass" name="agg_pass"/><br>
-        <label for="newpass2">Nuova password </label><input type="text" id="newpass2" name="agg_pass"/>
+        <label for="oldpass">Vecchia password </label><input type="text" id="oldpass" name="oldpass"/><br>
+        <label for="newpass">Nuova password </label><input type="text" id="newpass" name="newpass"/><br>
+        <label for="newpass2">Nuova password </label><input type="text" id="newpass2" name="newpass2"/>
         <input class="sub_button" type="submit" value="Aggiorna">
     </form>
+    <?php if(isset($AggDataErr)): ?>
+        <div class="errormessage">
+            <h2><?php echo $AggDataErr; ?></h2>
+        </div>
+    <?php endif; ?>
     <form name="agg_dati" action="template/user/update-data.php" onsubmit="return checkData()" method="post">
         <h2>Aggiorna dati</h2>
         <p>Per lasciare i vari dati invariati non compilare il campo.</p>
-        <label for="nome">Nome </label><input type="text" id="nome" name="agg_dati" /><br>
-        <label for="username">Username </label><input type="text" id="username" name="agg_dati" /><br>
-        <label for="email">Email </label><input type="text" id="email" name="agg_dati" /><br>
-        <label for="telefono">Telefono </label><input type="text" id="telefono" name="agg_dati" /><br>
+        <label for="nome">Nome </label><input type="text" id="nome" name="nome" /><br>
+        <label for="username">Username </label><input type="text" id="username" name="username" /><br>
+        <label for="email">Email </label><input type="text" id="email" name="email" /><br>
+        <label for="telefono">Telefono </label><input type="text" id="telefono" name="telefono" /><br>
         <fieldset>
             <legend>Tipo</legend>
-            <input type="radio" name="agg_dati" value="cliente" id="cliente" <?php if($_SESSION["type"] == "cliente"): ?> checked="checked" <?php endif; ?>>
+            <input type="radio" name="tipo" value="cliente" id="cliente" <?php if($_SESSION["type"] == "cliente"): ?> checked="checked" <?php endif; ?>>
             <label for="cliente">Cliente</label>
-            <input type="radio" name="agg_dati" value="venditore" id="venditore" <?php if($_SESSION["type"] == "venditore"): ?> checked="checked" <?php endif; ?>>
+            <input type="radio" name="tipo" value="venditore" id="venditore" <?php if($_SESSION["type"] == "venditore"): ?> checked="checked" <?php endif; ?>>
             <label for="venditore">Venditore</label>
         </fieldset>
         <input class="sub_button" type="submit" value="Aggiorna">

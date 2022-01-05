@@ -188,17 +188,17 @@ footer > .about-contatti > p, footer > .ext-links > p{
 
 .message h2{
 	text-align: center;
+	margin: auto;
 	background-color: #136408;
 	padding: 10px 0;
-	margin: 10px 0;
 	color: #ffffff;
 }
 
 .errormessage h2{
 	text-align: center;
+	margin: auto;
 	background-color: #8B0000;
 	padding: 10px 0;
-	margin: 10px 0;
 	color: #ffffff;
 }
 
@@ -300,6 +300,15 @@ form .user-details .input-box{
 		overflow: hidden;
 	}
 
+	.message h2{
+		width: 60%;
+	}
+	
+	.errormessage h2{
+		width: 60%;
+	}
+
+	
 	.sidebar > ul > li > a{
 		transition: .3s;
 	}

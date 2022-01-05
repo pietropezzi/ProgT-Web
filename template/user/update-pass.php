@@ -6,7 +6,6 @@ $ins_newpass = $_POST["newpass"];
 
 $oldpass = $dbh->getUserPassword($_SESSION["email"]); 
 
-
 if($oldpass->password != $ins_oldpass){
     $_SESSION["ErrPass"] = "La password inserita non è corretta.";
 }else{

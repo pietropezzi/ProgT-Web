@@ -18,7 +18,7 @@ function checkData(){
 		return false;
 	}	
 
-    if (!filter.test(email)){
+    if (email && !filter.test(email)){
         alert('Attenzione: Email non valida');
         return false;
 	}
