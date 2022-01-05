@@ -29,7 +29,8 @@
     <?php endif; ?>
     <form name="agg_dati" action="template/user/update-data.php" onsubmit="return checkData()" method="post">
         <h2>Aggiorna dati</h2>
-        <p>Per lasciare i vari dati invariati non compilare il campo.</p>
+        <p>Per lasciare i vari dati invariati non compilare il campo.<br>
+        Una volta inseriti correttamente i dati, dopo il loro aggiornamento, sarà necessario effettuare nuovamente il login.</p>
         <label for="nome">Nome </label><input type="text" id="nome" name="nome" /><br>
         <label for="username">Username </label><input type="text" id="username" name="username" /><br>
         <label for="email">Email </label><input type="text" id="email" name="email" /><br>

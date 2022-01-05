@@ -75,6 +75,7 @@
 .update_userdata_form > form > p{
 	font-size: 110%;
 	margin-bottom: 20px;
+	font-style: italic;
 }
 
 .update_userdata_form > form > label{

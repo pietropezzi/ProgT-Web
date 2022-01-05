@@ -7,4 +7,5 @@ function registerLoggedUser($nome, $username, $email, $type){
     $_SESSION["type"] = $type;
 }
 
+
 ?>

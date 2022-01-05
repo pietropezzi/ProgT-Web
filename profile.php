@@ -33,6 +33,14 @@ if(isset($_SESSION["ErrEmpty"])){
     $AggDataErr = $_SESSION["ErrEmpty"];
     unset($_SESSION["ErrEmpty"]);
 }
+if(isset($_SESSION["ErrNewEmail"])){
+    $AggDataErr = $_SESSION["ErrNewEmail"];
+    unset($_SESSION["ErrNewEmail"]);
+}
+if(isset($_SESSION["ErrDbDati"])){
+    $AggDataErr = $_SESSION["ErrDbDati"];
+    unset($_SESSION["ErrDbDati"]);
+}
 
 $profile_data = $dbh->getUser($_SESSION["email"]);
 $profile_image = "default.png";
