@@ -95,6 +95,15 @@ class DatabaseHelper{
 		return $result->fetch_object();
 	}
 
+	public function doOrder($cliente, $venditore, $nome, $prezzo, $quantità){
+		$query = "INSERT INTO ordine(cliente, venditore, nome, prezzo, quantita)
+		VALUES (?, ?, ?, ?, ?)";		
+  		$stmt = $this->db->prepare($query);
+ 		$stmt->bind_param('sssdi', $cliente, $venditore, $nome, $prezzo, $quantità);
+
+  		return $stmt->execute();
+	}	
+
 	/* da mettere $amount per prendere una quantità precisa di prodotti */
 	public function getProducts(){
 		$query = "SELECT nome, venditore, prezzo, breve_descrizione FROM prodotti ORDER BY nome";

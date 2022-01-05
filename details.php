@@ -5,11 +5,18 @@ $nome = $_POST["nome"];
 $venditore = $_POST["venditore"];	
 
 $title = $nome." - Dettaglio";
-$Categories = ["Home", "Carrello", "Ordini", "Notifiche"];
-$CatToLink = ["Home" => "index.php", "Carrello" => "#", "Ordini" => "#", "Notifiche" => "#"];
+
+if(isset($_SESSION["email"])){
+  $Categories = ["Home", "Carrello", "Ordini", "Notifiche"];
+  $CatToLink = ["Home" => "index.php", "Carrello" => "#", "Ordini" => "#", "Notifiche" => "#"];
+}
+
+else {
+  $Categories = ["Carrello", "Ordini", "Notifiche", "Login"];
+  $CatToLink = ["Carrello" => "#", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
+}
 
 $AuthForm = "details-form.php";
-
 
 $result = $dbh->searchProduct($nome, $venditore);
 if(empty($result)){

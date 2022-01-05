@@ -22,3 +22,13 @@ CREATE TABLE `prodotti`(
     `descrizione` varchar(255) NOT NULL,
     PRIMARY KEY(`nome`, `venditore`)
 );
+
+CREATE TABLE `ordine`(
+    `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `cliente` varchar(50) NOT NULL,
+    `venditore` varchar(50) NOT NULL,
+    `nome`  varchar(50) NOT NULL,   
+    `prezzo` decimal(10, 2) NOT NULL,   
+    `quantita` int(50) NOT NULL,
+    PRIMARY KEY(`id`)
+)AUTO_INCREMENT=1;
