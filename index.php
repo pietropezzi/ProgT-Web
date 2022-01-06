@@ -4,16 +4,16 @@ require_once("bootstrap.php");
 $title = "PCHW - Home";
 if(isset($_SESSION["email"])){
     $Categories = ["Carrello", "Ordini", "Notifiche"];
-    $CatToLink = ["Carrello" => "#", "Ordini" => "#", "Notifiche" => "#"];
+    $CatToLink = ["Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "#"];
 		
 	if($_SESSION["type"] == "venditore"){
 		$Categories = ["Carrello", "Ordini", "I Tuoi Prodotti", "Notifiche"];
-		$CatToLink = ["Carrello" => "#", "Ordini" => "#", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "#"];		
+		$CatToLink = ["Carrello" => "cart.php", "Ordini" => "#", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "#"];		
 	}	
 }
  else {
     $Categories = ["Carrello", "Ordini", "Notifiche", "Login"];
-    $CatToLink = ["Carrello" => "#", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
+    $CatToLink = ["Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
 }
 
 $prodotti = $dbh->getProducts();

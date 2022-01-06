@@ -30,5 +30,6 @@ CREATE TABLE `ordine`(
     `nome`  varchar(50) NOT NULL,   
     `prezzo` decimal(10, 2) NOT NULL,   
     `quantita` int(50) NOT NULL,
+    `status`  varchar(50) NOT NULL,
     PRIMARY KEY(`id`)
 )AUTO_INCREMENT=1;

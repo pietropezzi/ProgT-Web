@@ -8,12 +8,12 @@ $title = $nome." - Dettaglio";
 
 if(isset($_SESSION["email"])){
   $Categories = ["Home", "Carrello", "Ordini", "Notifiche"];
-  $CatToLink = ["Home" => "index.php", "Carrello" => "#", "Ordini" => "#", "Notifiche" => "#"];
+  $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "#"];
 }
 
 else {
   $Categories = ["Carrello", "Ordini", "Notifiche", "Login"];
-  $CatToLink = ["Carrello" => "#", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
+  $CatToLink = ["Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
 }
 
 $AuthForm = "details-form.php";

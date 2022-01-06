@@ -95,11 +95,11 @@ class DatabaseHelper{
 		return $result->fetch_object();
 	}
 
-	public function doOrder($cliente, $venditore, $nome, $prezzo, $quantità){
-		$query = "INSERT INTO ordine(cliente, venditore, nome, prezzo, quantita)
-		VALUES (?, ?, ?, ?, ?)";		
+	public function doOrder($cliente, $venditore, $nome, $prezzo, $quantità, $status){
+		$query = "INSERT INTO ordine(cliente, venditore, nome, prezzo, quantita, status)
+		VALUES (?, ?, ?, ?, ?, ?)";		
   		$stmt = $this->db->prepare($query);
- 		$stmt->bind_param('sssdi', $cliente, $venditore, $nome, $prezzo, $quantità);
+ 		$stmt->bind_param('sssdis', $cliente, $venditore, $nome, $prezzo, $quantità, $status);
 
   		return $stmt->execute();
 	}	
