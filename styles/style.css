@@ -303,6 +303,30 @@ form .user-details .input-box{
 }
 /* FINE DETTAGLIO PRODOTTO */
 
+/* INIZIO CARRELLO */
+
+.cart .prodotti{
+	margin: auto;
+  	width: 90%;	  
+	height: 180px;
+  	border: 3px solid black;	
+}
+
+.cart img{	
+	max-width: 50%;
+	max-height: 50%;
+	padding-bottom: 15px;
+	float: left;
+}
+
+.cart .prodotti .quantity{
+	max-width: 20%;
+}
+
+.cart .prodotti .remove{
+	text-align: left;
+}
+/* FINE CARRELLO */
 
 @media screen and (min-width:768px){
 	header img{

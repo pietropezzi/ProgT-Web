@@ -6,8 +6,9 @@ $venditore = $_POST["venditore"];
 $nome = $_POST["nome"];	
 $prezzo = $_POST["prezzo"];
 $quantità = $_POST["quantità"];
+$status = "cart";
 
-$checkInsert = $dbh->doOrder($cliente, $venditore, $nome, $prezzo, $quantità);
+$checkInsert = $dbh->doOrder($cliente, $venditore, $nome, $prezzo, $quantità, $status);
 
 if($checkInsert){	
 	$Message = "".$nome." Inserito nel carrello.";
