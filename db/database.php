@@ -29,11 +29,31 @@ class DatabaseHelper{
         return $result->fetch_object();
 	}
 
+	// ritorna tutte le notifiche di un cliente ordinate per data.
+	public function getClientNotifications($email){
+		$query = "SELECT data, email, tipo, ordine FROM notifiche_cliente WHERE email = ? ORDER BY data DESC";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('s', $email);
+		$stmt->execute();
+		$result = $stmt->get_result();
+
+		return $result->fetch_all(MYSQLI_ASSOC);
+	}
+
 	// Cambia password di un utente
 	public function updateUserPassword($email, $password){
 		$query = "UPDATE users SET password = ? WHERE email = ?";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('ss', $password, $email);
+
+		$dt = date('Y-m-d H:i:s');
+		$tipo = "password";
+		$order = 0;
+
+		$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, ordine) VALUES(?, ?, ?, ?)";
+		$stmtnot = $this->db->prepare($notifquery);
+		$stmtnot->bind_param('sssi', $dt, $email, $tipo, $order);
+		$stmtnot->execute();
 
 		return $stmt->execute();
 	}

@@ -41,6 +41,9 @@
                 <h2><?php echo $ErrorMessage; ?></h2>
             </div>
             <?php endif; ?>
+			<?php if(isset($notifiche)): ?>
+				<?php require("template/user/user-notifications.php"); ?>
+			<?php endif; ?>
 			<?php if(isset($profile_data)): ?>
 				<?php require("template/user/user-data.php"); ?>
 			<?php endif; ?>
