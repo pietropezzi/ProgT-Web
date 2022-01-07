@@ -326,6 +326,32 @@ form .user-details .input-box{
 .cart .prodotti .remove{
 	text-align: left;
 }
+
+.cart .resoconto {
+	margin: auto;
+	width: 90%;  	
+  	border: 3px solid black;	
+}
+
+.cart .spaceUnder>td {
+	padding-bottom: 1em;
+  }
+
+.cart .totale {
+	border-top: 1px solid black;
+}
+
+.cart .price {
+	text-align: right;
+}
+
+.cart .shopBtn{	
+	width: 80%;	
+	background: #006666;
+	border: 3px solid #006666;
+}
+
+
 /* FINE CARRELLO */
 
 @media screen and (min-width:768px){
