@@ -60,18 +60,17 @@ class DatabaseHelper{
 
 	// Aggiorna i vari dati passati, se vuoti i dati rimangono invariati.
 	// ATTENZIONE: prima di chiamare questa funzione è necessario che la nuova email non sia gia occupata!
-	public function updateUserData($old_email, $email, $name, $username, $phone, $type){
+	public function updateUserData($old_email, $email, $name, $username, $phone){
 		$prev = $this->getUser($old_email);
 
 		$email = empty($email) ? $prev->email : $email;
 		$name = empty($name) ? $prev->name : $name;
 		$username = empty($username) ? $prev->username : $username;
 		$phone = empty($phone) ? $prev->phone : $phone;
-		$type = empty($type) ? $prev->type : $type;
 
-		$query = "UPDATE users SET email = ?, name = ?, username = ?, phone = ?, type = ? WHERE email = ?";
+		$query = "UPDATE users SET email = ?, name = ?, username = ?, phone = ? WHERE email = ?";
 		$stmt = $this->db->prepare($query);
-		$stmt->bind_param('sssiss', $email, $name, $username, $phone, $type, $old_email);
+		$stmt->bind_param('sssis', $email, $name, $username, $phone, $old_email);
 
 		return $stmt->execute();
 	}

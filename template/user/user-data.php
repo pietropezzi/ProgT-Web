@@ -35,13 +35,6 @@
         <label for="username">Username </label><input type="text" id="username" name="username" /><br>
         <label for="email">Email </label><input type="text" id="email" name="email" /><br>
         <label for="telefono">Telefono </label><input type="text" id="telefono" name="telefono" /><br>
-        <fieldset>
-            <legend>Tipo</legend>
-            <input type="radio" name="tipo" value="cliente" id="cliente" <?php if($_SESSION["type"] == "cliente"): ?> checked="checked" <?php endif; ?>>
-            <label for="cliente">Cliente</label>
-            <input type="radio" name="tipo" value="venditore" id="venditore" <?php if($_SESSION["type"] == "venditore"): ?> checked="checked" <?php endif; ?>>
-            <label for="venditore">Venditore</label>
-        </fieldset>
         <input class="sub_button" type="submit" value="Aggiorna">
     </form>
 </div>
