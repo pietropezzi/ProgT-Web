@@ -291,6 +291,10 @@ form .user-details .input-box{
 	font-weight: bold;
 }
 
+.details input{
+	width: 15%;
+}
+
 .details .cartBtn{	
 	width: 80%;	
 	background: #006666;
