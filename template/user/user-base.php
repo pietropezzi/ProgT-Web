@@ -36,6 +36,11 @@
                 <h2><?php echo $Message; ?></h2>
             </div>
             <?php endif; ?>
+			<?php if(isset($ErrorMessage)): ?>
+            <div class="errormessage">
+                <h2><?php echo $ErrorMessage; ?></h2>
+            </div>
+            <?php endif; ?>
 			<?php if(isset($profile_data)): ?>
 				<?php require("template/user/user-data.php"); ?>
 			<?php endif; ?>

@@ -13,7 +13,7 @@ if(isset($_SESSION["email"])){
 
 else {
   $Categories = ["Carrello", "Ordini", "Notifiche", "Login"];
-  $CatToLink = ["Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
+  $CatToLink = ["Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "notifications.php", "Login" => "login.php"];
 }
 
 $AuthForm = "details-form.php";

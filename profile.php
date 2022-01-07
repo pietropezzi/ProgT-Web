@@ -5,16 +5,16 @@ $title = $_SESSION["nome"]." - Profilo";
 $location = "PROFILO";
 if(isset($_SESSION["email"])){
     $Categories = ["Home", "Carrello", "Ordini", "Notifiche"];
-    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "#"];
+    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "notifications.php"];
 		
 	if($_SESSION["type"] == "venditore"){
 		$Categories = ["Home", "Carrello", "Ordini", "I Tuoi Prodotti", "Notifiche"];
-		$CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "#"];		
+		$CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "notifications.php"];		
 	}	
 }
  else {
     $Categories = ["Home", "Carrello", "Ordini", "Notifiche", "Login"];
-    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "#", "Login" => "login.php"];
+    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "notifications.php", "Login" => "login.php"];
 }
 
 if(isset($_SESSION["Message"])){
