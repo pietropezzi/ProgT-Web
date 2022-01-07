@@ -11,7 +11,7 @@ CREATE TABLE `users`(
     PRIMARY KEY (`email`)   
 );
 
-/* Restano diversi attributi da mettere */
+-- Restano diversi attributi da mettere 
 CREATE TABLE `prodotti`(
     `nome` varchar(50) NOT NULL,
     `venditore` varchar(50) NOT NULL,
@@ -33,3 +33,17 @@ CREATE TABLE `ordine`(
     `status`  varchar(50) NOT NULL,
     PRIMARY KEY(`id`)
 )AUTO_INCREMENT=1;
+
+CREATE TABLE `notifiche_cliente`(
+    `data` datetime NOT NULL, 
+    `email` varchar(50) NOT NULL,
+    `tipo` varchar(50) NOT NULL,
+    -- se il tipo è ACQUISTO allora si usa ordine per vedere cosa ha comprato
+    -- inoltre se il tipo è STATO allora si controlla lo stato aggiornato dell'ordine 
+    `ordine` int(11) NOT NULL,
+    -- se il tipo è PASSWORD si limita a dirgli che in tale data è stata modificata la password 
+    --  stessa cosa per DATI, mettere quali dati sono sati cambiati renderebbe questa tabella troppo complessa (da valutare in futuro)
+    PRIMARY KEY(`data`,`email`),
+    FOREIGN KEY (`email`)
+        REFERENCES users(`email`)
+);
