@@ -16,11 +16,11 @@
         else if($_SESSION["email"] == $venditore){ ?>
             <p class="disponibility mx-1 ">Il tuo prodotto</p>
             <p class="mx-2">Prodotti rimasti: <?php echo $quantita?></p>
-            <form action="" method="post">  
-                <input type="hidden" name="venditore" <?php echo $venditore?>/>                
+            <form action="update_quantity.php" method="post">  
+                <input type="hidden" name="venditore" value="<?php echo $venditore?>"/>                
                 <label class="mx-2">Quantità:</label>
-                <input class="quantity my-2" type="number" step="1" min="1" max="" name="quantità" value="<?php echo $quantita?>"><br>
-                <button class="cartBtn text-white my-2\" name="nome" value="$nome" type="submit">Aggiorna la quantità</button>
+                <input class="quantity my-2" type="number" step="1" min="1" max="" name="quantita" value="<?php echo $quantita?>"><br>
+                <button class="cartBtn text-white my-2\" name="nome" value="<?php echo $nome?>" type="submit">Aggiorna la quantità</button>
             </form>
         <?php }
     
@@ -32,7 +32,7 @@
             <p class="disponibility mx-1 text-success">Disponibilità immediata</p>                       
             <form action="add_to_cart.php" method="post"> 
                 <input type="hidden" name="venditore" value="<?php echo $venditore?>"/>
-                <input type="hidden" name="prezzo" value="$prezzo">
+                <input type="hidden" name="prezzo" value="<?php echo $prezzo?>">
                 <label class="mx-2">Quantità:</label>
                 <input type="number" step="1" min="1" max="<?php echo $quantita?>" id="quantità" name="quantità" value="1" class="quantity"><br>
                 <button class="cartBtn text-white my-2" name="nome" value="<?php echo $nome?>" type="submit">Aggiungi al carrello</button>

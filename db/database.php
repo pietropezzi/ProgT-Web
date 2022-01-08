@@ -134,14 +134,31 @@ class DatabaseHelper{
 	}
 
 
+	public function updateQuantity($nome, $venditore, $quantita){
+		$query = "UPDATE prodotti SET quantita = ? WHERE nome = ? AND venditore = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('iss', $quantita, $nome, $venditore);
+
+		return $stmt->execute();
+	}
+
+
 	public function getProductsCart($cliente, $status){
-		$query = "SELECT nome, prezzo, quantita FROM ordine WHERE cliente = ? AND status = ? ";
+		$query = "SELECT nome, prezzo, quantita, venditore FROM ordine WHERE cliente = ? AND status = ? ";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('ss', $cliente, $status);
 		$stmt->execute();
 		$result = $stmt->get_result();		
 
 		return $result->fetch_all(MYSQLI_ASSOC);
+	}
+
+	public function removeToCart($cliente, $venditore, $nome, $status){
+		$query = "DELETE FROM ordine WHERE cliente = ? AND venditore = ? AND nome = ? AND status = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('ssss', $cliente, $venditore, $nome, $status);
+
+		return $stmt->execute();
 	}
 
 	public function searchProduct($nome, $venditore){
