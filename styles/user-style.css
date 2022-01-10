@@ -96,11 +96,48 @@
 
 /* FINE UPDATE USER DATA */
 
+/* NOTIFICHE */
+
+.notifica{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid #000000;
+	border-radius: 9px;
+	transition: .4s;
+}
+
+.notifica > h2, .notifica > h3{
+	display: inline-block;
+}
+
+.notifica > h2{
+	font-size: 130%;
+}
+
+.notifica > h3{
+	margin-left: 10px;
+	font-size: 110%;
+}
+
+.notifica > p{
+	font-size: 130%;
+}
+
+/* FINE NOTIFICHE */
+
 @media screen and (min-width:768px){
     .user_header > .user_image{
         max-height: 4%;
         max-width: 4%;
     }
+
+	.notifica{
+		width: 60%;
+	}
 
     .userdata{
         width: 50%;

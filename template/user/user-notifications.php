@@ -1,6 +1,8 @@
+<?php foreach($notifiche as $notifica): ?>
 <div class="notifica">
-    <?php foreach($notifiche as $notifica): ?>
-        <h2><?php echo $notifica["data"] ?></h2>
-        <p><?php echo $notifica["tipo"] ?></p>
-    <?php endforeach; ?>
+        <h2>Data: </h2><h3><?php echo $notifica["data"] ?></h3>
+        <?php if($notifica["tipo"] == "password"): ?>
+            <p>La tua password è stata aggiornata.</p>
+        <?php endif; ?>
 </div>
+<?php endforeach; ?>
