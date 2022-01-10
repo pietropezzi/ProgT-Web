@@ -125,6 +125,14 @@
 
 .notifica > p{
 	font-size: 130%;
+	margin-bottom: 10px; 
+}
+
+.notifica > .line{
+	width: 50%;
+	margin: auto;
+	border-top: 1px solid #353333;
+	margin-bottom: 10px;
 }
 
 /* FINE NOTIFICHE */
@@ -136,7 +144,7 @@
     }
 
 	.notifica{
-		width: 60%;
+		width: 40%;
 	}
 
     .userdata{

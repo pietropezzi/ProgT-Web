@@ -84,6 +84,18 @@ class DatabaseHelper{
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('sssis', $email, $name, $username, $phone, $old_email);
 
+		$dt = date('Y-m-d H:i:s');
+		$tipo = "dati";
+		$order = 0;
+		if($prev->type == "cliente"){
+			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, ordine) VALUES(?, ?, ?, ?)";
+			$stmtnot = $this->db->prepare($notifquery);
+			$stmtnot->bind_param('sssi', $dt, $email, $tipo, $order);
+			$stmtnot->execute();
+		}else{
+
+		}
+
 		return $stmt->execute();
 	}
 	
