@@ -8,5 +8,8 @@
         <?php if($notifica["tipo"] == "dati"): ?>
             <p>Alcuni dati di questo account sono stati aggiornati.</p>
         <?php endif; ?>
+        <?php if($notifica["tipo"] == "create"): ?>
+            <p>Creazione account.</p>
+        <?php endif; ?>
 </div>
 <?php endforeach; ?>

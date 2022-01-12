@@ -18,6 +18,26 @@ class DatabaseHelper{
 		return $stmt->execute();
 	}
 
+	// inserisce notifica creazione account
+	public function insertNotificationNewUser($email, $type){
+		$dt = date('Y-m-d H:i:s');
+		$tipo = "create";
+		$order = 0;
+
+		if($type == "cliente"){
+			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, ordine) VALUES(?, ?, ?, ?)";
+			$stmtnot = $this->db->prepare($notifquery);
+			$stmtnot->bind_param('sssi', $dt, $email, $tipo, $order);
+			$stmtnot->execute();
+
+			return $stmtnot->execute();
+		}else{
+
+		}
+
+		return true;
+	}
+
 	// ritorna la password id un utente.
 	public function getUserPassword($email){
 		$query = "SELECT password, email FROM users WHERE email = ?";
