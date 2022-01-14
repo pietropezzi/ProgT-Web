@@ -312,7 +312,7 @@ form .user-details .input-box{
 .cart .prodotti{
 	margin: auto;
   	width: 90%;	  
-	height: 180px;
+	height: 200px;
   	border: 3px solid black;	
 }
 
@@ -342,14 +342,23 @@ form .user-details .input-box{
   }
 
 .cart .totale {
-	border-top: 1px solid black;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
 }
 
-.cart .price {
+.cart .price {	
+	border-left: 1px solid black;
+	padding-left: 1em;
+	padding-right: 5px;	
 	text-align: right;
 }
 
-.cart .shopBtn{	
+.cart .quantity {	
+	padding-left: 1em;
+	padding-right: 5px;		
+}
+
+.cart .shopBtn{		
 	width: 80%;	
 	background: #006666;
 	border: 3px solid #006666;

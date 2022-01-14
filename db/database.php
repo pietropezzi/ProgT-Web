@@ -186,13 +186,30 @@ class DatabaseHelper{
 		return $stmt->execute();
 	}
 
-
 	public function getProductsCart($cliente, $status){
 		$query = "SELECT nome, prezzo, quantita, venditore FROM ordine WHERE cliente = ? AND status = ? ";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('ss', $cliente, $status);
 		$stmt->execute();
 		$result = $stmt->get_result();		
+
+		return $result->fetch_all(MYSQLI_ASSOC);
+	}
+
+	public function updateCartQuantity($nome, $venditore, $quantita, $cliente){
+		$query = "UPDATE ordine SET quantita = ? WHERE nome = ?  AND venditore = ? AND cliente = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('isss', $quantita, $nome, $venditore, $cliente);
+
+		return $stmt->execute();
+	}
+
+	public function getMaxQuantity($nome, $venditore){
+		$query = "SELECT quantita FROM prodotti WHERE nome = ? AND venditore = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('ss', $nome, $venditore);
+		$stmt->execute();
+		$result = $stmt->get_result();
 
 		return $result->fetch_all(MYSQLI_ASSOC);
 	}

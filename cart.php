@@ -7,6 +7,7 @@ $CatToLink = ["Home" => "index.php", "Ordini" => "#", "Notifiche" => "notificati
 
 $cart_product = $dbh->getProductsCart($_SESSION["email"], "cart");
 
+
 $AuthForm = "cart-form.php";
 require("template/home.php");
 ?>
