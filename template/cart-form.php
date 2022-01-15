@@ -1,5 +1,9 @@
 <div class="cart">    
-    <?php foreach($cart_product as $prod): ?>
+    <?php 
+    if(empty($cart_product)){?>          
+        <p class="empty mx-1">Il carrello è vuoto</p>
+    <?php }     
+    foreach($cart_product as $prod): ?>
     <div class="prodotti my-2">
         <?php $result_get = $dbh->getMaxQuantity($prod["nome"], $prod["venditore"]);
             $max_quantity = implode($result_get[0]);?>

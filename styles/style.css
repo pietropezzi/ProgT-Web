@@ -309,6 +309,12 @@ form .user-details .input-box{
 
 /* INIZIO CARRELLO */
 
+.cart .empty{	
+	text-align: center;
+	font-size: 150%;
+	font-weight: bold;
+}
+
 .cart .prodotti{
 	margin: auto;
   	width: 90%;	  
@@ -339,6 +345,11 @@ form .user-details .input-box{
 
 .cart .spaceUnder>td {
 	padding-bottom: 1em;
+  }
+
+.cart table {
+	width: 100%;
+	
   }
 
 .cart .totale {
