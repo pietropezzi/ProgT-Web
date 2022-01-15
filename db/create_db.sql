@@ -24,7 +24,7 @@ CREATE TABLE `prodotti`(
 );
 
 CREATE TABLE `ordine`(
-    `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
     `cliente` varchar(50) NOT NULL,
     `venditore` varchar(50) NOT NULL,
     `nome`  varchar(50) NOT NULL,   
@@ -33,6 +33,13 @@ CREATE TABLE `ordine`(
     `status`  varchar(50) NOT NULL,
     PRIMARY KEY(`id`)
 )AUTO_INCREMENT=1;
+
+CREATE TABLE `acquisto`(
+    `id` int(255) NOT NULL,
+    `data` datetime NOT NULL,    
+    `status`  varchar(50) NOT NULL,
+    PRIMARY KEY(`id`,`data`)
+);
 
 CREATE TABLE `notifiche_cliente`(
     `data` datetime NOT NULL, 

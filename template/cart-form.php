@@ -42,7 +42,9 @@
             </tr>           
         </table>
         <div class="text-center">
-            <button class="shopBtn text-white my-2" type="submit">Procedi all'ordine</button>
+            <form action="buy_order.php">
+                <button class="shopBtn text-white my-2" type="submit">Procedi all'ordine</button>
+            </form>
         </div>
     </div>     
 </div>

@@ -187,7 +187,7 @@ class DatabaseHelper{
 	}
 
 	public function getProductsCart($cliente, $status){
-		$query = "SELECT nome, prezzo, quantita, venditore FROM ordine WHERE cliente = ? AND status = ? ";
+		$query = "SELECT id, nome, prezzo, quantita, venditore FROM ordine WHERE cliente = ? AND status = ? ";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('ss', $cliente, $status);
 		$stmt->execute();
@@ -231,5 +231,27 @@ class DatabaseHelper{
 
         return $result->fetch_object();
 	}	
+
+	public function buyingProdoct($id){
+		$status = "da_spedire";
+		$data = date('Y-m-d H:i:s');
+	    $query = "INSERT INTO acquisto(id, data, status)
+		VALUES (?, ?, ?)";	
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('iss', $id, $data, $status);
+
+		return $stmt->execute();
+	}	
+
+	public function updateOrderStatus($id){
+		$status = "acquistato";
+		$query = "UPDATE ordine SET status = ? WHERE id = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('si', $status, $id);
+
+		return $stmt->execute();
+	}
+
+
 }
 ?>
