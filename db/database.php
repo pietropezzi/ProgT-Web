@@ -158,6 +158,18 @@ class DatabaseHelper{
 		return $result->fetch_object();
 	}
 
+	public function isInCart($cliente, $venditore, $nome){
+		$status = "cart";
+		$query = "SELECT * FROM ordine WHERE cliente = ? AND venditore = ? AND nome = ? AND status = ? ";	
+  		$stmt = $this->db->prepare($query);
+ 		$stmt->bind_param('ssss', $cliente, $venditore, $nome, $status);
+		$stmt->execute();
+		$result = $stmt->get_result();
+ 
+		return $result->fetch_all(MYSQLI_ASSOC);
+	}
+	
+
 	public function doOrder($cliente, $venditore, $nome, $prezzo, $quantità, $status){
 		$query = "INSERT INTO ordine(cliente, venditore, nome, prezzo, quantita, status)
 		VALUES (?, ?, ?, ?, ?, ?)";		

@@ -1,4 +1,5 @@
 <div class="details">
+    <?php $cart_result = $dbh->isInCart($_SESSION["email"], $venditore, $nome);?>
     <h2 class="m-1"><?php echo $nome; ?></h2>
     <div class="img">
         <img class="my-2" src="<?php echo IMAGES_DIR; ?>test.jpg" alt="logo"/>
@@ -25,7 +26,14 @@
         <?php }
     
         else if($quantita == 0 ){?>
-            <p class="disponibility mx-1 text-danger">Prodotto non disponibile</p>
+            <p class="disponibility mx-1 text-danger">Prodotto non disponibile</p>           
+        <?php }
+
+        else if(!empty($cart_result)){?>
+            <p class="disponibility mx-1 text-danger">Prodotto già nel carrello</p>
+            <form action="cart.php">
+                <button class="cartBtn text-white my-2" type="submit">Vai al Carrello</button>
+            </form>
         <?php }
 
         else{ ?>

@@ -11,10 +11,10 @@ foreach($prodotti as $prod):
     $checkUpdate = $dbh->updateOrderStatus($prod["id"]);
 
     if(!$checkInsert){
-        $ErrorMessage = "REGISTRAZIONE FALLITA";
+        $ErrorMessage = "ACQUISTO FALLITO";
         require("cart.php");
     }
-    
+
 endforeach;
 
 require("index.php");
