@@ -1,9 +1,9 @@
 /** qui ci andremo a mettere i vari valori di prova
 tutto quello che è qui è temporaneo **/
 
-INSERT INTO user(email, name, username, password, type, phone) VALUES 
+INSERT INTO users(email, name, username, password, type, phone) VALUES 
 ("marco@marco.it", "Marco", "marcolino", "trottola", "cliente", "369547485"), 
-("luigi@luigi.it", "Luigi", "LuigiBros", "myriam", "venditore", "7657655"), 
+("luigi@luigi.it", "Luigi", "LuigiBros", "myriam", "venditore", "07657655"), 
 ("gustavo@gus.it", "Gustavo", "gus", "troppo", "venditore", "345678944"); 
 
 

@@ -13,7 +13,7 @@ class DatabaseHelper{
 		$query = "INSERT INTO users(email, name, username, password, type,  phone)
 			  VALUES (?, ?, ?, ?, ?, ?)";
 		$stmt = $this->db->prepare($query);
-		$stmt->bind_param('sssssi', $email, $name, $username, $password, $type, $phone);
+		$stmt->bind_param('ssssss', $email, $name, $username, $password, $type, $phone);
 
 		return $stmt->execute();
 	}
@@ -102,7 +102,7 @@ class DatabaseHelper{
 
 		$query = "UPDATE users SET email = ?, name = ?, username = ?, phone = ? WHERE email = ?";
 		$stmt = $this->db->prepare($query);
-		$stmt->bind_param('sssis', $email, $name, $username, $phone, $old_email);
+		$stmt->bind_param('sssss', $email, $name, $username, $phone, $old_email);
 
 		$dt = date('Y-m-d H:i:s');
 		$tipo = "dati";
