@@ -54,10 +54,10 @@ class DatabaseHelper{
 		$user_data = $this->getUser($email);
 
 		if($user_data->type == "cliente"){
-			$query = "SELECT data, email, tipo, ordine FROM notifiche_cliente WHERE email = ? ORDER BY data DESC";
+			$query = "SELECT data, email, tipo, data_acquisto, status FROM notifiche_cliente WHERE email = ? ORDER BY data DESC";
 		}else{
 			/* ancora da creare tabella notifiche_venditore  quindi per ora fa la stessa cosa per evitare errori*/
-			$query = "SELECT data, email, tipo, ordine FROM notifiche_cliente WHERE email = ? ORDER BY data DESC";
+			$query = "SELECT data, email, tipo, data_acquisto, status FROM notifiche_cliente WHERE email = ? ORDER BY data DESC";
 		}
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('s', $email);
@@ -76,12 +76,13 @@ class DatabaseHelper{
 		$user_data = $this->getUser($email);
 		$dt = date('Y-m-d H:i:s');
 		$tipo = "password";
-		$order = 0;
+		$order = NULL;
+		$status = "new";
 
 		if($user_data->type == "cliente"){
-			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, ordine) VALUES(?, ?, ?, ?)";
+			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
-			$stmtnot->bind_param('sssi', $dt, $email, $tipo, $order);
+			$stmtnot->bind_param('sssi', $dt, $email, $tipo, $order, $status);
 			$stmtnot->execute();
 		}else{
 
@@ -106,11 +107,13 @@ class DatabaseHelper{
 
 		$dt = date('Y-m-d H:i:s');
 		$tipo = "dati";
-		$order = 0;
+		$order = NULL;
+		$status = "new";
+		
 		if($prev->type == "cliente"){
-			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, ordine) VALUES(?, ?, ?, ?)";
+			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
-			$stmtnot->bind_param('sssi', $dt, $email, $tipo, $order);
+			$stmtnot->bind_param('sssi', $dt, $email, $tipo, $order, $status);
 			$stmtnot->execute();
 		}else{
 

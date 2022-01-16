@@ -45,9 +45,11 @@ CREATE TABLE `notifiche_cliente`(
     `data` datetime NOT NULL, 
     `email` varchar(50) NOT NULL,
     `tipo` varchar(50) NOT NULL,
-    -- se il tipo è ACQUISTO allora si usa ordine per vedere cosa ha comprato
+    -- lo status della notifica indica se è stata letta o no (non letta -> new, letta -> read)
+    `status` varchar(50) NOT NULL,
+    -- se il tipo è ACQUISTO allora si usa data_acquisto per vedere tutti i prodotti presi in quel acquisto
     -- inoltre se il tipo è STATO allora si controlla lo stato aggiornato dell'ordine 
-    `ordine` int(11) NOT NULL,
+    `data_acquisto` datetime,
     -- se il tipo è PASSWORD si limita a dirgli che in tale data è stata modificata la password 
     --  stessa cosa per DATI, mettere quali dati sono sati cambiati renderebbe questa tabella troppo complessa (da valutare in futuro)
     PRIMARY KEY(`data`,`email`),
