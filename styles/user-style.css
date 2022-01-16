@@ -98,7 +98,7 @@
 
 /* NOTIFICHE */
 
-.notifica{
+.notifica-read{
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 30px;
@@ -110,25 +110,38 @@
 	transition: .4s;
 }
 
-.notifica > h2, .notifica > h3{
+.notifica-new{
+	background-color: #bffffa;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid #000000;
+	border-radius: 9px;
+	transition: .4s;
+}
+
+.notifica-read > h2, .notifica-read > h3, .notifica-new > h2, .notifica-new > h3{
 	display: inline-block;
 }
 
-.notifica > h2{
+.notifica-read > h2, .notifica-new > h2{
 	font-size: 130%;
 }
 
-.notifica > h3{
+.notifica-read > h3, .notifica-new > h3{
 	margin-left: 10px;
 	font-size: 110%;
 }
 
-.notifica > p{
+.notifica-read > p, .notifica-new > p{
 	font-size: 130%;
 	margin-bottom: 10px; 
 }
 
-.notifica > .line{
+.notifica-read > .line, .notifica-new > .line{
 	width: 50%;
 	margin: auto;
 	border-top: 1px solid #353333;
@@ -143,7 +156,7 @@
         max-width: 4%;
     }
 
-	.notifica{
+	.notifica-read, .notifica-new{
 		width: 40%;
 	}
 

@@ -1,5 +1,5 @@
 <?php foreach($notifiche as $notifica): ?>
-<div class="notifica">
+<div class="notifica<?php echo "-".$notifica["status"]; ?>">
         <h2>Data: </h2><h3><?php echo $notifica["data"] ?></h3>
         <div class="line"></div>
         <?php if($notifica["tipo"] == "password"): ?>

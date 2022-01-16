@@ -22,12 +22,13 @@ class DatabaseHelper{
 	public function insertNotificationNewUser($email, $type){
 		$dt = date('Y-m-d H:i:s');
 		$tipo = "create";
-		$order = 0;
+		$order = NULL;
+		$status = "new";
 
-		if($type == "cliente"){
-			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, ordine) VALUES(?, ?, ?, ?)";
+		if($type == "cliente"){				
+			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
-			$stmtnot->bind_param('sssi', $dt, $email, $tipo, $order);
+			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $order, $status);
 			$stmtnot->execute();
 
 			return $stmtnot->execute();
@@ -64,6 +65,20 @@ class DatabaseHelper{
 		$stmt->execute();
 		$result = $stmt->get_result();
 
+		// update to read all new since user load the notifications
+		$new_status = "read";
+		$old_status = "new";
+		if($user_data->type == "cliente"){
+			$query = "UPDATE notifiche_cliente SET status = ? WHERE email = ? AND status = ?";
+			$stmt = $this->db->prepare($query);
+			$stmt->bind_param('sss', $new_status, $email, $old_status);
+		}else{
+			$query = "UPDATE notifiche_cliente SET status = ? WHERE email = ? AND status = ?";
+			$stmt = $this->db->prepare($query);
+			$stmt->bind_param('sss', $new_status, $email, $old_status);
+		}
+		$stmt->execute();
+
 		return $result->fetch_all(MYSQLI_ASSOC);
 	}
 
@@ -82,7 +97,7 @@ class DatabaseHelper{
 		if($user_data->type == "cliente"){
 			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
-			$stmtnot->bind_param('sssi', $dt, $email, $tipo, $order, $status);
+			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $order, $status);
 			$stmtnot->execute();
 		}else{
 
@@ -109,11 +124,11 @@ class DatabaseHelper{
 		$tipo = "dati";
 		$order = NULL;
 		$status = "new";
-		
+
 		if($prev->type == "cliente"){
 			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
-			$stmtnot->bind_param('sssi', $dt, $email, $tipo, $order, $status);
+			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $order, $status);
 			$stmtnot->execute();
 		}else{
 
