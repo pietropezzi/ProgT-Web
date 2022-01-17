@@ -21,6 +21,11 @@ else {
   $CatToLink = ["Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "notifications.php", "Login" => "login.php"];
 }
 
+// Quantità nuove notifiche in sidebar
+if(isset($_SESSION["email"])){
+  $new_not = $dbh->getNewNotificationsAmount($_SESSION["email"]);
+}
+
 $AuthForm = "details-form.php";
 
 $result = $dbh->searchProduct($nome, $venditore);
