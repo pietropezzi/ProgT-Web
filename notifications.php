@@ -28,6 +28,13 @@ if(!isset($_SESSION["email"])){
 }else{
     // per ora solo client poi metto distizione fra cliente e venditore
     $notifiche = $dbh->getClientNotifications($_SESSION["email"]);
+    if($_SESSION["type"] == "cliente"){
+        // info acquisti del cliente, se non ha acquistato niente è vuoto
+        $tutti_acquisti = $dbh->getUserPurchases($_SESSION["email"]);
+    }else{
+        // TODO: venditore
+    }
 }
+
 require("template/user/user-base.php");
 ?>

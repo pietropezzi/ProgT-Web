@@ -5,10 +5,10 @@ $cliente = $_SESSION["email"];
 $status = "cart";
 
 $prodotti = $dbh->getProductsCart($cliente, $status);
-
+$data = date('Y-m-d H:i:s');
 foreach($prodotti as $prod): 
     /*Per ogni prodotto lo mette in acquisto*/
-    $checkInsert = $dbh->buyingProdoct($prod["id"]);
+    $checkInsert = $dbh->buyingProduct($prod["id"], $data);
     $checkUpdate = $dbh->updateOrderStatus($prod["id"]);
     /*Ne aggiorna lo status su ordine*/
     $checkUpdateStatus = $dbh->updateOrderStatus($prod["id"]);
@@ -19,14 +19,15 @@ foreach($prodotti as $prod):
 
     $checkUpdateQuantity = $dbh->updateQuantity($prod["nome"], $prod["venditore"], $new_quantity);
 
-
-
     if(!$checkInsert){
         $ErrorMessage = "ACQUISTO FALLITO";
         require("cart.php");
     }
 
 endforeach;
+
+/* notifica */
+$dbh->insertNotificationPurchase($data, $cliente, $_SESSION["type"]);
 
 require("index.php");
 

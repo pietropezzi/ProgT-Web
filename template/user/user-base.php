@@ -42,7 +42,9 @@
             </div>
             <?php endif; ?>
 			<?php if(isset($notifiche)): ?>
-				<?php require("template/user/user-notifications.php"); ?>
+				<div class="notifiche-container">
+					<?php require("template/user/user-notifications.php"); ?>
+				</div>
 			<?php endif; ?>
 			<?php if(isset($profile_data)): ?>
 				<?php require("template/user/user-data.php"); ?>
