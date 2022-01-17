@@ -24,7 +24,6 @@
         </form>       
     </div>    
     <?php endforeach; ?>
-    
     <div class="resoconto mt-5 mb-1">
         <table>           
             <?php $totale = 0 ?>
