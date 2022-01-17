@@ -1,11 +1,7 @@
 <div class="sidebar">
     <ul class="nav flex-column font-verdana" id="navigation">
     <?php foreach($Categories as $cat): ?>
-        <?php if($cat == "Notifiche" && isset($new_not)): ?>
-            <li><a class="nav-link mt-2 mx-2 text-white" href="<?php echo $CatToLink[$cat]; ?>" ><?php echo $cat." (".$new_not->amount.")"; ?></a></li>
-        <?php else: ?>
-            <li><a class="nav-link mt-2 mx-2 text-white" href="<?php echo $CatToLink[$cat]; ?>" ><?php echo $cat; ?></a></li>
-        <?php endif; ?>
+        <li><a class="nav-link mt-2 mx-2 text-white" href="<?php echo $CatToLink[$cat]; ?>" ><?php echo $cat; ?></a></li>
     <?php endforeach; ?>
     </ul>
 

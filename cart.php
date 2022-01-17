@@ -5,11 +5,6 @@ $title = "PCHW - Registrazione";
 $Categories = ["Home", "Ordini", "Notifiche"];
 $CatToLink = ["Home" => "index.php", "Ordini" => "#", "Notifiche" => "notifications.php"];
 
-// Quantità nuove notifiche in sidebar
-if(isset($_SESSION["email"])){
-    $new_not = $dbh->getNewNotificationsAmount($_SESSION["email"]);
-}
-
 $cart_product = $dbh->getProductsCart($_SESSION["email"], "cart");
 
 

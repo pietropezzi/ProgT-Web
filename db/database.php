@@ -82,24 +82,6 @@ class DatabaseHelper{
 		return $result->fetch_all(MYSQLI_ASSOC);
 	}
 
-	public function getNewNotificationsAmount($email){
-		$user_data = $this->getUser($email);
-
-		if($user_data->type == "cliente"){
-			$query = "SELECT COUNT(status) as amount FROM notifiche_cliente WHERE email = ? AND status = ?";
-		}else{
-			/* ancora da creare tabella notifiche_venditore  quindi per ora fa la stessa cosa per evitare errori*/
-			$query = "SELECT COUNT(status) as amount FROM notifiche_cliente WHERE email = ? AND status = ?";
-		}
-		$new_status = "new";
-		$stmt = $this->db->prepare($query);
-		$stmt->bind_param('ss', $email, $new_status);
-		$stmt->execute();
-		$result = $stmt->get_result();
-
-		return $result->fetch_object();
-	}
-
 	// Cambia password di un utente
 	public function updateUserPassword($email, $password){
 		$query = "UPDATE users SET password = ? WHERE email = ?";

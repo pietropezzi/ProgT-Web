@@ -17,11 +17,6 @@ if(isset($_SESSION["email"])){
     $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "notifications.php", "Login" => "login.php"];
 }
 
-// Quantità nuove notifiche in sidebar
-if(isset($_SESSION["email"])){
-    $new_not = $dbh->getNewNotificationsAmount($_SESSION["email"]);
-}
-
 if(isset($_SESSION["Message"])){
     $Message = $_SESSION["Message"];
     unset($_SESSION["Message"]);
