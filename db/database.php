@@ -215,6 +215,15 @@ class DatabaseHelper{
   		$stmt = $this->db->prepare($query);
  		$stmt->bind_param('ssdsiss', $nome, $venditore, $prezzo, $tipo, $quantità, $breve_descrizione, $descrizione);
 
+		// notifica venditore
+		$data = date('Y-m-d H:i:s');
+		$tipo = "aggiunto";
+		$status = "new";
+		$query = "INSERT INTO notifiche_venditore(data, email, tipo, status, nome_prod) VALUES(?, ?, ?, ?, ?)";
+		$notstmt = $this->db->prepare($query);
+ 		$notstmt->bind_param('sssss', $data, $venditore, $tipo, $status, $nome);
+		$notstmt->execute();
+
   		return $stmt->execute();
 	}	
 
