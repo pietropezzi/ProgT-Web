@@ -33,7 +33,13 @@ class DatabaseHelper{
 
 			return $stmtnot->execute();
 		}else{
-			// TODO: notifiche venditore
+			$prod = NULL; 
+			$notifquery = "INSERT INTO notifiche_venditore(data, email, tipo, status, nome_prod) VALUES(?, ?, ?, ?, ?)";
+			$stmtnot = $this->db->prepare($notifquery);
+			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $status, $prod);
+			$stmtnot->execute();
+
+			return $stmtnot->execute();
 		}
 
 		return true;
@@ -70,15 +76,14 @@ class DatabaseHelper{
         return $result->fetch_object();
 	}
 
-	// ritorna tutte le notifiche di un cliente ordinate per data.
-	public function getClientNotifications($email){		
+	// ritorna tutte le notifiche di un utente ordinate per data.
+	public function getNotifications($email){		
 		$user_data = $this->getUser($email);
 
 		if($user_data->type == "cliente"){
 			$query = "SELECT data, email, tipo, data_acquisto, status FROM notifiche_cliente WHERE email = ? ORDER BY data DESC";
 		}else{
-			// TODO: notifiche venditore
-			$query = "SELECT data, email, tipo, data_acquisto, status FROM notifiche_cliente WHERE email = ? ORDER BY data DESC";
+			$query = "SELECT data, email, tipo, status, nome_prod FROM notifiche_venditore WHERE email = ? ORDER BY data DESC";
 		}
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('s', $email);
@@ -93,8 +98,7 @@ class DatabaseHelper{
 			$stmt = $this->db->prepare($query);
 			$stmt->bind_param('sss', $new_status, $email, $old_status);
 		}else{
-			// TODO: notifiche venditore
-			$query = "UPDATE notifiche_cliente SET status = ? WHERE email = ? AND status = ?";
+			$query = "UPDATE notifiche_venditore SET status = ? WHERE email = ? AND status = ?";
 			$stmt = $this->db->prepare($query);
 			$stmt->bind_param('sss', $new_status, $email, $old_status);
 		}
@@ -110,8 +114,7 @@ class DatabaseHelper{
 		if($user_data->type == "cliente"){
 			$query = "SELECT COUNT(status) as amount FROM notifiche_cliente WHERE email = ? AND status = ?";
 		}else{
-			// TODO: notifiche venditore
-			$query = "SELECT COUNT(status) as amount FROM notifiche_cliente WHERE email = ? AND status = ?";
+			$query = "SELECT COUNT(status) as amount FROM notifiche_venditore WHERE email = ? AND status = ?";
 		}
 		$new_status = "new";
 		$stmt = $this->db->prepare($query);
@@ -131,16 +134,21 @@ class DatabaseHelper{
 		$user_data = $this->getUser($email);
 		$dt = date('Y-m-d H:i:s');
 		$tipo = "password";
-		$data_acquisto = NULL;
 		$status = "new";
 
+		/* notifica */
 		if($user_data->type == "cliente"){
+			$data_acquisto = NULL;
 			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
 			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $data_acquisto, $status);
 			$stmtnot->execute();
 		}else{
-			// TODO: notifiche venditore
+			$prod = NULL;
+			$notifquery = "INSERT INTO notifiche_venditore(data, email, tipo, status, nome_prod) VALUES(?, ?, ?, ?, ?)";
+			$stmtnot = $this->db->prepare($notifquery);
+			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $status, $prod);
+			$stmtnot->execute();
 		}
 
 		return $stmt->execute();
@@ -162,16 +170,20 @@ class DatabaseHelper{
 
 		$dt = date('Y-m-d H:i:s');
 		$tipo = "dati";
-		$data_acquisto = NULL;
 		$status = "new";
 
 		if($prev->type == "cliente"){
+			$data_acquisto = NULL;
 			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
 			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $data_acquisto, $status);
 			$stmtnot->execute();
 		}else{
-			// TODO: notifiche venditore
+			$prod = NULL;
+			$notifquery = "INSERT INTO notifiche_venditore(data, email, tipo, status, nome_prod) VALUES(?, ?, ?, ?, ?)";
+			$stmtnot = $this->db->prepare($notifquery);
+			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $status, $prod);
+			$stmtnot->execute();
 		}
 
 		return $stmt->execute();
@@ -247,7 +259,6 @@ class DatabaseHelper{
   		return $stmt->execute();
 	}	
 
-	/* da mettere $amount per prendere una quantità precisa di prodotti */
 	public function getProducts(){
 		$query = "SELECT nome, venditore, prezzo, breve_descrizione FROM prodotti ORDER BY nome";
 		$stmt = $this->db->prepare($query);

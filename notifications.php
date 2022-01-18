@@ -26,8 +26,7 @@ $profile_image = "default.png";
 if(!isset($_SESSION["email"])){
     $ErrorMessage = "Per visualizzare le notifiche è necessario effettuare il login!";
 }else{
-    // per ora solo client poi metto distizione fra cliente e venditore
-    $notifiche = $dbh->getClientNotifications($_SESSION["email"]);
+    $notifiche = $dbh->getNotifications($_SESSION["email"]);
     if($_SESSION["type"] == "cliente"){
         // info acquisti del cliente, se non ha acquistato niente è vuoto
         $tutti_acquisti = $dbh->getUserPurchases($_SESSION["email"]);

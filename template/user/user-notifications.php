@@ -18,14 +18,14 @@
                     $venditore = ""; ?>
                 <?php foreach($tutti_acquisti as $acquisto): ?>
                     <?php if($acquisto["data"] == $notifica["data"]): ?>
-                        <?php $venditore = $acquisto["venditore"]; 
-                              $prezzo_tot += $acquisto["prezzo"];?>
-                        <li><?php echo $acquisto["nome"]." - QT(".$acquisto["quantita"].")"; ?></li>
+                        <?php $prezzo_tot += $acquisto["prezzo"];?>
+                        <li><?php echo $acquisto["nome"]." - QT(".$acquisto["quantita"].") da ".$acquisto["venditore"]; ?></li>
                     <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
-            <p>Venditore: <?php echo $venditore; ?> <br>
             Prezzo totale acquisto: <?php echo $prezzo_tot; ?>€</p> 
         <?php endif; ?>
+        <!-- TODO: cambio status su consegna di 1 prodotto -->
+        
 </div>
 <?php endforeach; ?>

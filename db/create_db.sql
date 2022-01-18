@@ -56,3 +56,14 @@ CREATE TABLE `notifiche_cliente`(
     FOREIGN KEY (`email`)
         REFERENCES users(`email`)
 );
+
+CREATE TABLE `notifiche_venditore`(
+    `data` datetime NOT NULL,
+    `email` varchar(50) NOT NULL,
+    `tipo` varchar(50) NOT NULL,
+    `status` varchar(50) NOT NULL,
+    `nome_prod` varchar(50),
+    PRIMARY KEY(`data`,`email`),
+    FOREIGN KEY (`email`)
+        REFERENCES users(`email`)
+);
