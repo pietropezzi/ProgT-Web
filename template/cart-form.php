@@ -1,7 +1,7 @@
 <div class="cart">    
     <?php 
     if(empty($cart_product)){?>          
-        <p class="empty mx-1">Il carrello è vuoto</p>
+        <p class="empty m-5 p-5">Il carrello è vuoto</p>
     <?php }     
     foreach($cart_product as $prod): ?>
     <div class="prodotti my-2">
@@ -23,33 +23,35 @@
             <button class="remove mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit">Rimuovi</button>
         </form>       
     </div>    
-    <?php endforeach; ?>
-    <div class="resoconto mt-5 mb-1">
-        <table>           
-            <?php $totale = 0 ?>
-            <?php foreach($cart_product as $prod): ?>                  
-            <tr class="spaceUnder">       
-                <td><?php echo $prod["nome"]; ?></td>
-                <?php if($prod["quantita"] > 1){ ?>
-                    <td class="quantity">x<?php echo $prod["quantita"]; ?></td> 
-                <?php }
-                else{ ?>   
-                    <td></td>   
-                <?php } ?>                       
-                <td class="price"> <?php echo $prod["prezzo"] * $prod["quantita"]; $totale = $totale+$prod["prezzo"]*$prod["quantita"]?>€</td>    
-            </tr>                        
-            <?php endforeach; ?>         
-            <tr class="totale spaceUnder">       
-                <td>Totale: </td>
-                <td></td>
-                <td class="price"> <?php echo $totale?>€</td>    
-            </tr>           
-        </table>
-        <div class="text-center">
-            <form action="buy_order.php">
-                <button class="shopBtn text-white my-2" type="submit">Procedi all'ordine</button>
-            </form>
+    <?php endforeach;
+    if(!empty($cart_product)){?>          
+        <div class="resoconto mt-5 mb-1">
+            <table>           
+                <?php $totale = 0 ?>
+                <?php foreach($cart_product as $prod): ?>                  
+                <tr class="spaceUnder">       
+                    <td><?php echo $prod["nome"]; ?></td>
+                    <?php if($prod["quantita"] > 1){ ?>
+                        <td class="quantity">x<?php echo $prod["quantita"]; ?></td> 
+                    <?php }
+                    else{ ?>   
+                        <td></td>   
+                    <?php } ?>                       
+                    <td class="price"> <?php echo $prod["prezzo"] * $prod["quantita"]; $totale = $totale+$prod["prezzo"]*$prod["quantita"]?>€</td>    
+                </tr>                        
+                <?php endforeach; ?>         
+                <tr class="totale spaceUnder">       
+                    <td>Totale: </td>
+                    <td></td>
+                    <td class="price"> <?php echo $totale?>€</td>    
+                </tr>           
+            </table>
+            <div class="text-center">
+                <form action="buy_order.php">
+                    <button class="shopBtn text-white my-2" type="submit">Procedi all'ordine</button>
+                </form>
+            </div>
         </div>
-    </div>     
+    <?php }?> 
 </div>
 

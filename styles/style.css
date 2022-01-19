@@ -333,8 +333,12 @@ form .user-details .input-box{
 	max-width: 20%;
 }
 
+.cart .prodotti .aggiorna{
+	float: right;
+}
+
 .cart .prodotti .remove{
-	text-align: left;
+	float: left;
 }
 
 .cart .resoconto {

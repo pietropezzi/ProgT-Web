@@ -1,7 +1,7 @@
 <?php 
 require_once("bootstrap.php");
 
-$title = "PCHW - Registrazione";
+$title = $_SESSION["nome"]." - Carrello";
 $Categories = ["Home", "Ordini", "Notifiche"];
 $CatToLink = ["Home" => "index.php", "Ordini" => "#", "Notifiche" => "notifications.php"];
 
