@@ -204,16 +204,6 @@ class DatabaseHelper{
 
 	}
 
-	public function loginCheck($email, $password){
-	    $query = "SELECT name, username, type FROM users WHERE email = ? AND password = ?";
-		$stmt = $this->db->prepare($query);
-		$stmt->bind_param('ss', $email, $password);
-		$stmt->execute();
-        $result = $stmt->get_result();
-
-        return $result->fetch_object();
-	}	
-
 	public function insertProduct($nome, $venditore, $prezzo, $tipo, $quantità, $breve_descrizione, $descrizione){
 		$query = "INSERT INTO prodotti(nome, venditore, prezzo, tipo, quantita, breve_descrizione, descrizione)
 		VALUES (?, ?, ?, ?, ?, ?, ?)";		
@@ -244,7 +234,7 @@ class DatabaseHelper{
 	}
 
 	public function getUser($email){
-		$query = "SELECT email, name, username, type, phone FROM users WHERE email = ?";
+		$query = "SELECT email, password, name, username, type, phone FROM users WHERE email = ?";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('s', $email);
 		$stmt->execute();
