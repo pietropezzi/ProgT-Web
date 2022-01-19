@@ -25,10 +25,22 @@
         </ul>
         Prezzo totale acquisto: <?php echo $prezzo_tot; ?>€</p> 
     <?php endif; ?>
-
     <!-- TODO: cambio status su consegna di 1 prodotto -->
+
     <?php if($notifica["tipo"] == "aggiunto"): ?>
-        <p>Hai aggiunto un nuovo prodotto: <?php echo $notifica["nome_prod"]; ?></p>
+        <p>Hai aggiunto un nuovo prodotto: <?php echo "'".$notifica["nome_prod"]."'"; ?></p>
+        <p>Quantità: <?php echo $notifica["quantita"]; ?></p>
     <?php endif; ?> 
+    <?php if($notifica["tipo"] == "venduto"): ?>
+        <p>Venduto prodotto <?php echo "'".$notifica["nome_prod"]."'"; ?> ,info:</p>
+        <ul>
+            <li>Cliente: <?php echo $notifica["cliente"]; ?></li>
+            <li>Quantità venduta: <?php echo $notifica["quantita"]; ?></li>
+        </ul>
+        <br>
+    <?php endif; ?>
+    <?php if($notifica["tipo"] == "esaurito"): ?>
+        <p>ESAURITO il prodotto: <?php echo $notifica["nome_prod"]; ?></p>
+    <?php endif; ?>
 </div>
 <?php endforeach; ?>

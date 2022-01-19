@@ -6,7 +6,7 @@ $status = "cart";
 
 $prodotti = $dbh->getProductsCart($cliente, $status);
 $data = date('Y-m-d H:i:s');
-foreach($prodotti as $prod): 
+foreach($prodotti as $prod){
     /*Per ogni prodotto lo mette in acquisto*/
     $checkInsert = $dbh->buyingProduct($prod["id"], $data);
     $checkUpdate = $dbh->updateOrderStatus($prod["id"]);
@@ -18,16 +18,23 @@ foreach($prodotti as $prod):
     $new_quantity = $max_quantity - $prod["quantita"];
 
     $checkUpdateQuantity = $dbh->updateQuantity($prod["nome"], $prod["venditore"], $new_quantity);
+    $dbh->notifyVendorBoughtProd($prod["nome"], $prod["venditore"], $data, $prod["quantita"], $cliente);
+    if($new_quantity == 0){
+        // notifica venditore prodotto esaurito
+        $dbh->notifyVendorOutOfStock($prod["nome"], $prod["venditore"], $data);
+    }
 
     if(!$checkInsert){
         $ErrorMessage = "ACQUISTO FALLITO";
         require("cart.php");
     }
 
-endforeach;
+} 
 
-/* notifica */
-$dbh->insertNotificationPurchase($data, $cliente, $_SESSION["type"]);
+/* notifica cliente*/
+if($_SESSION["type"] == "cliente"){
+    $dbh->insertNotificationPurchase($data, $cliente);
+}
 
 require("index.php");
 

@@ -58,12 +58,15 @@ CREATE TABLE `notifiche_cliente`(
 );
 
 CREATE TABLE `notifiche_venditore`(
+    `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
     `data` datetime NOT NULL,
     `email` varchar(50) NOT NULL,
     `tipo` varchar(50) NOT NULL,
     `status` varchar(50) NOT NULL,
     `nome_prod` varchar(50),
-    PRIMARY KEY(`data`,`email`),
+    `quantita` varchar(50),
+    `cliente` varchar(50),
+    PRIMARY KEY(`id`),
     FOREIGN KEY (`email`)
         REFERENCES users(`email`)
 );
