@@ -41,6 +41,7 @@ CREATE TABLE `acquisto`(
     `status`  varchar(50) NOT NULL,
     PRIMARY KEY(`id`,`data`)
 );
+/*TODO: foreign key*/
 
 CREATE TABLE `notifiche_cliente`(
     `data` datetime NOT NULL, 

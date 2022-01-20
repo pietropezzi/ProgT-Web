@@ -5,16 +5,12 @@ $title = isset($_SESSION["nome"]) ? $_SESSION["nome"]." - Notifiche" : "No Accou
 $location = "NOTIFICHE";
 if(isset($_SESSION["email"])){
     $Categories = ["Home", "Carrello", "Ordini"];
-    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#"];
+    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "order.php"];
 		
 	if($_SESSION["type"] == "venditore"){
 		$Categories = ["Home", "Carrello", "Ordini", "I Tuoi Prodotti"];
-		$CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "I Tuoi Prodotti" => "your_product.php"];		
+		$CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "order.php", "I Tuoi Prodotti" => "your_product.php"];		
 	}	
-}
- else {
-    $Categories = ["Home", "Carrello", "Ordini", "Login"];
-    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "Login" => "login.php"];
 }
 
 if(isset($_SESSION["Message"])){

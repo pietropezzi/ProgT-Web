@@ -363,6 +363,23 @@ class DatabaseHelper{
 		return $stmt->execute();
 	}
 
+	public function getSellerOrder($venditore){
+		$query = "SELECT o.nome, o.cliente, o.quantita, a.data, a.status, o.id FROM ordine as o, acquisto as a WHERE o.id = a.id AND venditore = ? GROUP BY o.id ORDER BY a.data";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('s', $venditore);
+		$stmt->execute();
+		$result = $stmt->get_result();		
 
+		return $result->fetch_all(MYSQLI_ASSOC);
+	}
+
+
+	public function updateBuyingStatus($data, $id, $status){
+		$query = "UPDATE acquisto SET status = ? WHERE data = ?  AND id = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('ssi', $status, $data, $id);
+
+		return $stmt->execute();
+	}
 }
 ?>

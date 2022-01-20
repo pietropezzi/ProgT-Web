@@ -382,6 +382,17 @@ form .user-details .input-box{
 
 /* FINE CARRELLO */
 
+.ordine{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;	
+	border: 2px solid #000000;
+	border-radius: 9px;
+	transition: .4s;
+}
+
 @media screen and (min-width:768px){
 	header img{
 		max-height: 5%;

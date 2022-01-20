@@ -3,7 +3,7 @@ require_once("bootstrap.php");
 
 $title = $_SESSION["nome"]." - Carrello";
 $Categories = ["Home", "Ordini", "Notifiche"];
-$CatToLink = ["Home" => "index.php", "Ordini" => "#", "Notifiche" => "notifications.php"];
+$CatToLink = ["Home" => "index.php", "Ordini" => "order.php", "Notifiche" => "notifications.php"];
 
 // Quantità nuove notifiche in sidebar
 if(isset($_SESSION["email"])){

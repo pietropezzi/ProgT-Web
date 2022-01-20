@@ -8,17 +8,17 @@ $title = $nome." - Dettaglio";
 
 if(isset($_SESSION["email"])){
   $Categories = ["Home", "Carrello", "Ordini", "Notifiche"];
-  $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "#"];
+  $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "order.php", "Notifiche" => "#"];
 
   if($_SESSION["type"] == "venditore"){
 		$Categories = ["Home", "Carrello", "Ordini", "I Tuoi Prodotti", "Notifiche"];
-		$CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "notifications.php"];		
+		$CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "order.php", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "notifications.php"];		
 	}
 }
 
 else {
-  $Categories = ["Carrello", "Ordini", "Notifiche", "Login"];
-  $CatToLink = ["Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "notifications.php", "Login" => "login.php"];
+  $Categories = ["Carrello", "Login"];
+  $CatToLink = ["Carrello" => "cart.php", "Login" => "login.php"];
 }
 
 // Quantità nuove notifiche in sidebar
