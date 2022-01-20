@@ -29,7 +29,6 @@ class DatabaseHelper{
 			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
 			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $data_acquisto, $status);
-			$stmtnot->execute();
 
 			return $stmtnot->execute();
 		}else{
@@ -39,7 +38,6 @@ class DatabaseHelper{
 			$notifquery = "INSERT INTO notifiche_venditore(data, email, tipo, status, nome_prod, quantita, cliente) VALUES(?, ?, ?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
 			$stmtnot->bind_param('sssssss', $dt, $email, $tipo, $status, $prod, $quantita, $cliente);
-			$stmtnot->execute();
 
 			return $stmtnot->execute();
 		}
@@ -56,7 +54,6 @@ class DatabaseHelper{
 		$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
 		$stmtnot = $this->db->prepare($notifquery);
 		$stmtnot->bind_param('sssss', $data, $email, $tipo, $data_acquisto, $status);
-		$stmtnot->execute();
 
 		return $stmtnot->execute();
 	}
