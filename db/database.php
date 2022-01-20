@@ -22,13 +22,14 @@ class DatabaseHelper{
 	public function insertNotificationNewUser($email, $type){
 		$dt = date('Y-m-d H:i:s');
 		$tipo = "create";
-		$data_acquisto = NULL;
 		$status = "new";
 
-		if($type == "cliente"){				
-			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
+		if($type == "cliente"){	
+			$data_acquisto = NULL;	
+			$id = NULL;		
+			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status, order_id) VALUES(?, ?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
-			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $data_acquisto, $status);
+			$stmtnot->bind_param('sssssi', $dt, $email, $tipo, $data_acquisto, $status, $id);
 
 			return $stmtnot->execute();
 		}else{
@@ -45,15 +46,16 @@ class DatabaseHelper{
 		return true;
 	}
 
-	// inserisce la notifica dopo che un cliente acquista un ordine/ più ordini.
+	// inserisce la notifica dopo che un cliente acquista un ordine/più ordini.
 	public function insertNotificationPurchase($data, $email){
 		$tipo = "acquisto";
 		$data_acquisto = $data;
 		$status = "new";			
-		
-		$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
+		$id = NULL;
+
+		$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status, order_id) VALUES(?, ?, ?, ?, ?, ?)";
 		$stmtnot = $this->db->prepare($notifquery);
-		$stmtnot->bind_param('sssss', $data, $email, $tipo, $data_acquisto, $status);
+		$stmtnot->bind_param('sssssi', $data, $email, $tipo, $data_acquisto, $status, $id);
 
 		return $stmtnot->execute();
 	}
@@ -74,7 +76,7 @@ class DatabaseHelper{
 		$user_data = $this->getUser($email);
 
 		if($user_data->type == "cliente"){
-			$query = "SELECT data, email, tipo, data_acquisto, status FROM notifiche_cliente WHERE email = ? ORDER BY data DESC";
+			$query = "SELECT data, email, tipo, data_acquisto, status, order_id FROM notifiche_cliente WHERE email = ? ORDER BY data DESC";
 		}else{
 			$query = "SELECT data, email, tipo, status, nome_prod, quantita, cliente FROM notifiche_venditore WHERE email = ? ORDER BY data DESC";
 		}
@@ -132,9 +134,10 @@ class DatabaseHelper{
 		/* notifica */
 		if($user_data->type == "cliente"){
 			$data_acquisto = NULL;
-			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
+			$id = NULL;
+			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status, order_id) VALUES(?, ?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
-			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $data_acquisto, $status);
+			$stmtnot->bind_param('sssssi', $dt, $email, $tipo, $data_acquisto, $status, $id);
 			$stmtnot->execute();
 		}else{
 			$prod = NULL; 
@@ -169,9 +172,10 @@ class DatabaseHelper{
 
 		if($prev->type == "cliente"){
 			$data_acquisto = NULL;
-			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status) VALUES(?, ?, ?, ?, ?)";
+			$id = NULL;
+			$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status, order_id) VALUES(?, ?, ?, ?, ?, ?)";
 			$stmtnot = $this->db->prepare($notifquery);
-			$stmtnot->bind_param('sssss', $dt, $email, $tipo, $data_acquisto, $status);
+			$stmtnot->bind_param('sssssi', $dt, $email, $tipo, $data_acquisto, $status, $id);
 			$stmtnot->execute();
 		}else{
 			$prod = NULL; 
@@ -373,11 +377,29 @@ class DatabaseHelper{
 		return $result->fetch_all(MYSQLI_ASSOC);
 	}
 
+	public function getUserFromPurchase($id, $data){
+		$query = "SELECT a.id, a.data, o.cliente FROM acquisto as a, ordine as o WHERE o.id = a.id AND a.id = ? AND a.data = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('ss', $id, $data);
+		$stmt->execute();
+		$result = $stmt->get_result();		
+
+		return $result->fetch_object();
+	}
 
 	public function updateBuyingStatus($data, $id, $status){
 		$query = "UPDATE acquisto SET status = ? WHERE data = ?  AND id = ?";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('ssi', $status, $data, $id);
+
+		//notifica cliente aggiornamento status 
+		$user = $this->getUserFromPurchase($id, $data);
+		$notif_status = "new";
+		$data_notifica = date("Y-m-d H:i");
+		$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status, order_id) VALUES(?, ?, ?, ?, ?, ?)";
+		$stmtnot = $this->db->prepare($notifquery);
+		$stmtnot->bind_param('sssssi', $data_notifica, $user->cliente, $status, $data, $notif_status, $id);
+		$stmtnot->execute();
 
 		return $stmt->execute();
 	}
