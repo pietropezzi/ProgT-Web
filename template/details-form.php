@@ -1,5 +1,7 @@
 <div class="details">
-    <?php $cart_result = $dbh->isInCart($_SESSION["email"], $venditore, $nome);?>
+<?php if(isset($_SESSION["email"])){           
+    $cart_result = $dbh->isInCart($_SESSION["email"], $venditore, $nome);
+}?>    
     <h2 class="m-1"><?php echo $nome; ?></h2>
     <div class="img">
         <img class="my-2" src="<?php echo PROD_IMAGES_DIR.$immagine; ?>" alt="immagine_prodotto"/>
