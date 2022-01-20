@@ -7,7 +7,7 @@
     <div class="prodotti my-2">
         <?php $result_get = $dbh->getMaxQuantity($prod["nome"], $prod["venditore"]);
             $max_quantity = implode($result_get[0]);?>
-        <img class="mx-4 mt-3 mb-3" src="<?php echo IMAGES_DIR; ?>test.jpg" alt="logo"/>
+        <img class="mx-4 mt-3 mb-3" src="<?php echo PROD_IMAGES_DIR.$prod["immagine"]; ?>" alt="logo"/>
         <div class="info">
             <p><?php echo $prod["nome"]; ?></p>
             <p class="text-primary">Prezzo: <?php echo $prod["prezzo"]; ?>€</p>

@@ -20,6 +20,7 @@ CREATE TABLE `prodotti`(
     `quantita` int(50) NOT NULL,	
     `breve_descrizione` varchar(50) NOT NULL,
     `descrizione` varchar(255) NOT NULL,
+    `immagine` varchar(255) NOT NULL,
     PRIMARY KEY(`nome`, `venditore`)
 );
 

@@ -197,15 +197,11 @@ class DatabaseHelper{
 		return $result->fetch_all(MYSQLI_ASSOC);
 	}
 
-	public function getVendorSales($email){
-
-	}
-
-	public function insertProduct($nome, $venditore, $prezzo, $tipo, $quantità, $breve_descrizione, $descrizione){
-		$query = "INSERT INTO prodotti(nome, venditore, prezzo, tipo, quantita, breve_descrizione, descrizione)
-		VALUES (?, ?, ?, ?, ?, ?, ?)";		
+	public function insertProduct($nome, $venditore, $prezzo, $tipo, $quantità, $breve_descrizione, $descrizione, $immagine){
+		$query = "INSERT INTO prodotti(nome, venditore, prezzo, tipo, quantita, breve_descrizione, descrizione, immagine)
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?)";		
   		$stmt = $this->db->prepare($query);
- 		$stmt->bind_param('ssdsiss', $nome, $venditore, $prezzo, $tipo, $quantità, $breve_descrizione, $descrizione);
+ 		$stmt->bind_param('ssdsisss', $nome, $venditore, $prezzo, $tipo, $quantità, $breve_descrizione, $descrizione, $immagine);
 
 		// notifica venditore
 		$data = date('Y-m-d H:i:s');
@@ -221,7 +217,7 @@ class DatabaseHelper{
 	}	
 
 	public function getProductsBySeller($venditore){
-		$query = "SELECT nome, venditore, prezzo, breve_descrizione FROM prodotti WHERE venditore = ? ORDER BY nome";
+		$query = "SELECT nome, venditore, prezzo, breve_descrizione, immagine FROM prodotti WHERE venditore = ? ORDER BY nome";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('s', $venditore);
 		$stmt->execute();
@@ -262,7 +258,7 @@ class DatabaseHelper{
 	}	
 
 	public function getProducts(){
-		$query = "SELECT nome, venditore, prezzo, breve_descrizione FROM prodotti ORDER BY nome";
+		$query = "SELECT nome, venditore, prezzo, breve_descrizione, immagine FROM prodotti ORDER BY nome";
 		$stmt = $this->db->prepare($query);
 		$stmt->execute();
 		$result = $stmt->get_result();
@@ -279,7 +275,7 @@ class DatabaseHelper{
 	}
 
 	public function getProductsCart($cliente, $status){
-		$query = "SELECT id, nome, prezzo, quantita, venditore FROM ordine WHERE cliente = ? AND status = ? ";
+		$query = "SELECT o.id, o.nome, o.prezzo, o.quantita, o.venditore, p.immagine FROM ordine as o, prodotti as p WHERE o.nome = p.nome AND cliente = ? AND status = ? GROUP BY o.id";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('ss', $cliente, $status);
 		$stmt->execute();

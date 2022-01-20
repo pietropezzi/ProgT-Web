@@ -2,7 +2,7 @@
     <?php $cart_result = $dbh->isInCart($_SESSION["email"], $venditore, $nome);?>
     <h2 class="m-1"><?php echo $nome; ?></h2>
     <div class="img">
-        <img class="my-2" src="<?php echo IMAGES_DIR; ?>test.jpg" alt="logo"/>
+        <img class="my-2" src="<?php echo PROD_IMAGES_DIR.$immagine; ?>" alt="immagine_prodotto"/>
     </div>
     <div class="main m-1">        
         <h4>Prezzo: <?php echo $prezzo; ?>€</h4>

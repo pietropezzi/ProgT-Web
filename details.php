@@ -41,6 +41,7 @@ else{
   $tipo = $result->tipo;
   $quantita = $result->quantita;
   $descrizione = $result->descrizione;
+  $immagine = $result->immagine;
    
   require("template/home.php");
 }

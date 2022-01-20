@@ -2,7 +2,7 @@
 <div class="my-4 text-white register">
    <label class="mb-2">Inserisci un nuovo Prodotto</label>
    <div>
-		<form name="new_product" id="new_product" action="insert_product.php" onsubmit="return checkProductForm()" method="post">
+		<form name="new_product" id="new_product" action="insert_product.php" onsubmit="return checkProductForm()" method="post" enctype="multipart/form-data">
 			<div>				
                 <div class="input-box">
                     <label class="mb-1">Nome</label><br>
@@ -19,7 +19,9 @@
                 <div class="input-box">
                     <label class="mb-1">Descrizione</label><br>
                     <textarea rows ="5" cols="50" name="descrizione" id="descrizione" class="text-input" placeholder="Inserisci la descrizione del tuo prodotto"></textarea>                 
-                </div>    
+                </div>
+                <label class="mb-1">Immagine prodotto</label><br>
+                <input type="file" name="immagine_prodotto" id="immagine_prodotto"><br>
                 <label class="mb-1">Tipo di Prodotto</label><br>
                 <select id="tipo" name="tipo">
                     <option value="cpu">CPU/Processore</option>

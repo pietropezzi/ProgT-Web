@@ -4,7 +4,6 @@ function checkProductForm() {
 	var prezzo = document.getElementById("prezzo").value
 	var breve_descrizione = document.getElementById("breve_descrizione").value	
 	var descrizione = document.getElementById("descrizione").value	
-	
 	//test
 	var number = /^[0-9]+$/;   
     var decimal = /^([0-9])+\.[0-9]+$/;	
