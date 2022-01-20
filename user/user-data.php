@@ -1,7 +1,7 @@
 <script src="js/checkPassword.js"></script>
 <script src="js/checkData.js"></script>
 <div class="userdata">
-    <img class="user_image" src="<?php echo USER_IMAGES_DIR.$profile_image; ?>" alt="immagine profilo"/>
+    <img class="user_image" src="<?php echo IMAGES_DIR."user-icon.png"; ?>" alt="icona utente"/>
     <h2>Nome:</h2><p><?php echo $profile_data->name; ?></p><br>
     <h2>Username:</h2><p><?php echo $profile_data->username ?></p><br>
     <h2>Email:</h2><p><?php echo $profile_data->email ?> </p><br>
@@ -14,7 +14,7 @@
             <h2><?php echo $AggPassErr; ?></h2>
         </div>
     <?php endif; ?>
-    <form name="agg_pass" action="template/user/update-pass.php" onsubmit="return checkAggPassForm()" method="post"> 
+    <form name="agg_pass" action="user/update-pass.php" onsubmit="return checkAggPassForm()" method="post"> 
         <h2>Aggiorna password</h2>
         <p>Per aggiornare la password, reinserire la vecchia password per la convalida per poi inserire la nuova due volte</p>
         <label for="oldpass">Vecchia password </label><input type="text" id="oldpass" name="oldpass"/><br>
@@ -27,7 +27,7 @@
             <h2><?php echo $AggDataErr; ?></h2>
         </div>
     <?php endif; ?>
-    <form name="agg_dati" action="template/user/update-data.php" onsubmit="return checkData()" method="post">
+    <form name="agg_dati" action="user/update-data.php" onsubmit="return checkData()" method="post">
         <h2>Aggiorna dati</h2>
         <p>Per lasciare i vari dati invariati non compilare il campo.<br>
         Una volta inseriti correttamente i dati, dopo il loro aggiornamento, sarà necessario effettuare nuovamente il login.</p>

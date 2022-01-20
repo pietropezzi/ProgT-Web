@@ -18,7 +18,6 @@ if(isset($_SESSION["Message"])){
     unset($_SESSION["Message"]);
 }
 
-$profile_image = "default.png";
 if(!isset($_SESSION["email"])){
     $ErrorMessage = "Per visualizzare le notifiche è necessario effettuare il login!";
 }else{
@@ -26,10 +25,8 @@ if(!isset($_SESSION["email"])){
     if($_SESSION["type"] == "cliente"){
         // info acquisti del cliente, se non ha acquistato niente è vuoto
         $tutti_acquisti = $dbh->getUserPurchases($_SESSION["email"]);
-    }else{
-        // TODO: venditore
     }
 }
 
-require("template/user/user-base.php");
+require("user/user-base.php");
 ?>

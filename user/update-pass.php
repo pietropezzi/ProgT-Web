@@ -1,5 +1,5 @@
 <?php 
-require_once("../../bootstrap.php");
+require_once("../bootstrap.php");
 
 $ins_oldpass = $_POST["oldpass"];
 $ins_newpass = $_POST["newpass"];
@@ -19,5 +19,5 @@ if(!password_verify($ins_oldpass, $oldpass->password)){
     }
 }
 
-header("Location: ../../profile.php");
+header("Location: ../profile.php");
 ?>

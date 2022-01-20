@@ -43,11 +43,11 @@
             <?php endif; ?>
 			<?php if(isset($notifiche)): ?>
 				<div class="notifiche-container">
-					<?php require("template/user/user-notifications.php"); ?>
+					<?php require("user/user-notifications.php"); ?>
 				</div>
 			<?php endif; ?>
 			<?php if(isset($profile_data)): ?>
-				<?php require("template/user/user-data.php"); ?>
+				<?php require("user/user-data.php"); ?>
 			<?php endif; ?>
 		</main>
 		<footer>

@@ -48,7 +48,6 @@ if(isset($_SESSION["ErrDbDati"])){
 }
 
 $profile_data = $dbh->getUser($_SESSION["email"]);
-$profile_image = "default.png";
 
-require("template/user/user-base.php");
+require("user/user-base.php");
 ?>
