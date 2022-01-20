@@ -5,16 +5,16 @@ $title = $_SESSION["nome"]." - Profilo";
 $location = "PROFILO";
 if(isset($_SESSION["email"])){
     $Categories = ["Home", "Carrello", "Ordini", "Notifiche"];
-    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "notifications.php"];
+    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "order.php", "Notifiche" => "notifications.php"];
 		
 	if($_SESSION["type"] == "venditore"){
-		$Categories = ["Home", "Carrello", "Ordini", "I Tuoi Prodotti", "Notifiche"];
-		$CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "notifications.php"];		
+		$Categories = ["Home", "Ordini", "I Tuoi Prodotti", "Notifiche"];
+		$CatToLink = ["Home" => "index.php", "Ordini" => "order.php", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "notifications.php"];		
 	}	
 }
- else {
+else{
     $Categories = ["Home", "Carrello", "Ordini", "Notifiche", "Login"];
-    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "#", "Notifiche" => "notifications.php", "Login" => "login.php"];
+    $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "order.php", "Notifiche" => "notifications.php", "Login" => "login.php"];
 }
 
 // Quantità nuove notifiche in sidebar

@@ -14,16 +14,15 @@
     <?php if($notifica["tipo"] == "acquisto"): ?>
         <p>Hai eseguito un acquisto contenente: </p>
         <ul>
-            <?php $prezzo_tot = 0;
-                $venditore = ""; ?>
+            <?php $prezzo_tot = 0; ?>
             <?php foreach($tutti_acquisti as $acquisto): ?>
                 <?php if($acquisto["data"] == $notifica["data"]): ?>
-                    <?php $prezzo_tot += $acquisto["prezzo"];?>
+                    <?php $prezzo_tot += $acquisto["prezzo"] * ( (int)$acquisto["quantita"]);?>
                     <li><?php echo $acquisto["nome"]." - QT(".$acquisto["quantita"].") da ".$acquisto["venditore"]; ?></li>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
-        Prezzo totale acquisto: <?php echo $prezzo_tot; ?>€</p> 
+        <p>Prezzo totale acquisto: <?php echo $prezzo_tot; ?>€</p> 
     <?php endif; ?>
     <!-- TODO: cambio status su consegna di 1 prodotto -->
 
