@@ -182,6 +182,13 @@ footer > .about-contatti > p, footer > .ext-links > p{
 	border-style: solid;
 }
 
+.immagine_prodotto{		
+	width: 250px;
+	height: 250px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;  
+}
 /* FINE PRODOTTI */
 
 /* MESSAGGI IN HOME */
@@ -274,8 +281,8 @@ form .user-details .input-box{
 }
 
 .details .img img{
-	max-width: 50%;
-	max-height: 50%;
+	max-width: 250px;
+	max-height: 250px;
 }
 
 .details .main .title{

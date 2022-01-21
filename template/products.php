@@ -1,7 +1,7 @@
 <!-- le immagini verranno gestite in seguito -->
 <?php foreach($prodotti as $prod): ?>
 <div class="prodotto">
-    <img src="<?php echo PROD_IMAGES_DIR.$prod["immagine"]; ?>" alt="immagine_prodotto"/>
+    <img class="immagine_prodotto" src="<?php echo PROD_IMAGES_DIR.$prod["immagine"]; ?>" alt="immagine_prodotto"/>
     <h2><?php echo $prod["nome"]; ?></h2>
     <h3><?php echo $prod["prezzo"]; ?>€</h3>
     <p><?php echo $prod["breve_descrizione"]; ?></p>

@@ -7,8 +7,9 @@ if(isset($_SESSION["email"])){
     $CatToLink = ["Carrello" => "cart.php", "Ordini" => "order.php", "Notifiche" => "notifications.php"];
 		
 	if($_SESSION["type"] == "venditore"){
-		$Categories = ["Ordini", "I Tuoi Prodotti", "Notifiche"];
-		$CatToLink = ["Ordini" => "order.php", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "notifications.php"];		
+		$Categories = ["Ordini", "Notifiche"];
+		$CatToLink = ["Ordini" => "order.php", "Notifiche" => "notifications.php"];
+        
 	}	
 }
  else {
@@ -16,12 +17,20 @@ if(isset($_SESSION["email"])){
     $CatToLink = ["Login" => "login.php"];
 }
 
+$prodotti = $dbh->getProducts();
+
 // Quantità nuove notifiche in sidebar
 if(isset($_SESSION["email"])){
     $new_not = $dbh->getNewNotificationsAmount($_SESSION["email"]);
+
+    if($_SESSION["type"] == "venditore"){
+        $AuthForm = "your_product-form.php";
+        $prodotti = $dbh->getProductsBySeller($_SESSION["email"]);
+        $title = "PCHW - I Tuoi Prodotti";
+    }
 }
 
-$prodotti = $dbh->getProducts();
-
 require("template/home.php");
+
+
 ?> 
