@@ -104,6 +104,10 @@
     overflow-y:scroll;
 }
 
+.notifica-read > ul, .notifica-new > ul{
+	list-style-type: none;
+}
+
 .notifica-read > ul > li, .notifica-new > ul > li{
 	font-size: 120%;
 	font-weight: bold;
