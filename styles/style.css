@@ -184,8 +184,7 @@ footer > .about-contatti > p, footer > .ext-links > p{
 }
 
 .prodotto h3{
-	height: 100px;
-	
+	height: 100px;	
 }
 
 .prodotto p{
@@ -203,6 +202,14 @@ footer > .about-contatti > p, footer > .ext-links > p{
 .prodotto .detailsBtn{			
 	background: #006666;
 	border: 3px solid #006666;
+}
+
+.insertBtn {		
+	background: #006666;
+	border: 3px solid #006666;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;  
 }
 
 /* FINE PRODOTTI */
