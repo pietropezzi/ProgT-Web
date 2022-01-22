@@ -5,7 +5,7 @@
         <ul>
             <li class="mx-1 mt-2">Cliente: <?php echo $ordine["cliente"]; ?></li>
             <li class="mx-1">Quantità venduta: <?php echo $ordine["quantita"]; ?></li>
-            <li class="mx-1">Stutus Prodotto: <?php echo $ordine["status"]; ?></li>
+            <li class="mx-1">Stato consegna del prodotto:<?php echo $ordine["status"]; ?></li>
             <form action="update_order_status.php" method="post">
                 <select id="status" name="status">
                     <option value="da_spedire">Da Spedire</option>

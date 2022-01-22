@@ -377,6 +377,18 @@ class DatabaseHelper{
 		return $result->fetch_all(MYSQLI_ASSOC);
 	}
 
+	public function getClientOrders($cliente){
+		$query = "SELECT o.cliente, o.venditore, o.nome, o.prezzo, o.quantita, o.status, p.immagine, a.data FROM ordine as o, prodotti as p, acquisto as a WHERE o.nome = p.nome 
+		AND o.venditore = p.venditore AND o.id = a.id AND o.cliente = ? GROUP BY o.id ORDER BY a.data DESC";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('s', $cliente);
+		$stmt->execute();
+		$result = $stmt->get_result();		
+
+		return $result->fetch_all(MYSQLI_ASSOC);
+	}
+
+
 	public function getUserFromPurchase($id, $data){
 		$query = "SELECT a.id, a.data, o.cliente FROM acquisto as a, ordine as o WHERE o.id = a.id AND a.id = ? AND a.data = ?";
 		$stmt = $this->db->prepare($query);
