@@ -19,7 +19,7 @@ if ($mimetype == 'image/jpg' || $mimetype == 'image/jpeg' || $mimetype == 'image
 	$checkInsert = $dbh->insertProduct($nome, $venditore, $prezzo, $tipo, $quantità, $breve_descrizione, $descrizione, basename($_FILES["immagine_prodotto"]["name"]));
 	if($checkInsert){	
 		$Message = "Inserimento del prodotto: ".$nome." eseguita con successo.";
-		require("your_product.php");	
+		require("index.php");	
 	}else{
 		$ErrorMessage = "INSERIMENTO DEL PRODOTTO FALLITO";
 		require("new_product.php");
