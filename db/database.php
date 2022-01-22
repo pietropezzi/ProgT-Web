@@ -209,12 +209,12 @@ class DatabaseHelper{
 
 		// notifica venditore
 		$data = date('Y-m-d H:i:s');
-		$tipo = "aggiunto";
+		$type = "aggiunto";
 		$status = "new";
 		$cliente = NULL;
 		$query = "INSERT INTO notifiche_venditore(data, email, tipo, status, nome_prod, quantita, cliente) VALUES(?, ?, ?, ?, ?, ?, ?)";
 		$notstmt = $this->db->prepare($query);
- 		$notstmt->bind_param('sssssss', $data, $venditore, $tipo, $status, $nome, $quantità, $cliente);
+ 		$notstmt->bind_param('sssssss', $data, $venditore, $type, $status, $nome, $quantità, $cliente);
 		$notstmt->execute();
 
   		return $stmt->execute();
