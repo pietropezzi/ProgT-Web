@@ -8,8 +8,8 @@ if(isset($_SESSION["email"])){
     $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Ordini" => "order.php"];
 		
 	if($_SESSION["type"] == "venditore"){
-		$Categories = ["Home", "Ordini", "I Tuoi Prodotti"];
-		$CatToLink = ["Home" => "index.php", "Ordini" => "order.php", "I Tuoi Prodotti" => "your_product.php"];		
+		$Categories = ["Home", "Ordini"];
+		$CatToLink = ["Home" => "index.php", "Ordini" => "order.php"];		
 	}	
 }
 

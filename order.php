@@ -7,8 +7,8 @@ if($_SESSION["type"] == "cliente"){
     $Categories = ["Home", "Carrello", "Notifiche"];
     $CatToLink = ["Home" => "index.php", "Carrello" => "cart.php", "Notifiche" => "notifications.php"];
 }else{
-    $Categories = ["Home", "Ordini", "I Tuoi Prodotti", "Notifiche"];
-    $CatToLink = ["Home" => "index.php", "Ordini" => "order.php", "I Tuoi Prodotti" => "your_product.php", "Notifiche" => "notifications.php"];		
+    $Categories = ["Home", "Notifiche"];
+    $CatToLink = ["Home" => "index.php", "Notifiche" => "notifications.php"];		
 }
 // Quantità nuove notifiche in sidebar
 if(isset($_SESSION["email"])){
