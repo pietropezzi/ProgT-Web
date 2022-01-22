@@ -457,6 +457,38 @@ form .user-details .input-box{
 	.register{
 		width: 30%;		
 	}
+
+	.details h2{
+		padding-bottom: 20px;
+		text-align: center;
+		border-bottom: 3px solid #000000;
+	}
+	.details .side{	
+		display: inline-block;
+		border: none;
+		position: relative;
+		float: right;
+		padding-top: 3%;
+		width: 30%;
+		height: 300px;
+	}
+
+	.details .img{	
+		display: inline-block;
+		border: none;
+		float: left;
+		width: 30%;
+		height: 300px;
+	}
+
+	.details .main{	
+		display: inline-block;
+		float: center;
+		border: none;
+		margin-top: 10px;
+		width: 30%;
+		height: 300px;
+	}
 }
 
 @media screen and (min-width:1024px){
@@ -464,4 +496,5 @@ form .user-details .input-box{
 	.prodotto {
 		width: 28%;					
 	}	
+	
 }
