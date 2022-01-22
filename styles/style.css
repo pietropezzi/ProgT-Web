@@ -177,18 +177,34 @@ footer > .about-contatti > p, footer > .ext-links > p{
 
 .prodotto {
 	display: inline-block;
-	margin: 10px 30px;
+	width: 85%;
+	margin: 10px 25px;
 	padding: 1%;
 	border-style: solid;
 }
 
+.prodotto h3{
+	height: 100px;
+	
+}
+
+.prodotto p{
+	height: 55px;
+}
+
 .immagine_prodotto{		
-	width: 250px;
-	height: 250px;
+	width: 225px;
+	height: 225px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;  
 }
+
+.prodotto .detailsBtn{			
+	background: #006666;
+	border: 3px solid #006666;
+}
+
 /* FINE PRODOTTI */
 
 /* MESSAGGI IN HOME */
@@ -418,7 +434,10 @@ form .user-details .input-box{
 		width: 60%;
 	}
 
-	
+	.prodotto {
+		width: 40%;					
+	}	
+
 	.sidebar > ul > li > a{
 		transition: .3s;
 	}
@@ -431,4 +450,11 @@ form .user-details .input-box{
 	.register{
 		width: 30%;		
 	}
+}
+
+@media screen and (min-width:1024px){
+
+	.prodotto {
+		width: 28%;					
+	}	
 }

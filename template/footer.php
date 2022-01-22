@@ -5,7 +5,7 @@
     <ul class="gestori">
         <li>Fabio Chiarini 
         <a href="https://github.com/FabioDrago13"><img src="<?php echo IMAGES_DIR; ?>github.png" alt="github"/></a>
-        <a href="#"><img src="<?php echo IMAGES_DIR; ?>email.png" alt="email"/></a>
+        <a href="mailto:fabio.chiarini@studio.unibo.it"><img src="<?php echo IMAGES_DIR; ?>email.png" alt="email"/></a>
         </li>
         <li>Pietro Pezzi 
         <a href="https://github.com/pietropezzi"><img src="<?php echo IMAGES_DIR; ?>github.png" alt="github"/></a>
