@@ -7,7 +7,7 @@
     <div class="prodotti my-2">
         <?php $result_get = $dbh->getMaxQuantity($prod["nome"], $prod["venditore"]);
             $max_quantity = implode($result_get[0]);?>
-        <img class="mx-4 mt-3 mb-3" src="<?php echo PROD_IMAGES_DIR.$prod["immagine"]; ?>" alt="logo"/>
+        <img class="prodImg mx-4 mt-3 mb-3" src="<?php echo PROD_IMAGES_DIR.$prod["immagine"]; ?>" alt="logo"/>
         <div class="info">
             <p><?php echo $prod["nome"]; ?></p>
             <p class="text-primary">Prezzo: <?php echo $prod["prezzo"]; ?>€</p>
@@ -15,12 +15,12 @@
                 <input type="hidden" name="venditore" value="<?php echo $prod["venditore"]?>"/>                                     
                 <label class="mt-2">Quantità:</label>
                 <input class="quantity" type="number" step="1" min="1" max="<?php echo $max_quantity;?>" id="quantità" name="quantita" value="<?php echo $prod["quantita"];?>" title="Qty">
-                <button class="aggiorna mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit">Aggiorna</button>
+                <button class="aggiorna text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit">Aggiorna</button>
             </form>
         </div>
         <form action="remove_to_cart.php" method="post"> 
             <input type="hidden" name="venditore" value="<?php echo $prod["venditore"]?>"/>                    
-            <button class="remove mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit">Rimuovi</button>
+            <button class="remove text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit"><img class= "removeImg" src="<?php echo IMAGES_DIR; ?>remove.png" alt="bin"/></button>
         </form>       
     </div>    
     <?php endforeach;

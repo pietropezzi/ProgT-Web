@@ -352,7 +352,7 @@ form .user-details .input-box{
   	border: 3px solid black;	
 }
 
-.cart img{	
+.cart .prodImg{	
 	max-width: 50%;
 	max-height: 50%;
 	padding-bottom: 15px;
@@ -365,11 +365,24 @@ form .user-details .input-box{
 
 .cart .prodotti .aggiorna{
 	float: right;
+	background: #006666;
+	border: 3px solid #006666;	
 }
 
 .cart .prodotti .remove{
-	float: left;
+	float: left;	
+    width: 40px;
+    height: 40px;    
+	background: #fff;
+	border: none;		
 }
+
+.cart .prodotti .removeImg{
+	width: 40px;
+    height: 40px;    
+	
+}
+
 
 .cart .resoconto {
 	margin: auto;
@@ -489,6 +502,7 @@ form .user-details .input-box{
 		width: 30%;
 		height: 300px;
 	}
+	
 }
 
 @media screen and (min-width:1024px){
