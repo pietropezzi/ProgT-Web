@@ -1,8 +1,4 @@
 <script src="js/checkPassword.js"></script>
-<script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
 <script src="js/checkData.js"></script>
 <div class="userdata">
     <img class="user_image" src="<?php echo IMAGES_DIR."user-icon.png"; ?>" alt="icona utente"/>

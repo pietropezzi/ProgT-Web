@@ -5,8 +5,7 @@
 </div>
 <?php endif; ?>
 <div class="my-4 text-white register">
-   <label class="mb-2">Inserisci un nuovo Prodotto</label>
-   <!--TODO non visualizza ma funziona -->
+   <label class="mb-2">Inserisci un nuovo Prodotto</label><br>
    <span class="text-white" id="err_prod"></span>
    <div>   
 		<form name="new_product" id="prod" action="insert_product.php" method="post" enctype="multipart/form-data">

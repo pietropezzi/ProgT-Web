@@ -7,7 +7,7 @@
 <div class="my-4 text-white register">
    <label class="mb-2">Registrati</label>
    <div>
-        <span class = "text-white "id="err_reg"></span>
+        <span class="text-white" id="err_reg"></span>
 		<form name="registrazione" action="registrazione.php" method="post" id="reg">
 			<div class="user-details">
 				<div class="input-box">
