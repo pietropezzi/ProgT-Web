@@ -7,7 +7,7 @@ body, header, h1, p, nav, aside, section, ul, li, footer{
 
 header{
 	background: #088484;
-	margin-bottom: 10px;
+	margin-bottom: 10px;	
 }
 
 header img{
@@ -383,11 +383,11 @@ form .user-details .input-box{
 	
 }
 
-
 .cart .resoconto {
 	margin: auto;
 	width: 90%;  	
   	border: 3px solid black;	
+	margin-top: 15%;
 }
 
 .cart .spaceUnder>td {
@@ -501,6 +501,23 @@ form .user-details .input-box{
 		margin-top: 10px;
 		width: 30%;
 		height: 300px;
+	}
+
+	.cart .prodotti{
+		display: inline-block;
+		width: 55%;	
+		margin: 0;
+		margin-left: 15px;	
+	}
+
+	.cart .resoconto{
+		width: 40%;
+		position:absolute;
+   		top: 160px;
+   		right:5px;
+		margin: 0;
+		
+
 	}
 	
 }

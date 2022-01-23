@@ -25,12 +25,12 @@
     </div>    
     <?php endforeach;
     if(!empty($cart_product)){?>          
-        <div class="resoconto mt-5 mb-1">
+        <div class="resoconto  mb-1">
             <table>           
                 <?php $totale = 0 ?>
                 <?php foreach($cart_product as $prod): ?>                  
                 <tr class="spaceUnder">       
-                    <td><?php echo $prod["nome"]; ?></td>
+                    <td class="px-1"><?php echo $prod["nome"]; ?></td>
                     <?php if($prod["quantita"] > 1){ ?>
                         <td class="quantity">x<?php echo $prod["quantita"]; ?></td> 
                     <?php }
