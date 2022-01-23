@@ -1,4 +1,8 @@
 <script src="js/checkPassword.js"></script>
+<script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
 <script src="js/checkData.js"></script>
 <div class="userdata">
     <img class="user_image" src="<?php echo IMAGES_DIR."user-icon.png"; ?>" alt="icona utente"/>
@@ -14,7 +18,8 @@
             <h2><?php echo $AggPassErr; ?></h2>
         </div>
     <?php endif; ?>
-    <form name="agg_pass" action="user/update-pass.php" onsubmit="return checkAggPassForm()" method="post"> 
+    <span id="err_pass"></span>
+    <form name="agg_pass" action="user/update-pass.php" method="post" id="pass"> 
         <h2>Aggiorna password</h2>
         <p>Per aggiornare la password, reinserire la vecchia password per la convalida per poi inserire la nuova due volte</p>
         <label for="oldpass">Vecchia password </label><input type="text" id="oldpass" name="oldpass"/><br>
@@ -27,7 +32,8 @@
             <h2><?php echo $AggDataErr; ?></h2>
         </div>
     <?php endif; ?>
-    <form name="agg_dati" action="user/update-data.php" onsubmit="return checkData()" method="post">
+    <span id="err_dati"></span>
+    <form name="agg_dati" action="user/update-data.php" method="post" id="dati">
         <h2>Aggiorna dati</h2>
         <p>Per lasciare i vari dati invariati non compilare il campo.<br>
         Una volta inseriti correttamente i dati, dopo il loro aggiornamento, sarà necessario effettuare nuovamente il login.</p>
