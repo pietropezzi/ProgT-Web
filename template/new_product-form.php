@@ -1,8 +1,15 @@
 <script src="js/checkProductForm.js"></script>
+<?php if(isset($ErrorMessage)): ?> 
+<div class="errormessage">
+    <h2 class="font-verdana text-center"><?php echo $ErrorMessage; ?></h2>
+</div>
+<?php endif; ?>
 <div class="my-4 text-white register">
    <label class="mb-2">Inserisci un nuovo Prodotto</label>
-   <div>
-		<form name="new_product" id="new_product" action="insert_product.php" onsubmit="return checkProductForm()" method="post" enctype="multipart/form-data">
+   <!--TODO non visualizza ma funziona -->
+   <span class="text-white" id="err_prod"></span>
+   <div>   
+		<form name="new_product" id="prod" action="insert_product.php" method="post" enctype="multipart/form-data">
 			<div>				
                 <div class="input-box">
                     <label class="mb-1">Nome</label><br>

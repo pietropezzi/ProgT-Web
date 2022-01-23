@@ -207,17 +207,19 @@ class DatabaseHelper{
   		$stmt = $this->db->prepare($query);
  		$stmt->bind_param('ssdsisss', $nome, $venditore, $prezzo, $tipo, $quantità, $breve_descrizione, $descrizione, $immagine);
 
-		// notifica venditore
-		$data = date('Y-m-d H:i:s');
-		$type = "aggiunto";
-		$status = "new";
-		$cliente = NULL;
-		$query = "INSERT INTO notifiche_venditore(data, email, tipo, status, nome_prod, quantita, cliente) VALUES(?, ?, ?, ?, ?, ?, ?)";
-		$notstmt = $this->db->prepare($query);
- 		$notstmt->bind_param('sssssss', $data, $venditore, $type, $status, $nome, $quantità, $cliente);
-		$notstmt->execute();
+		if($stmt->execute()){
+			// notifica venditore
+			$data = date('Y-m-d H:i:s');
+			$type = "aggiunto";
+			$status = "new";
+			$cliente = NULL;
+			$query = "INSERT INTO notifiche_venditore(data, email, tipo, status, nome_prod, quantita, cliente) VALUES(?, ?, ?, ?, ?, ?, ?)";
+			$notstmt = $this->db->prepare($query);
+ 			$notstmt->bind_param('sssssss', $data, $venditore, $type, $status, $nome, $quantità, $cliente);
+			return $notstmt->execute();			
+		}	
 
-  		return $stmt->execute();
+		return $stmt->execute();
 	}	
 
 	public function getProductsBySeller($venditore){
