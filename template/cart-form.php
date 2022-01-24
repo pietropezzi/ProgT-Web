@@ -15,19 +15,19 @@
                 <input type="hidden" name="venditore" value="<?php echo $prod["venditore"]?>"/>                                     
                 <label class="mt-2">Quantità:</label>
                 <input class="quantity" type="number" step="1" min="1" max="<?php echo $max_quantity;?>" id="quantità" name="quantita" value="<?php echo $prod["quantita"];?>" title="Qty">
-                <button class="aggiorna text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit">Aggiorna</button>
+               <button class="aggiorna text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit">Aggiorna</button>
             </form>
+            <?php if($prod["quantita"] > $prod["prod_quantita"]): ?>
+                <?php $CantBuy = true; ?>
+                <p>La quantità disponibile del prodotto non è sufficente per soddisfare l'acquisto,<br>
+                quantità disponibile: <?php echo $prod["prod_quantita"]; ?></p>
+            <?php endif; ?>       
+    </div>   
         </div>
         <form action="remove_to_cart.php" method="post"> 
             <input type="hidden" name="venditore" value="<?php echo $prod["venditore"]?>"/>                    
             <button class="remove text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit"><img class= "removeImg" src="<?php echo IMAGES_DIR; ?>remove.png" alt="bin"/></button>
-        </form>
-        <?php if($prod["quantita"] > $prod["prod_quantita"]): ?>
-            <?php $CantBuy = true; ?>
-            <p>La quantità disponibile del prodotto non è sufficente per soddisfare l'acquisto,<br>
-            quantità disponibile: <?php echo $prod["prod_quantita"]; ?></p>
-        <?php endif; ?>       
-    </div>    
+        </form> 
     <?php endforeach;
     if(!empty($cart_product)){?>          
         <div class="resoconto  mb-1">

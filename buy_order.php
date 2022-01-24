@@ -32,4 +32,15 @@ foreach($prodotti as $prod){
     if(!$checkInsert){
         $ErrorMessage = "ACQUISTO FALLITO";
         require("cart.php");
+    }
+
+} 
+
+/* notifica cliente*/
+if($_SESSION["type"] == "cliente"){
+    $dbh->insertNotificationPurchase($data, $cliente);
 }
+
+require("index.php");
+
+?>
