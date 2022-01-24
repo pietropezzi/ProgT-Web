@@ -96,6 +96,11 @@
 
 /* FINE UPDATE USER DATA */
 
+span{
+	font-size: 120%;
+	font-weight: bold;
+}
+
 /* NOTIFICHE */
 
 .notifiche-container{
