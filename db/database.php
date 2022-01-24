@@ -417,5 +417,23 @@ class DatabaseHelper{
 
 		return $stmt->execute();
 	}
+
+	public function addCreditCard($email, $numero, $scadenzaMese, $scadenzaAnno, $cvv2){
+		$query = "INSERT INTO carta_di_credito(email, numero, scadenzaMese, scadenzaAnno, cvv2) VALUES (?, ?, ?, ?, ?)";		
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('sisis', $email, $numero, $scadenzaMese, $scadenzaAnno, $cvv2);
+
+		return $stmt->execute();
+	}
+
+	public function getCreditCard($email){
+		$query = "SELECT * FROM carta_di_credito WHERE email = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('s', $email);
+		$stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_object();
+	}
 }
 ?>

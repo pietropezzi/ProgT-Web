@@ -4,7 +4,6 @@ $(document).ready(function(){
 		var username = document.getElementById("username").value
 		var email = document.getElementById("email").value	
 		var phone = document.getElementById("telefono").value	
-
 		var number = /^[0-9]+$/;
 		var letters = /^[A-Za-z]+$/;
 		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -27,4 +26,3 @@ $(document).ready(function(){
 		}
 	});
 });
-

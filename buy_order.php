@@ -1,6 +1,5 @@
 <?php
 require_once("bootstrap.php");
-
 $cliente = $_SESSION["email"];
 $status = "cart";
 
@@ -24,26 +23,13 @@ foreach($prodotti as $prod){
     $result_get = $dbh->getMaxQuantity($prod["nome"], $prod["venditore"]);
     $max_quantity = implode($result_get[0]);
     $new_quantity = $max_quantity - $prod["quantita"];
-
     $checkUpdateQuantity = $dbh->updateQuantity($prod["nome"], $prod["venditore"], $new_quantity);
     $dbh->notifyVendorBoughtProd($prod["nome"], $prod["venditore"], $data, $prod["quantita"], $cliente);
     if($new_quantity == 0){
         // notifica venditore prodotto esaurito
         $dbh->notifyVendorOutOfStock($prod["nome"], $prod["venditore"], $data);
     }
-
     if(!$checkInsert){
         $ErrorMessage = "ACQUISTO FALLITO";
         require("cart.php");
-    }
-
-} 
-
-/* notifica cliente*/
-if($_SESSION["type"] == "cliente"){
-    $dbh->insertNotificationPurchase($data, $cliente);
 }
-
-require("index.php");
-
-?>

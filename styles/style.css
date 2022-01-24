@@ -387,8 +387,11 @@ form .user-details .input-box{
 .cart .resoconto {
 	margin: auto;
 	width: 90%;  	
-  	border: 3px solid black;	
 	margin-top: 15%;
+}
+
+.cart .metodo{
+	border: 3px solid black;
 }
 
 .cart .spaceUnder>td {
@@ -396,6 +399,7 @@ form .user-details .input-box{
   }
 
 .cart table {
+	border: 3px solid black;
 	width: 100%;
 	
   }
@@ -451,7 +455,7 @@ form .user-details .input-box{
 		max-height: 5%;
 		max-width: 5%;
 	}
-	
+
 	.ordine{
 		width: 60%;
 	}
@@ -517,6 +521,10 @@ form .user-details .input-box{
 		height: 300px;
 	}
 
+	.cart{
+		min-height: 400px;
+	}
+
 	.cart .prodotti{
 		display: inline-block;
 		width: 55%;	
@@ -530,10 +538,7 @@ form .user-details .input-box{
    		top: 160px;
    		right:5px;
 		margin: 0;
-		
-
-	}
-	
+	}	
 }
 
 @media screen and (min-width:1024px){
