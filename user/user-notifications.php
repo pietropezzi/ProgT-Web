@@ -35,7 +35,12 @@
         </ul>
         <p>E' stato aggiornato a:  <?php echo $notifica["tipo"]; ?></p>
     <?php endif; ?>
-
+    <?php if($notifica["tipo"] == "agg_carta"): ?>
+        <p>E' stata aggiunta una carta di credito al tuo account.</p>
+    <?php endif; ?> 
+    <?php if($notifica["tipo"] == "rem_carta"): ?>
+        <p>La carta di credito collegata al tuo account è stata rimossa.</p>
+    <?php endif; ?> 
     <?php if($notifica["tipo"] == "aggiunto"): ?>
         <p>Hai aggiunto un nuovo prodotto: <?php echo "'".$notifica["nome_prod"]."'"; ?></p>
         <p>Quantità: <?php echo $notifica["quantita"]; ?></p>

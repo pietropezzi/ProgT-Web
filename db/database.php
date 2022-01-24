@@ -422,6 +422,36 @@ class DatabaseHelper{
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('sssis', $email, $numero, $scadenzaMese, $scadenzaAnno, $cvv2);
 
+		// notifica cliente
+		$tipo = "agg_carta";
+		$data_notifica = date("Y-m-d H:i");
+		$data = NULL;
+		$status = "new";
+		$id = NULL;
+		$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status, order_id) VALUES(?, ?, ?, ?, ?, ?)";
+		$stmtnot = $this->db->prepare($notifquery);
+		$stmtnot->bind_param('sssssi', $data_notifica, $email, $tipo, $data, $status, $id);
+		$stmtnot->execute();
+
+		return $stmt->execute();
+	}
+
+	public function removeCreditCard($email){
+		$query = "DELETE FROM carta_di_credito WHERE email = ?";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param('s', $email);
+
+		// notifica cliente
+		$tipo = "rem_carta";
+		$data_notifica = date("Y-m-d H:i");
+		$data = NULL;
+		$status = "new";
+		$id = NULL;
+		$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status, order_id) VALUES(?, ?, ?, ?, ?, ?)";
+		$stmtnot = $this->db->prepare($notifquery);
+		$stmtnot->bind_param('sssssi', $data_notifica, $email, $tipo, $data, $status, $id);
+		$stmtnot->execute();
+
 		return $stmt->execute();
 	}
 

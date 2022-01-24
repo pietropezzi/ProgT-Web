@@ -41,15 +41,12 @@
         <input class="sub_button" type="submit" value="Aggiorna"><br>
         <span id="err_dati"></span>
     </form>
-
     <?php if(!isset($card_result)){ ?>
-
         <?php if(isset($AddCardErr)): ?>
             <div class="errormessage">
                 <h2><?php echo $AddCardErr; ?></h2>
             </div>
         <?php endif; ?>
-   
         <form name="credit-form" action="add_credit_card.php" method="post" id="credit">
             <h2>Aggiugi carta di credito</h2>        
             <label for="numero">Numero della carta</label><input type="text" id="numero" name="numero" required ><br>
@@ -60,10 +57,11 @@
         </form>
     <?php }
     else {?>
-        <form name="credit-show">
+        <form name="credit-show" action="remove_credit_card.php">
             <h2>La tua Carta di credito</h2>        
             <label for="numero">Numero della carta: <?php echo $card_result->numero?></label><br>
             <label for="scadenza">Data di Scadenza: <?php echo $card_result->scadenzaMese."/".$card_result->scadenzaAnno?></label><br>
+            <input class="sub_button" type="submit" value="Rimuovi carta"><br>
         </form>
     <?php } ?>
 </div>
