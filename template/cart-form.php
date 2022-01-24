@@ -21,13 +21,12 @@
                 <?php $CantBuy = true; ?>
                 <p>La quantità disponibile del prodotto non è sufficente per soddisfare l'acquisto,<br>
                 quantità disponibile: <?php echo $prod["prod_quantita"]; ?></p>
-            <?php endif; ?>       
-    </div>   
-        </div>
-        <form action="remove_to_cart.php" method="post"> 
+            <?php endif; ?>
+            <form action="remove_to_cart.php" method="post"> 
             <input type="hidden" name="venditore" value="<?php echo $prod["venditore"]?>"/>                    
-            <button class="remove text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit"><img class= "removeImg" src="<?php echo IMAGES_DIR; ?>remove.png" alt="bin"/></button>
-        </form> 
+            <button class="remove text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit"><img class= "removeImg" src="<?php echo IMAGES_DIR; ?>remove.png" alt="bin"/></button>      
+        </div>   
+    </div>
     <?php endforeach;
     if(!empty($cart_product)){?>          
         <div class="resoconto  mb-1">

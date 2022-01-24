@@ -44,13 +44,14 @@ CREATE TABLE `acquisto`(
 /*TODO: foreign key*/
 
 CREATE TABLE `notifiche_cliente`(
+    `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
     `data` datetime NOT NULL, 
     `email` varchar(50) NOT NULL,
     `tipo` varchar(50) NOT NULL,
     `status` varchar(50) NOT NULL,
     `data_acquisto` datetime,
     `order_id` int(255),
-    PRIMARY KEY(`data`,`email`),
+    PRIMARY KEY(`id`),
     FOREIGN KEY (`email`)
         REFERENCES users(`email`)
 );

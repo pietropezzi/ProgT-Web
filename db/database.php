@@ -401,7 +401,7 @@ class DatabaseHelper{
 		return $result->fetch_object();
 	}
 
-	public function updateBuyingStatus($data, $id, $status){
+	public function updateBuyingStatus($data, $id, $status, $data_notifica){
 		$query = "UPDATE acquisto SET status = ? WHERE data = ?  AND id = ?";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('ssi', $status, $data, $id);
@@ -409,7 +409,6 @@ class DatabaseHelper{
 		//notifica cliente aggiornamento status 
 		$user = $this->getUserFromPurchase($id, $data);
 		$notif_status = "new";
-		$data_notifica = date("Y-m-d H:i");
 		$notifquery = "INSERT INTO notifiche_cliente(data, email, tipo, data_acquisto, status, order_id) VALUES(?, ?, ?, ?, ?, ?)";
 		$stmtnot = $this->db->prepare($notifquery);
 		$stmtnot->bind_param('sssssi', $data_notifica, $user->cliente, $status, $data, $notif_status, $id);
