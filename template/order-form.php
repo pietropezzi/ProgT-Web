@@ -1,6 +1,5 @@
 <?php foreach($ordini as $ordine): ?>
     <div class="ordine">
-    <img class="immagine_prodotto" src="<?php echo PROD_IMAGES_DIR.$ordine["immagine"]; ?>" alt="immagine_prodotto"/>
     <h3 class="text-center">Data: <?php echo $ordine["data"] ?></h3>
     <p class="mx-1">Venduto prodotto <?php echo "'".$ordine["nome"]."'"; ?> ,info:</p>
         <ul>
