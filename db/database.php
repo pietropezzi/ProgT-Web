@@ -420,7 +420,7 @@ class DatabaseHelper{
 	public function addCreditCard($email, $numero, $scadenzaMese, $scadenzaAnno, $cvv2){
 		$query = "INSERT INTO carta_di_credito(email, numero, scadenzaMese, scadenzaAnno, cvv2) VALUES (?, ?, ?, ?, ?)";		
 		$stmt = $this->db->prepare($query);
-		$stmt->bind_param('sisis', $email, $numero, $scadenzaMese, $scadenzaAnno, $cvv2);
+		$stmt->bind_param('sssis', $email, $numero, $scadenzaMese, $scadenzaAnno, $cvv2);
 
 		return $stmt->execute();
 	}

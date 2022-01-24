@@ -12,10 +12,10 @@ $cvv2_hash = password_hash($cvv2, PASSWORD_BCRYPT);
 $checkInsert = $dbh->addCreditCard($email, $numero, $scadenzaMese, $scadenzaAnno, $cvv2_hash);
 
 if($checkInsert){		
-    require("index.php");	
-    
-}else{
-	$ErrorMessage = "INSERIMENTO DEL PRODOTTO FALLITO";
-	require("index.php");
+	require("profile.php");
+}
+else{
+	$AddCardErr = "INSERIMENTO DELLA CARTA FALLITA";
+	require("profile.php");
 }
 ?>

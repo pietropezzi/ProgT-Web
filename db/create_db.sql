@@ -72,7 +72,7 @@ CREATE TABLE `notifiche_venditore`(
 
 
 CREATE TABLE `carta_di_credito`(
-    `numero` int(20) NOT NULL,    
+    `numero` varchar(50) NOT NULL,    
     `email` varchar(50) NOT NULL,
     `scadenzaMese`varchar(5) NOT NULL,
     `scadenzaAnno`int(5) NOT NULL,
