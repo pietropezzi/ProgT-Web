@@ -180,7 +180,8 @@ footer > .about-contatti > p, footer > .ext-links > p{
 	width: 85%;
 	margin: 10px 25px;
 	padding: 1%;
-	border-style: solid;
+	border: 2px solid #000000;
+	border-radius: 9px;
 }
 
 .prodotto h3{
@@ -349,7 +350,8 @@ form .user-details .input-box{
 	margin: auto;
   	width: 90%;	  
 	height: 200px;
-  	border: 3px solid black;	
+	border: 2px solid #000000;
+	border-radius: 9px;	
 	overflow-y: scroll;
 }
 
@@ -390,8 +392,9 @@ form .user-details .input-box{
 }
 
 .cart .metodo{
-	border: 3px solid black;
-	}
+	border: 2px solid black;
+	border-radius: 9px;
+}
 
 .cart .metodo .scelta{
 	margin: 5%;
@@ -402,10 +405,9 @@ form .user-details .input-box{
   }
 
 .cart table {
-	border: 3px solid black;
+	border: 2px solid black;
 	width: 100%;
-	
-  }
+}
 
 .cart .totale {
 	border-top: 2px solid black;

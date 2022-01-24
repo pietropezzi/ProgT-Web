@@ -7,7 +7,7 @@ if($checkDelete){
 	require("profile.php");
 }
 else{
-	$AddCardErr = "INSERIMENTO DELLA CARTA FALLITA";
+	$AddCardErr = "RIMOZIONE CARTA FALLITA";
 	require("profile.php");
 }
 ?>
