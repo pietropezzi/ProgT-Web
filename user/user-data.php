@@ -18,9 +18,9 @@
     <form name="agg_pass" action="user/update-pass.php" method="post" id="pass"> 
         <h2>Aggiorna password</h2>
         <p>Per aggiornare la password, reinserire la vecchia password per la convalida per poi inserire la nuova due volte</p>
-        <label for="oldpass">Vecchia password </label><input type="text" id="oldpass" name="oldpass"/><br>
-        <label for="newpass">Nuova password </label><input type="text" id="newpass" name="newpass"/><br>
-        <label for="newpass2">Nuova password </label><input type="text" id="newpass2" name="newpass2"/>
+        <label for="oldpass">Vecchia password </label><input type="password" id="oldpass" name="oldpass"/><br>
+        <label for="newpass">Nuova password </label><input type="password" id="newpass" name="newpass"/><br>
+        <label for="newpass2">Nuova password </label><input type="password" id="newpass2" name="newpass2"/>
         <input class="sub_button" type="submit" value="Aggiorna">
     </form>
     <?php if(isset($AggDataErr)): ?>
