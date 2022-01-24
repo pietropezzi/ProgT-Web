@@ -370,7 +370,7 @@ class DatabaseHelper{
 	}
 
 	public function getSellerOrder($venditore){
-		$query = "SELECT o.nome, o.cliente, o.quantita, a.data, a.status, o.id FROM ordine as o, acquisto as a WHERE o.id = a.id AND venditore = ? GROUP BY o.id ORDER BY a.data";
+		$query = "SELECT o.nome, o.venditore, o.cliente, o.quantita, a.data, a.status, o.id, p.immagine FROM ordine as o, acquisto as a, prodotti as p WHERE p.nome = o.nome AND o.id = a.id AND o.venditore = ? GROUP BY o.id ORDER BY a.data";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('s', $venditore);
 		$stmt->execute();
