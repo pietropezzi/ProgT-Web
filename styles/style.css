@@ -380,8 +380,7 @@ form .user-details .input-box{
 
 .cart .prodotti .removeImg{
 	width: 40px;
-    height: 40px;    
-	
+    height: 40px;
 }
 
 .cart .resoconto {
@@ -392,7 +391,11 @@ form .user-details .input-box{
 
 .cart .metodo{
 	border: 3px solid black;
-}
+	}
+
+.cart .metodo .scelta{
+	margin: 5%;
+	}
 
 .cart .spaceUnder>td {
 	padding-bottom: 1em;
@@ -422,7 +425,7 @@ form .user-details .input-box{
 }
 
 .cart .shopBtn{		
-	width: 80%;	
+	width: 80%;		
 	background: #006666;
 	border: 3px solid #006666;
 }

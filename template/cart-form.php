@@ -1,4 +1,5 @@
-<div class="cart">    
+<div class="cart">  
+    <?php  $card_result = $dbh->getCreditCard($_SESSION["email"]); ?>  
     <?php 
     if(empty($cart_product)){?>          
         <p class="empty m-5 p-5">Il carrello è vuoto</p>
@@ -23,21 +24,32 @@
                 quantità disponibile: <?php echo $prod["prod_quantita"]; ?></p>
             <?php endif; ?>
             <form action="remove_to_cart.php" method="post"> 
-            <input type="hidden" name="venditore" value="<?php echo $prod["venditore"]?>"/>                    
-            <button class="remove text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit"><img class= "removeImg" src="<?php echo IMAGES_DIR; ?>remove.png" alt="bin"/></button>      
+                <input type="hidden" name="venditore" value="<?php echo $prod["venditore"]?>"/>                    
+                <button class="remove text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit"><img class= "removeImg" src="<?php echo IMAGES_DIR; ?>remove.png" alt="bin"/></button>
+            </form>
         </div>   
     </div>
     <?php endforeach;
     if(!empty($cart_product)){?>          
         <div class="resoconto  mb-1">
-            <div class="metodo mb-2">
-                <input type="radio" name="type" value="contanti" id="dot-1" checked>
-				<label class="name1" >Pagamento alla consegna</label><br>
-				<input class="name2" type="radio" name="type" value="card" id="dot-1" >
-				<label>Usa carta di credito</label>
-                <form action="profile.php">
-                    <button class="shopBtn text-white my-2" type="submit">Aggiugi la carta di credito</button>
-                </form>
+            <div class="metodo mb-2"> 
+                <div class="scelta">               
+                    <input type="radio" name="type" value="contanti" id="dot-1" checked>
+				    <label class="name1" >Pagamento alla consegna</label><br>
+                </div>
+                <?php if(!empty($card_result)){?>
+                    <div class="scelta">      
+				        <input class="name2" type="radio" name="type" value="card" id="dot-1" >                
+				        <label>Usa carta di credito: <?php echo $card_result->numero ?></label>
+                    </div>
+                <?php }  
+                else { ?> 
+               <div class="text-center">  
+                    <form action="profile.php">
+                        <button class="shopBtn text-white my-2" type="submit">Aggiugi la carta di credito</button>
+                    </form>
+                </div>
+                <?php } ?>     
             </div>
             <table>           
                 <?php $totale = 0 ?>
@@ -69,4 +81,3 @@
         </div>
     <?php }?> 
 </div>
-
