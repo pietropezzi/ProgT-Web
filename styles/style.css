@@ -350,9 +350,6 @@ form .user-details .input-box{
   	width: 90%;	  
 	height: 200px;
   	border: 3px solid black;	
-	display: block;
-	clear: left;
-	overflow-y: scroll;
 }
 
 .cart .prodImg{	
@@ -439,12 +436,25 @@ form .user-details .input-box{
 	transition: .4s;
 }
 
+.ordine > p{
+	font-size: 120%;
+}
+
+.ordine > ul{
+	margin-left: 15px;
+	list-style-type: none;
+}
+
 @media screen and (min-width:768px){
 	header img{
 		max-height: 5%;
 		max-width: 5%;
 	}
 	
+	.ordine{
+		width: 60%;
+	}
+
 	.user{
 		overflow: hidden;
 	}
@@ -507,12 +517,10 @@ form .user-details .input-box{
 	}
 
 	.cart .prodotti{
-		display: block;
+		display: inline-block;
 		width: 55%;	
 		margin: 0;
-		margin-left: 15px;
-		clear: left;
-		overflow-y: scroll;
+		margin-left: 15px;	
 	}
 
 	.cart .resoconto{
@@ -521,6 +529,8 @@ form .user-details .input-box{
    		top: 160px;
    		right:5px;
 		margin: 0;
+		
+
 	}
 	
 }
