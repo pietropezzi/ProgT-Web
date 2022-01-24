@@ -12,4 +12,3 @@
         </ul>  
     </div>
 <?php endforeach;?>
-<!--  o.venditore, o.nome, o.prezzo, o.quantita, o.status, p.immagine -->

@@ -350,6 +350,9 @@ form .user-details .input-box{
   	width: 90%;	  
 	height: 200px;
   	border: 3px solid black;	
+	display: block;
+	clear: left;
+	overflow-y: scroll;
 }
 
 .cart .prodImg{	
@@ -504,10 +507,12 @@ form .user-details .input-box{
 	}
 
 	.cart .prodotti{
-		display: inline-block;
+		display: block;
 		width: 55%;	
 		margin: 0;
-		margin-left: 15px;	
+		margin-left: 15px;
+		clear: left;
+		overflow-y: scroll;
 	}
 
 	.cart .resoconto{
@@ -516,8 +521,6 @@ form .user-details .input-box{
    		top: 160px;
    		right:5px;
 		margin: 0;
-		
-
 	}
 	
 }

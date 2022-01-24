@@ -281,7 +281,7 @@ class DatabaseHelper{
 	}
 
 	public function getProductsCart($cliente, $status){
-		$query = "SELECT o.id, o.nome, o.prezzo, o.quantita, o.venditore, p.immagine FROM ordine as o, prodotti as p WHERE o.nome = p.nome AND cliente = ? AND status = ? GROUP BY o.id";
+		$query = "SELECT o.id, o.nome, o.prezzo, o.quantita, o.venditore, p.immagine, p.quantita as prod_quantita FROM ordine as o, prodotti as p WHERE o.nome = p.nome AND cliente = ? AND status = ? GROUP BY o.id";
 		$stmt = $this->db->prepare($query);
 		$stmt->bind_param('ss', $cliente, $status);
 		$stmt->execute();

@@ -6,6 +6,14 @@ $status = "cart";
 
 $prodotti = $dbh->getProductsCart($cliente, $status);
 $data = date('Y-m-d H:i:s');
+//controllo che si possa fare l'acquisto
+foreach($prodotti as $prod){
+    if($prod["quantita"] > $prod["prod_quantita"]){
+        header("Location: cart.php");
+        die();
+    }
+}
+
 foreach($prodotti as $prod){
     /*Per ogni prodotto lo mette in acquisto*/
     $checkInsert = $dbh->buyingProduct($prod["id"], $data);

@@ -17,6 +17,11 @@
                 <input class="quantity" type="number" step="1" min="1" max="<?php echo $max_quantity;?>" id="quantità" name="quantita" value="<?php echo $prod["quantita"];?>" title="Qty">
                 <button class="aggiorna text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit">Aggiorna</button>
             </form>
+            <?php if($prod["quantita"] > $prod["prod_quantita"]): ?>
+            <?php $CantBuy = true; ?>
+            <p>La quantità disponibile del prodotto non è sufficente per soddisfare l'acquisto,<br>
+            quantità disponibile: <?php echo $prod["prod_quantita"]; ?></p>
+            <?php endif; ?>
         </div>
         <form action="remove_to_cart.php" method="post"> 
             <input type="hidden" name="venditore" value="<?php echo $prod["venditore"]?>"/>                    
@@ -46,11 +51,13 @@
                     <td class="price"> <?php echo $totale?>€</td>    
                 </tr>           
             </table>
+            <?php if(!isset($CantBuy)): ?>
             <div class="text-center">
                 <form action="buy_order.php">
                     <button class="shopBtn text-white my-2" type="submit">Procedi all'ordine</button>
                 </form>
             </div>
+            <?php endif; ?>
         </div>
     <?php }?> 
 </div>
