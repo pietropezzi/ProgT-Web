@@ -13,9 +13,11 @@
             <p><?php echo $prod["nome"]; ?></p>
             <p class="text-primary">Prezzo: <?php echo $prod["prezzo"]; ?>€</p>
             <form action="update_cart_quantity.php" method="post"> 
+                <?php $id = $prod["nome"]; 
+                      $id = str_replace(" ", "", $id); ?>
                 <input type="hidden" name="venditore" value="<?php echo $prod["venditore"]?>"/>                                     
-                <label class="mt-2">Quantità:</label>
-                <input class="quantity" type="number" step="1" min="1" max="<?php echo $max_quantity;?>" id="quantità" name="quantita" value="<?php echo $prod["quantita"];?>" title="Qty">
+                <label class="mt-2" for="qt-<?php echo $id; ?>">Quantità:</label>
+                <input class="quantity" type="number" step="1" min="1" max="<?php echo $max_quantity;?>" id="qt-<?php echo $id; ?>" name="quantita" value="<?php echo $prod["quantita"];?>" title="Qty">
                <button class="aggiorna text-white mx-4 my-2" name ="nome" value="<?php echo $prod["nome"]?>" type="submit">Aggiorna</button>
             </form>
             <?php if($prod["quantita"] > $prod["prod_quantita"]): ?>
@@ -35,12 +37,12 @@
             <div class="metodo mb-2"> 
                 <div class="scelta">               
                     <input type="radio" name="type" value="contanti" id="dot-1" checked>
-				    <label class="name1" >Pagamento alla consegna</label><br>
+				    <label class="name1" for="dot-1">Pagamento alla consegna</label><br>
                 </div>
                 <?php if(!empty($card_result)){?>
                     <div class="scelta">      
-				        <input class="name2" type="radio" name="type" value="card" id="dot-1" >                
-				        <label>Usa carta di credito: <?php echo $card_result->numero ?></label>
+				        <input class="name2" type="radio" name="type" value="card" id="dot-2" >                
+				        <label for="dot-2">Usa carta di credito: <?php echo $card_result->numero ?></label>
                     </div>
                 <?php }  
                 else { ?> 
