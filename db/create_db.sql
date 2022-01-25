@@ -1,7 +1,9 @@
+-- Creazione schema pc_hardware
 CREATE SCHEMA IF NOT EXISTS `pc_hardware` DEFAULT CHARACTER SET utf8 ;
 USE `pc_hardware`;
 
-CREATE TABLE `users`(
+-- Creazione tabella pc_hardware.users
+CREATE TABLE IF NOT EXISTS `pc_hardware`.`users`(
     `email` varchar(50) NOT NULL,
     `name` varchar(50) NOT NULL,
     `username` varchar(50) NOT NULL,
@@ -9,10 +11,10 @@ CREATE TABLE `users`(
     `type` varchar(50) NOT NULL,
     `phone` varchar(255),
     PRIMARY KEY (`email`)   
-);
+)ENGINE = InnoDB;
 
--- Restano diversi attributi da mettere 
-CREATE TABLE `prodotti`(
+-- Creazione tabella pc_hardware.prodotti
+CREATE TABLE IF NOT EXISTS `pc_hardware`.`prodotti`(
     `nome` varchar(50) NOT NULL,
     `venditore` varchar(50) NOT NULL,
     `prezzo` decimal(10, 2) NOT NULL,   
@@ -22,9 +24,10 @@ CREATE TABLE `prodotti`(
     `descrizione` varchar(255) NOT NULL,
     `immagine` varchar(255) NOT NULL,
     PRIMARY KEY(`nome`, `venditore`)
-);
+)ENGINE = InnoDB;
 
-CREATE TABLE `ordine`(
+-- Creazione tabella pc_hardware.ordine
+CREATE TABLE IF NOT EXISTS `pc_hardware`.`ordine`(
     `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
     `cliente` varchar(50) NOT NULL,
     `venditore` varchar(50) NOT NULL,
@@ -33,17 +36,18 @@ CREATE TABLE `ordine`(
     `quantita` int(50) NOT NULL,
     `status`  varchar(50) NOT NULL,
     PRIMARY KEY(`id`)
-)AUTO_INCREMENT=1;
+)AUTO_INCREMENT=1,ENGINE = InnoDB;
 
-CREATE TABLE `acquisto`(
+-- Creazione tabella pc_hardware.acquisto
+CREATE TABLE IF NOT EXISTS `pc_hardware`.`acquisto`(
     `id` int(255) NOT NULL,
     `data` datetime NOT NULL,    
     `status`  varchar(50) NOT NULL,
     PRIMARY KEY(`id`,`data`)
-);
-/*TODO: foreign key*/
+)ENGINE = InnoDB;
 
-CREATE TABLE `notifiche_cliente`(
+-- Creazione tabella pc_hardware.notifiche_cliente
+CREATE TABLE IF NOT EXISTS `pc_hardware`.`notifiche_cliente`(
     `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
     `data` datetime NOT NULL, 
     `email` varchar(50) NOT NULL,
@@ -54,9 +58,10 @@ CREATE TABLE `notifiche_cliente`(
     PRIMARY KEY(`id`),
     FOREIGN KEY (`email`)
         REFERENCES users(`email`)
-);
+)ENGINE = InnoDB;
 
-CREATE TABLE `notifiche_venditore`(
+-- Creazione tabella pc_hardware.notifiche_venditore
+CREATE TABLE IF NOT EXISTS `pc_hardware`.`notifiche_venditore`(
     `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
     `data` datetime NOT NULL,
     `email` varchar(50) NOT NULL,
@@ -70,8 +75,8 @@ CREATE TABLE `notifiche_venditore`(
         REFERENCES users(`email`)
 );
 
-
-CREATE TABLE `carta_di_credito`(
+-- Creazione tabella pc_hardware.carta_di_credito
+CREATE TABLE IF NOT EXISTS `pc_hardware`.`carta_di_credito`(
     `numero` varchar(50) NOT NULL,    
     `email` varchar(50) NOT NULL,
     `scadenzaMese`varchar(5) NOT NULL,
@@ -80,4 +85,4 @@ CREATE TABLE `carta_di_credito`(
     PRIMARY KEY(`numero`),
     FOREIGN KEY (`email`)
         REFERENCES users(`email`)
-);
+)ENGINE = InnoDB;
