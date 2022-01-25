@@ -50,7 +50,8 @@
         <form name="credit-form" action="add_credit_card.php" method="post" id="credit">
             <h2>Aggiugi carta di credito</h2>        
             <label for="numero">Numero della carta</label><input type="text" id="numero" name="numero" required ><br>
-            <label for="scadenza">Data di Scadenza</label><input type="text" id="scadenzaMese" name="scadenzaMese" required/>/<input type="text" id="scadenzaAnno" name="scadenzaAnno" required/><br>
+            <label for="scadenzaMese">Data di Scadenza</label><input type="text" id="scadenzaMese" name="scadenzaMese" required/>
+            <label for="scadenzaAnno">/</label><input type="text" id="scadenzaAnno" name="scadenzaAnno" required/><br>
             <label for="cvv2">CVV2 </label><input type="text" id="cvv2" name="cvv2" required/><br>  
             <input class="sub_button" type="submit" value="Aggiungi">
             <span id="err_credit"></span>     
@@ -59,8 +60,8 @@
     else {?>
         <form name="credit-show" action="remove_credit_card.php">
             <h2>La tua Carta di credito</h2>        
-            <label for="numero">Numero della carta: <?php echo $card_result->numero?></label><br>
-            <label for="scadenza">Data di Scadenza: <?php echo $card_result->scadenzaMese."/".$card_result->scadenzaAnno?></label><br>
+            <label>Numero della carta: <?php echo $card_result->numero?></label><br>
+            <label>Data di Scadenza: <?php echo $card_result->scadenzaMese."/".$card_result->scadenzaAnno?></label><br>
             <input class="sub_button" type="submit" value="Rimuovi carta"><br>
         </form>
     <?php } ?>
