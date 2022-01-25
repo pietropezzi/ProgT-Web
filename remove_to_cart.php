@@ -8,8 +8,7 @@ $status = "cart";
 
 $checkInsert = $dbh->removeToCart($cliente, $venditore, $nome, $status);
 
-if($checkInsert){	
-	$Message = "".$nome." Rimosso dal carrello.";
+if($checkInsert){		
     require("cart.php");	
     
 }else{
