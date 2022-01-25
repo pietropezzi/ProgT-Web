@@ -15,6 +15,10 @@ if(!empty($login_result)){
     registerLoggedUser($name, $username, $email , $type);
     $Message = "Login per: ".$username." eseguita con successo.";
     require("index.php");  
+  }else{
+  //Login fallito
+  $ErrorMessage = "LOGIN FALLITO";
+  require("login.php");
   }
 } else{
   //Login fallito
