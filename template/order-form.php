@@ -9,8 +9,8 @@
             <li class="mx-1">Stato consegna del prodotto:<?php echo $ordine["status"]; ?></li>                      
         </ul>  
         <form action="update_order_status.php" method="post">
-            <label for="status" class="mx-4">Aggiorna lo status:</label>
-            <select id="status" name="status">
+            <label for="status-<?php echo $ordine["id"]; ?>" class="mx-4">Aggiorna lo status:</label>
+            <select id="status-<?php echo $ordine["id"]; ?>" name="status">
                 <option value="da_spedire">Da Spedire</option>
                 <option value="spedito">Spedito</option>
                 <option value="consegnato">Consegnato</option>                 
