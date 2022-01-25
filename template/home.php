@@ -32,8 +32,7 @@
 					<img src="<?php echo IMAGES_DIR; ?>logo.png" alt="logo"/>
 					<h1 class="font-verdana text-center">PC HARDWARE</h1>
 				</header>
-			<?php endif; ?>
-		</header>
+			<?php endif; ?>		
 		<nav>
 			<?php require("template/sidebar.php"); ?>
 		</nav>

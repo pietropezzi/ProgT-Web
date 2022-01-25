@@ -6,16 +6,16 @@
         <ul>
             <li class="mx-1 mt-2">Cliente: <?php echo $ordine["cliente"]; ?></li>
             <li class="mx-1">Quantità venduta: <?php echo $ordine["quantita"]; ?></li>
-            <li class="mx-1">Stato consegna del prodotto:<?php echo $ordine["status"]; ?></li>
-            <form action="update_order_status.php" method="post">
-                <select id="status" name="status">
-                    <option value="da_spedire">Da Spedire</option>
-                    <option value="spedito">Spedito</option>
-                    <option value="consegnato">Consegnato</option>                 
-                </select>
-                <input type="hidden" name="id" value="<?php echo $ordine["id"]?>"/>
-                <button class="" name ="data" type="submit" value="<?php echo $ordine["data"]?>">Cambia status ordine</button>
-            </form>           
+            <li class="mx-1">Stato consegna del prodotto:<?php echo $ordine["status"]; ?></li>                      
         </ul>  
+        <form action="update_order_status.php" method="post">
+            <select id="status" name="status">
+                <option value="da_spedire">Da Spedire</option>
+                <option value="spedito">Spedito</option>
+                <option value="consegnato">Consegnato</option>                 
+            </select>
+            <input type="hidden" name="id" value="<?php echo $ordine["id"]?>"/>
+            <button class="" name ="data" type="submit" value="<?php echo $ordine["data"]?>">Cambia status ordine</button>
+        </form>
     </div>
 <?php endforeach;?>

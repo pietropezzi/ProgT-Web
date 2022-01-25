@@ -22,7 +22,7 @@
             <form action="update_quantity.php" method="post">  
                 <input type="hidden" name="venditore" value="<?php echo $venditore?>"/>                
                 <label class="mx-2">Quantità:</label>
-                <input class="quantity my-2" type="number" step="1" min="1" max="" name="quantita" value="<?php echo $quantita?>"><br>
+                <input class="quantity my-2" type="number" step="1" min="1" name="quantita" value="<?php echo $quantita?>"><br>
                 <button class="cartBtn text-white my-2\" name="nome" value="<?php echo $nome?>" type="submit">Aggiorna la quantità</button>
             </form>
         <?php }
