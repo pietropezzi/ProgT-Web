@@ -11,7 +11,7 @@
 		<form name="registrazione" action="registrazione.php" method="post" id="reg">
 			<div class="user-details">
 				<div class="input-box">
-					<label class="mb-1" for="username">Nome</label><br>
+					<label class="mb-1" for="name">Nome</label><br>
                     <input class="text-input" id="name" name="name" type="text" placeholder="Inserisci il tuo nome" required>
                 </div>
                 <div class="input-box">
@@ -19,28 +19,28 @@
                     <input class="text-input" id="username" name="username" type="text" placeholder="Inserisci il tuo username" required>
                 </div>
                 <div class="input-box">
-                    <label class="mb-1" for="username">E-mail</label><br>
+                    <label class="mb-1" for="email">E-mail</label><br>
                     <input class="text-input" id="email" name="email" type="text" placeholder="Inserisci la tua e-mail" required>
                 </div>
                 <div class="input-box">
-                    <label class="mb-1" for="username">Numero di telefono</label><br>
+                    <label class="mb-1" for="phone">Numero di telefono</label><br>
                     <input class="text-input" id="phone" name="phone" type="text" placeholder="Inserisci il tuo numero di telefono">
                 </div>
                 <div class="input-box">
-                    <label class="mb-1" for="username">Password</label><br>
+                    <label class="mb-1" for="psw">Password</label><br>
                     <input class="text-input" id="psw" name="password" type="password" placeholder="Inserisci la tua password" required>
                 </div>
                 <div class="input-box">
-                    <label class="mb-1" for="username">Verifica Password</label><br>
+                    <label class="mb-1" for="psw2">Verifica Password</label><br>
                     <input class="text-input" id="psw2" name="password2" type="password" placeholder="Conferma la tua password" required>
                 </div>
 				<div class="user-type text-center">
 					<label class="title my-2">Che tipo di utente sei?</label><br>
 					<div class="user-type">
 						<input type="radio" name="type" value="cliente" id="dot-1" checked>
-						<label class="name1" >Cliente</label>
+						<label class="name1" for="type" >Cliente</label>
 						<input class="name2" type="radio" name="type" value="venditore" id="dot-1" >
-						<label>Venditore</label>
+						<label for="type">Venditore</label>
 					</div>
 				</div>
             </div>

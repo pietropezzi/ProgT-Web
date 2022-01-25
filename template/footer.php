@@ -1,5 +1,5 @@
 <div class="about-contatti">
-    <h3>About & Contatti</h3>
+    <h2>About & Contatti</h2>
     <p>pchardware è un piccolo sito per acquisti e vendite di parti hardware per pc.<br>
     Il sito è attualmente gestito da:</p>
     <ul class="gestori">
@@ -15,7 +15,7 @@
     <p>Per informazioni e assistenza contattare uno dei gestori.</p>
 </div>
 <div class="ext-links">
-    <h3>Links</h3>
+    <h2>Links</h2>
     <ul class="linklist">
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Facebook</a></li>
