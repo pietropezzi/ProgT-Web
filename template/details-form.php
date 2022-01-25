@@ -21,8 +21,8 @@
             <p class="mx-2">Prodotti rimasti: <?php echo $quantita?></p>
             <form action="update_quantity.php" method="post">  
                 <input type="hidden" name="venditore" value="<?php echo $venditore?>"/>                
-                <label class="mx-2">Quantità:</label>
-                <input class="quantity my-2" type="number" step="1" min="1" name="quantita" value="<?php echo $quantita?>"><br>
+                <label for="quantità" class="mx-2">Quantità:</label>
+                <input class="quantity my-2" type="number" step="1" min="1" name="quantita" id="quantità" value="<?php echo $quantita?>"><br>
                 <button class="cartBtn text-white my-2\" name="nome" value="<?php echo $nome?>" type="submit">Aggiorna la quantità</button>
             </form>
         <?php }
@@ -43,7 +43,7 @@
             <form action="add_to_cart.php" method="post"> 
                 <input type="hidden" name="venditore" value="<?php echo $venditore?>"/>
                 <input type="hidden" name="prezzo" value="<?php echo $prezzo?>">
-                <label class="mx-2">Quantità:</label>
+                <label for="quantità" class="mx-2">Quantità:</label>
                 <input type="number" step="1" min="1" max="<?php echo $quantita?>" id="quantità" name="quantità" value="1" class="quantity"><br>
                 <button class="cartBtn text-white my-2" name="nome" value="<?php echo $nome?>" type="submit">Aggiungi al carrello</button>
             </form>            
