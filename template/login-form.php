@@ -8,12 +8,12 @@
 	<form action="loginCheck.php" method="post">  
 		<div>
 			<div class="input-box">
-				<label class="m-1">Email</label><br>
-				<input class="text-input" type="text" placeholder="Inserisci la tua e-mail" name="email" required>
+				<label class="m-1" for="email">Email</label><br>
+				<input class="text-input" type="text" id="email" placeholder="Inserisci la tua e-mail" name="email" required>
 			</div>
 			<div class="input-box">
-				<label class="m-1">Password</label><br>
-				<input class="text-input mb-2" type="password" placeholder="Inserisci la tua password" name="password" required>
+				<label class="m-1" for="psw">Password</label><br>
+				<input class="text-input mb-2" type="password" id="psw" placeholder="Inserisci la tua password" name="password" required>
 			</div>
 		</div>
 		<input class="button my-3 text-white" type="submit" value="Login">
