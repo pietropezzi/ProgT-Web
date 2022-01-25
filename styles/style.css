@@ -184,8 +184,9 @@ footer > .about-contatti > p, footer > .ext-links > p{
 	border-radius: 9px;
 }
 
-.prodotto h3{
-	height: 100px;	
+.prodotto h2{
+	font-size: 140%;
+	height: 70px;
 }
 
 .prodotto p{
