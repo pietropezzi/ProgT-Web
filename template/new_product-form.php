@@ -11,24 +11,24 @@
 		<form name="new_product" id="prod" action="insert_product.php" method="post" enctype="multipart/form-data">
 			<div>				
                 <div class="input-box">
-                    <label class="mb-1">Nome</label><br>
+                    <label class="mb-1" for="nome">Nome</label><br>
                     <input class="text-input" id="nome" name="nome" type="text" placeholder="Inserisci il nome del tuo prodotto" required>
                 </div>
                 <div class="input-box">
-                    <label class="mb-1">Prezzo</label><br>
+                    <label class="mb-1" for="prezzo">Prezzo</label><br>
                     <input class="text-input" id="prezzo" name="prezzo" type="text" placeholder="Inserisci il prezzo del tuo prodotto" required>
                 </div>
                 <div class="input-box">
-                    <label class="mb-1">Breve descrizione</label><br>
+                    <label class="mb-1" for="breve_descrizione">Breve descrizione</label><br>
                     <textarea rows = "2" cols = "50" name = "breve_descrizione" id="breve_descrizione" class="text-input" placeholder="Inserisci una breve descrizione del tuo prodotto"></textarea>
                 </div>
                 <div class="input-box">
-                    <label class="mb-1">Descrizione</label><br>
+                    <label class="mb-1" for="descrizione">Descrizione</label><br>
                     <textarea rows ="5" cols="50" name="descrizione" id="descrizione" class="text-input" placeholder="Inserisci la descrizione del tuo prodotto"></textarea>                 
                 </div>
-                <label class="mb-1">Immagine prodotto</label><br>
+                <label class="mb-1" for="immagine_prodotto">Immagine prodotto</label><br>
                 <input type="file" name="immagine_prodotto" id="immagine_prodotto"><br>
-                <label class="mb-1">Tipo di Prodotto</label><br>
+                <label class="mb-1" for="tipo">Tipo di Prodotto</label><br>
                 <select id="tipo" name="tipo">
                     <option value="cpu">CPU/Processore</option>
                     <option value="cpu_cooling">Raffredamento della CPU</option>
@@ -42,8 +42,8 @@
                 </select>         
             </div>
             <div class="quantity_buttons">
-                <label class="mb-1">Quanti prodotti hai del genere?</label><br>
-	            <input type="number" step="1" min="1" max="" id="quantità" name="quantità" value="1" title="Qty" class="input-text">
+                <label class="mb-1" for="quantità">Quanti prodotti hai del genere?</label><br>
+	            <input type="number" step="1" min="1" id="quantità" name="quantità" value="1" title="Qty" class="input-text">
             </div>
             <div>
                 <input class="button text-white mt-2" type="submit" value="Inserisci il tuo nuovo prodotto">
