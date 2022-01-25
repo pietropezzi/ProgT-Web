@@ -7,7 +7,7 @@
         <img class="my-2" src="<?php echo PROD_IMAGES_DIR.$immagine; ?>" alt="immagine_prodotto"/>
     </div>
     <div class="main m-1">        
-        <h4>Prezzo: <?php echo $prezzo; ?>€</h4>
+        <h3>Prezzo: <?php echo $prezzo; ?>€</h3>
         <label class="title font-weight-bold">Dettaglio del prodotto</label>
         <p><?php echo $descrizione; ?></p>
     </div>
