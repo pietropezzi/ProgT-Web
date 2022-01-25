@@ -35,13 +35,15 @@
                     <input class="text-input" id="psw2" name="password2" type="password" placeholder="Conferma la tua password" required>
                 </div>
 				<div class="user-type text-center">
-					<label class="title my-2">Che tipo di utente sei?</label><br>
+                    <fieldset>
+					<legend class="title my-2">Che tipo di utente sei?</legend><br>
 					<div class="user-type">
 						<input type="radio" name="type" value="cliente" id="dot-1" checked>
-						<label class="name1" for="type" >Cliente</label>
-						<input class="name2" type="radio" name="type" value="venditore" id="dot-1" >
-						<label for="type">Venditore</label>
-					</div>
+						<label class="name1" for="dot-1" >Cliente</label>
+						<input class="name2" type="radio" name="type" value="venditore" id="dot-2" >
+						<label for="dot-2">Venditore</label>
+                    </div>
+                    </fieldset>
 				</div>
             </div>
             <div>
